@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: broker
+  name: broker
+  namespace: integration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: broker
+  template:
+    metadata:
+      labels:
+        app: broker
+    spec:
+      imagePullSecrets:
+        - name: registry-secret # replace with your own registry secret
+      containers:
+      - image: <image-name> #cp-enablement.docker.repositories.sap.ondemand.com/easyfranchise/broker # use your own image
+        name: broker
+        imagePullPolicy: Always
+        env:
+        - name: CLUSTER_DOMAIN
+          valueFrom:
+            configMapKeyRef:
+              key: cluster-domain
+              name: cluster-domain
+        - name: SERVICE_LIST
+          valueFrom:
+            configMapKeyRef:
+              key: backend.properties
+              name: backend-configmap              
+        volumeMounts:
+          - name: xsuaa-volume
+            mountPath: "/etc/secrets/sapcp/xsuaa/xsuaaserviceinstance"
+            readOnly: true
+          - name: saas-registry-volume
+            mountPath: "/etc/secrets/sapcp/saas-registry/saasregistryinstance"
+            readOnly: true
+          - name: destination-volume
+            mountPath: "/etc/secrets/sapcp/destination/destinationinstance"
+            readOnly: true          
+      volumes:
+        - name: xsuaa-volume
+          secret:
+            secretName: xsuaa-service-binding
+        - name: saas-registry-volume
+          secret:
+            secretName: saas-registry-service-binding            
+        - name: destination-volume
+          secret:
+            secretName: destination-service-binding
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: broker
+  namespace: integration
+  labels:
+    run: broker
+spec:
+  ports:
+  - port: 3002
+    protocol: TCP
+    targetPort: 3002
+  selector:
+    app: broker
+  type: ClusterIP
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: broker-rolebinding
+  namespace: integration
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: integration
+roleRef:
+  kind: ClusterRole
+  name: kyma-namespace-admin
+  apiGroup: rbac.authorization.k8s.io  

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: business-partner-mock
+  name: business-partner-mock
+  namespace: mock
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: business-partner-mock
+  template:
+    metadata:
+      labels:
+        app: business-partner-mock
+    spec:
+      imagePullSecrets:
+        - name: registry-secret # replace with your own registry secret      
+      containers:
+      - image: <image-name> # e.g. cp-enablement.docker.repositories.sap.ondemand.com/com.sap.easyfranchise/s4hanamock:<version>
+        name: business-partner-mock
+        ports:
+          - containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: business-partner-mock
+  name: business-partner-mock
+  namespace: mock
+spec:
+  ports:
+    - port: 8081
+      protocol: TCP
+      targetPort: 8081
+  selector:
+    app: business-partner-mock
+  type: ClusterIP
+

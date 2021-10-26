@@ -1,0 +1,67 @@
+Guideline
+curl --request PUT 'https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/guideline' --header 'Content-Type: application/json' --data-raw '{"id":181, "Content": "In EU you have to be aware of A+b+c", "Name": "guideline EU Matt"}'
+
+Assign guideline
+curl --request PUT 'https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/{businessPartnerId}/add_guideline/{guidelineId}'
+
+Delete Guideline assignement
+https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300273/delete_guideline/374
+
+Mentors
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/mentor" -H "Content-Type: application/json" -d '{"id":"24","Name":"Justin Case","Email":"justin.case@cityscooter.com","Phone":"0815","Experience":"beginner","Capacity":"0"}'
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/mentor" -H "Content-Type: application/json" -d '{"id":"24","Name":"Tony Stark","Email":"tony.stark@cityscooter.com","Phone":"0815123456","Experience":"Expert","Capacity":"0"}'
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/mentor" -H "Content-Type: application/json" -d '{"id":"24","Name":"Peter Parker","Email":"peter.parker@cityscooter.com","Phone":"081876534567","Experience":"Intermediate","Capacity":"0"}'
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/mentor" -H "Content-Type: application/json" -d '{"id":"24","Name":"Mile Stone","Email":"mile.stone@cityscooter.com","Phone":"081336896578","Experience":"beginner","Capacity":"0"}'
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/mentor" -H "Content-Type: application/json" -d '{"id":"24","Name":"John Snow","Email":"john.snow@cityscooter.com","Phone":"081112334795","Experience":"expert","Capacity":"0"}'
+
+Update mentor Capacity
+curl -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/mentor" -H "Content-Type: application/json" -d '{"Id":"403","Name":"Tony Stark","Email":"tony.stark@cityscooter.com","Phone":"0815123456","Experience":"Expert","Capacity":"5"}'
+
+Assign mentor to franchise
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100088/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100001/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100001/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100002/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300001/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300002/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300273/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300003/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100003/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100004/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100006/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100008/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100009/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100014/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100012/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100013/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300006/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100005/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100273/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100050/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100051/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100100/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300080/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300081/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300082/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300083/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100007/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300007/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10401010/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300090/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100060/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10200001/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10411010/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100010/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300084/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100080/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100081/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300010/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300095/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10100088/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10101011/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10154801/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300085/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/10300086/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/1000090/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/1000110/mentor/403"
+curl --verbose -X PUT "https://efservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/efservice/v1/franchise/1000120/mentor/403"

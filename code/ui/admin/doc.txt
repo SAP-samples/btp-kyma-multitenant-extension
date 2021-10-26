@@ -1,0 +1,51 @@
+- Disclaimer on code - not for productive usage
+- Explain multitenancy aspect 
+- 1 UI for all customers consuming the different tenant (more details in appRouter chapter)
+- admin corner (logo + customer name)
+- Explain high level vue + tools (chrome plugin) – link to doc
+- Explain fundamentals – link to doc
+- Install Basis Vue app to verify that env works
+- Explain app structure with diagram
+- Optional: short Tour of the code
+- Prerequisite: backend API / See previous chapter (dev config without tenant id) 
+- Copy code of repo
+- Test app in local environment (npm run build, npm run serve)
+- Explain specific config (resources folder instead of dist folder, chrome, dev, ...)
+- Explain docker config (basis-image, copy folders, …)
+- Build image with Docker Hub
+- Optional: run image from local docker hub (useful for debugging)
+- Explain K8s/Kyma configuration (namespace, deployment, service)
+- Deploy app to Kyma cluster (kubeconfig from Kyma Dashboard, …)
+- Test the app
+- Optional: use the build.sh script to deploy faster and use versioning
+
+
+Next:
+- testing dev without tenant id
+- adding nav back functionality
+- VUEX?
+- Cleanup CSS
+- Verification max 10 assignement
+- Problem with businesspartner to be send via api if not already saved in db
+
+
+Open points:
+- Franchisee renaming
+- S4 is down?
+- fd-title vs h2
+- problem with icons
+- problem with css (Checkbox)
+- Adding type to props
+- Review of Vue colleagues
+- Mockup of franchise details
+
+
+Consistent order in script export
+- name
+- props
+- data
+- components
+- computed
+- methods
+- watch
+- mounted

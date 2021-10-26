@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ef-service
+  name: ef-service
+  namespace: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ef-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ef-service
+    spec:
+      imagePullSecrets:
+        - name: registry-secret      
+      containers:
+      - image: <image-name>
+        name: ef-service
+        resources: {}
+        ports:
+          - containerPort: 8080
+        volumeMounts:
+          - name: backend-config
+            mountPath: "/etc/backend-config"
+            readOnly: true
+      volumes:
+        - name: backend-config
+          configMap:
+            name: backend-configmap        
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ef-service
+  name: ef-service
+  namespace: backend
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: ef-service
+  type: ClusterIP
+status:
+  loadBalancer: {}

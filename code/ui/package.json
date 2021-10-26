@@ -1,0 +1,49 @@
+{
+  "name": "easy-franchise-ui",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --dest resources",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "@vue/cli-service": "~4.5.0",
+    "bootstrap": "^5.0.0",
+    "fundamental-styles": "^0.1.0",
+    "fundamental-vue": "^0.18.3",
+    "moment": "^2.29.1",
+    "vue": "^2.6.11",
+    "vue-radial-progress": "^0.3.2",
+    "vue-router": "^3.5.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.0.1",
+    "eslint-plugin-vue": "^7.19.1",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "engines": {
+    "node": "14.x.x"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

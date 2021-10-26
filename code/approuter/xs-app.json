@@ -1,0 +1,38 @@
+{
+    "welcomeFile": "/ui/index.html",
+    "routes": [
+        {
+            "source": "^/broker/(.*)$",
+            "target": "$1",
+            "destination": "broker"
+        },        
+        {
+            "source": "^/ui/(.*)$",
+            "target": "$1",
+            "destination": "ui",
+            "scope": ["$XSAPPNAME.Display", "$XSAPPNAME.Backend"]
+        },
+        {
+            "source": "^/backend/(.*)$",
+            "target": "$1",
+            "destination": "ef-service",
+            "csrfProtection": false,
+            "scope": ["$XSAPPNAME.Backend"]
+        },        
+        {
+            "source": "^/css/(.*)$",
+            "destination": "ui",
+            "authenticationType": "none"
+        },
+        {
+            "source": "^/js/(.*)$",
+            "destination": "ui",
+            "authenticationType": "none"
+        },
+        {
+            "source": "^/img/(.*)$",
+            "destination": "ui",
+            "authenticationType": "none"
+        }        
+    ]
+}

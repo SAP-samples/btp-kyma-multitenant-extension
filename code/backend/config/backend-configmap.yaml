@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-configmap  
+data:
+  backend.properties: |
+    bp.service: http://bp-service.integration/easyfranchise/rest/bpservice/v1/
+    db.service: http://db-service.integration/easyfranchise/rest/dbservice/v1/
+    db.admin.service: http://db-service.integration/easyfranchise/rest/dbadminservice/v1/
+    email.service: http://email-service.integration:3002/easyfranchise/rest/emailservice/v1/
+    scheduler.auto.start: off
+    s4hana.destination: EasyFranchise-S4HANA 

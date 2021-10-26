@@ -1,0 +1,6 @@
+{
+  "name": "business-partner-mock",
+  "dependencies": {
+    "express": "~4.17.1"
+  }
+}

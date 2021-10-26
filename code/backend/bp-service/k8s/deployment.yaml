@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: bp-service
+  name: bp-service
+  namespace: integration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bp-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: bp-service
+    spec:
+      imagePullSecrets:
+        - name: registry-secret
+      containers:
+      - image: <image-name>
+        name: bp-service
+        resources: {}
+        ports:
+          - containerPort: 8080
+        volumeMounts:
+        - name: destination-volume
+          mountPath: "/etc/secrets/sapcp/destination/destinationserviceinstance"
+          readOnly: true
+        - name: xsuaa-volume
+          mountPath: "/etc/secrets/sapcp/xsuaa/xsuaaserviceinstance"
+          readOnly: true
+        - name: backend-config
+          mountPath: "/etc/backend-config"
+          readOnly: true
+      volumes:
+        - name: destination-volume
+          secret:
+            secretName: destination-service-binding
+        - name: xsuaa-volume
+          secret:
+            secretName: xsuaa-service-binding
+        - name: backend-config
+          configMap:
+            name: backend-configmap        
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: bp-service
+  name: bp-service
+  namespace: integration
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: bp-service
+  type: ClusterIP
+status:
+  loadBalancer: {}

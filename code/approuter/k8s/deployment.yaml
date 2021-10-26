@@ -1,0 +1,105 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: approuter
+  namespace: integration
+spec:
+  selector:
+    matchLabels:
+      app: approuter
+  template:
+    metadata:
+      labels:
+        app: approuter
+    spec:
+      imagePullSecrets:
+        - name: registry-secret # replace with your own registry secret
+      containers:
+      - image: <image-name> # use your own image
+        name: approuter
+        env:
+        - name: destinations
+          valueFrom: 
+            configMapKeyRef:
+              name: destinations-config
+              key: destinations
+        - name: CLUSTER_DOMAIN
+          valueFrom:
+            configMapKeyRef:
+              key: cluster-domain
+              name: cluster-domain
+        - name: TENANT_HOST_PATTERN
+          value: "^(.*).$(CLUSTER_DOMAIN)"              
+        volumeMounts:
+        - name: xsuaa-volume
+          mountPath: "/etc/secrets/sapcp/xsuaa/xsuaaserviceinstance"
+          readOnly: true
+      volumes:
+        - name: xsuaa-volume
+          secret:
+            secretName: xsuaa-service-binding
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: approuter
+  namespace: integration
+  labels:
+    app: approuter
+spec:
+  type: NodePort
+  ports:
+  - port: 5000
+  selector:
+    app: approuter
+---
+apiVersion: gateway.kyma-project.io/v1alpha1
+kind: APIRule
+metadata:
+  name: approuter-apirule
+  namespace: integration
+spec:
+  gateway: kyma-gateway.kyma-system.svc.cluster.local
+  service:
+    name: approuter
+    port: 5000
+    host: <provider-subdomain> # url for provider subaccount, adapt to your own subdomain
+  rules:
+    - path: /.*
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"]
+      mutators:
+        - handler: header
+          config:
+            headers:
+              x-forwarded-host: <provider-subdomain>.<cluster-domain> # adapt to your Kyma cluster
+      accessStrategies:
+        - handler: noop    
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: destinations-config
+  namespace: integration
+data:
+# two alternatives: # adapt to your Kyma cluster
+#   1. use (external) service url provided by Kyma APIRule (JWT enabled) (see application "deployment.yaml" APIRule)
+  # destinations: |
+  #   [
+  #     {"name":"broker","url":"https://broker.<cluster-domain>","forwardAuthToken" : true}
+  #   ]
+#   2. use cluster internal service url:  note that internal service naming follows http://<service-name>.<namespace>.svc.cluster.local:<service-port>
+#  make sure "namespace" of the broker is adapted when deploying to different namespace
+  destinations: |
+    [
+      {"name":"broker","url":"http://broker.integration.svc.cluster.local:3002","forwardAuthToken" : true},
+      {"name":"ui","url":"http://ui.frontend.svc.cluster.local:80","forwardAuthToken" : true},
+      {"name":"ef-service","url":"http://ef-service.backend.svc.cluster.local:80","forwardAuthToken" : true}
+    ] 
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-domain
+  namespace: integration
+data:
+  cluster-domain: <cluster-domain>  ## adapt to your Kyma cluster

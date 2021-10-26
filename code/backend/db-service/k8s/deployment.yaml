@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: db-service
+  name: db-service
+  namespace: integration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: db-service
+        sidecar.istio.io/inject: "false"
+    spec:
+      imagePullSecrets:
+        - name: registry-secret
+      containers:
+      - image: <image-name>
+        name: db-service
+        resources: {}
+        ports:
+          - containerPort: 8080
+        volumeMounts:
+          - name: db-config
+            mountPath: "/etc/secrets/db-config"
+            readOnly: true
+          - name: backend-config
+            mountPath: "/etc/backend-config"
+            readOnly: true
+      volumes:
+        - name: db-config
+          secret:
+            secretName: db-config
+        - name: backend-config
+          configMap:
+            name: backend-configmap
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: db-service
+  name: db-service
+  namespace: integration
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: db-service
+  type: ClusterIP
+status:
+  loadBalancer: {}

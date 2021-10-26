@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui
+  namespace: frontend
+spec:
+  selector:
+    matchLabels:
+      app: ui
+  template:
+    metadata:
+      labels:
+        app: ui
+    spec:
+      imagePullSecrets:
+        - name: registry-secret # replace with your own registry secret
+      containers:
+      - image: <image-name>
+        name: ui
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui
+  namespace: frontend
+  labels:
+    app: ui
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+  selector:
+    app: ui

@@ -1,0 +1,19 @@
+{
+  "name": "easy-franchise-approuter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start_orig": "node node_modules/@sap/approuter/approuter.js",
+    "start": "node approuter-start.js"
+  },
+  "dependencies": {
+    "@sap/approuter": "10.8.2",
+    "@sap/xsenv": "^3.1.1",
+    "@sap/xssec": "^3.2.8",
+    "jwt-decode": "^3.1.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "14.x.x"
+  }
+}
