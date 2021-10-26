@@ -20,15 +20,17 @@ The tutorial focus on the following aspects:
 * Freedom to use non-SAP frameworks and tools without CAP neither SAPUI5 (but indeed SAP Fiori like UI)
 
 # Known Issues
-Check this [page](https://github.tools.sap/saas-extension-on-kyma/easyfranchise-main/labels/known%20Issue) to get an overview about the known issues.
+The tutorial is provided on the "as-is" basis. Currently, there are no known issues for for the tutorial project.
 
-# How to Obtain Support?
-Please check if you find an answer in the [troubleshooting](documentation/appendix/troubleshooting/README.md) chapter. 
+## How to Obtain Support?
 
-Create an issue to get [support](#) or to report using [mistake in the step-by-step description](#).
+Please check if you find an answer in the [troubleshooting](documentation/appendix/troubleshooting/README.md) chapter.
 
-# How to Provide Feedback?
-Have you found the enablement material easy to understand? Are you missing something? What can we improve? Please [share](#) your feedback, so that we can improve the documentation and provide a better material for future stakeholders.
+Create an issue to get support or to report a bug [here](issues/new/choose).
+
+## How to Provide Feedback?
+
+Have you found the enablement material easy to understand? Are you missing something? What can we improve? Please [share](issues/new/choose) your feedback, so that we can improve the documentation and provide a better material for future stakeholders.
 
 # What's New?
 Check the details of our last releases [here](documentation/introduction/whats-new/README.md).
