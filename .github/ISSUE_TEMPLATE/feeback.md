@@ -3,7 +3,7 @@ name: General feedback
 about: Feel free to share any feedback on this enablement material. This will help to us to improve it in the future
 title: 'General feedback'
 labels: Feedback
-assignees: D037518, D056267
+assignees: AlexRieder, matthieupelatan
 
 ---
 
