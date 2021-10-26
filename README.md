@@ -10,9 +10,6 @@ The repository has been structured into 2 different sections:
 - [documentation](documentation): Here you will find details about the architecture, the components, and a step-by-step guide to set up the application EasyFranchise.
 - [code](code): Here you will find the code of all the components needed to run the application.
 
-This tutorial has been created in the context of the [end-to-end scenario enablement](https://pages.github.tools.sap/e2e-scenario-enablement/) activities.
-
-
 Find more details in the solution diagram of the EasyFranchise application:
 ![](documentation/images/easyfranchise-diagrams/Slide4.jpeg)
 
