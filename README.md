@@ -46,11 +46,11 @@ The tutorial is provided on the "as-is" basis. Currently, there are no known iss
 
 Please check if you find an answer in the [troubleshooting](documentation/appendix/troubleshooting/README.md) chapter.
 
-Create an issue to get [support](https://github.tools.sap/saas-extension-on-kyma/easyfranchise-main/issues/new?assignees=D037518%2C+D056267&labels=question&template=obtain-support.md&title=obtain+support+for+....) or to report using [mistake in the step-by-step description](https://github.tools.sap/saas-extension-on-kyma/easyfranchise-main/issues/new?assignees=D037518%2C+D056267&labels=bug&template=bug-in-a-step-by-step-description.md&title=).
+Create an issue to get support or to report a bug [here](issues/new/choose).
 
 ## How to Provide Feedback?
 
-Have you found the enablement material easy to understand? Are you missing something? What can we improve? Please [share](https://github.tools.sap/saas-extension-on-kyma/easyfranchise-main/issues/new?assignees=D037518%2C+D056267&labels=Feedback&template=feeback.md&title=General+feedback) your feedback, so that we can improve the documentation and provide a better material for future stakeholders.
+Have you found the enablement material easy to understand? Are you missing something? What can we improve? Please [share](issues/new/choose) your feedback, so that we can improve the documentation and provide a better material for future stakeholders.
 
 ## What's New
 
