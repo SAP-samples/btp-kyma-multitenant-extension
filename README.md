@@ -43,7 +43,7 @@ You can find all requirements to execute the tutorial described [here](documenta
   
 ## Known Issues
 
-Check this [page](https://github.tools.sap/saas-extension-on-kyma/easyfranchise-main/labels/known%20Issue) to get an overview about the known issues.
+The tutorial is provided on the "as-is" basis. Currently, there are no known issues for for the tutorial project.
 
 ## How to Obtain Support?
 
