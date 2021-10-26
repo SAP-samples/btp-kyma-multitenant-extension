@@ -25,11 +25,6 @@ spec:
       - name: Backend
         description:  Backend Role-Template
         scope-references: [$XSAPPNAME.Backend]
-      #- name: "MultitenancyCallbackRoleTemplate" # https://github.tools.sap/sapit-cloud-technologies/hangman-kyma/blob/2c6e1513006ea01bfbadb4e25c9716d646d3fbcc/k8s/helm/templates/services.yaml
-      #  description: "Call callback-services of applications"
-      #  scope-references:
-      #    - "$XSAPPNAME.Callback"        
-    # (name of a role collection needs to be unique within a cluster) https://github.wdf.sap.corp/FBSSSC/cloud-deployment/blob/master/k8s/core/app-router/050-xsuaa-service-instance.yaml#L20
     role-collections:
       - name: Easy Franchise (UAA) Viewer Role Collection <provider-subdomain>
         description: Viewer Role-Collection

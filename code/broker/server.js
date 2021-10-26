@@ -16,10 +16,10 @@ var axios = require('axios').default;
 
 var app = express();
 var kyma_cluster = process.env.CLUSTER_DOMAIN || "UNKNOWN";
-var services = xsenv.readServices(); //https://github.wdf.sap.corp/xs2/node-xsenv/blob/master/README.md, https://github.tools.sap/CPES/CPAppDevelopment/blob/master/docs/KymaAuth.md
-console.log(services); //https://github.com/dvankempen/XSUAA/blob/master/node/4b-authentication/myapp/server.js
+var services = xsenv.readServices(); 
+console.log(services);
 
-passport.use(new JWTStrategy(services.xsuaaserviceinstance.credentials)); // use xsuaa service, token exchange happens transparently, see https://github.wdf.sap.corp/CPSecurity/node-xs2sec/blob/master/doc/IAStoXSUAA.md
+passport.use(new JWTStrategy(services.xsuaaserviceinstance.credentials)); 
 
 app.use(passport.initialize());
 app.use(passport.authenticate("JWT", { session: false }));
@@ -70,7 +70,7 @@ app.put('/callback/v1.0/tenants/*', async function (req, res) {
         return;
     }
 
-    //1. create tenant unique URL, e.g.https://d049740consume.c-2e512db.kyma-stage.shoot.live.k8s-hana.ondemand.com/
+    //1. create tenant unique URL
 
     var tenantAppURL = 'https://' + consumerSubdomain + "." + kyma_cluster;
     console.log("On-boarding consumerSubdomain = " + consumerSubdomain);
@@ -176,7 +176,7 @@ app.delete('/callback/v1.0/tenants/*', async function (req, res) {
         return;
     }
 
-    //1. create tenant unique URL, e.g.https://d049740consume.c-2e512db.kyma-stage.shoot.live.k8s-hana.ondemand.com/
+    //1. create tenant unique URL
 
     var tenantAppURL = 'https://' + consumerSubdomain + "." + kyma_cluster;
     console.log("Off-boarding consumerSubdomain = " + consumerSubdomain);
