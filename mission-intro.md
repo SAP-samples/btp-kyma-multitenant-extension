@@ -7,11 +7,11 @@ The application called Easy Franchise is an extension of a SAP S/4 HANA Cloud an
 
 You can find the code of the application components in this Github [repository](#).
 
-# Who Is This Mission For?
+## Who Is This Mission For?
 The business scenario of this tutorial has been created with the partner as focus persona. The purpose of this project is to help SAP partners to get a quick start on developing a multitenant application and provide best practices.
 This is of course not exclusively for SAP partner and can be very useful for every person looking for details on how to build a multitenant application running on Kyma. It is suitable for new or experienced developers on SAP BTP. 
 
-# Focus Topics of the Mission
+## Focus Topics of the Mission
 The tutorial focus on the following aspects:
 * Multitenancy
 * Kyma environment on SAP BTP
@@ -19,7 +19,7 @@ The tutorial focus on the following aspects:
 * Extension SaaS (extending an SAP LoB solution), not a standalone SaaS 
 * Freedom to use non-SAP frameworks and tools without CAP neither SAPUI5 (but indeed SAP Fiori like UI)
 
-# Known Issues
+## Known Issues
 The tutorial is provided on the "as-is" basis. Currently, there are no known issues for for the tutorial project.
 
 ## How to Obtain Support?
@@ -32,5 +32,5 @@ Create an issue to get support or to report a bug [here](issues/new/choose).
 
 Have you found the enablement material easy to understand? Are you missing something? What can we improve? Please [share](issues/new/choose) your feedback, so that we can improve the documentation and provide a better material for future stakeholders.
 
-# What's New?
+## What's New?
 Check the details of our last releases [here](documentation/introduction/whats-new/README.md).
