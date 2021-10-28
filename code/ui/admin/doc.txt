@@ -1,6 +1,6 @@
 - Disclaimer on code - not for productive usage
 - Explain multitenancy aspect 
-- 1 UI for all customers consuming the different tenant (more details in appRouter chapter)
+- 1 UI for all customers consuming the different tenant (more details in Approuter chapter)
 - admin corner (logo + customer name)
 - Explain high level vue + tools (chrome plugin) – link to doc
 - Explain fundamentals – link to doc

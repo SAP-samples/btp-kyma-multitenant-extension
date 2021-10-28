@@ -1,2 +1,2 @@
 # Easy Franchise Backend
-Please refer to [documentation](/documentation/exploration/README.md) for more details.
+Please refer to [documentation](/documentation/explore/README.md) for more details.

@@ -1,2 +1,2 @@
 # Broker
-Please refer to [documentation](/documentation/exploration/broker/README.md) for more details.
+Please refer to [documentation](/documentation/explore/broker/README.md) for more details.

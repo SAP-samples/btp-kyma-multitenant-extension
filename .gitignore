@@ -16,6 +16,8 @@ code/ui/resources
 # env file for cluster c-97d8b1a
 code/c-97d8b1a-easyfranchisedev
 code/.env-dev-c-97d8b1a
+code/.env
+code/.env-dev
 # local env files
 .env.local
 .env.*.local

@@ -1,2 +1,2 @@
 # Email Service
-Please refer to [documentation](../../documentation/exploration/email-service/README.md) for more details.
+Please refer to [documentation](../../documentation/explore/email-service/README.md) for more details.

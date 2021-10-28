@@ -1,11 +1,9 @@
 # Welcome to the Mission
-
 In this mission you will learn how to develop a multitenant application running on the Kyma environment of the SAP Business Technology Platform (SAP BTP). 
-
 The application called Easy Franchise is an extension of a SAP S/4 HANA Cloud and has been build based using microservices. Due to the complexity of this topic, our team has taken some compromise compared to a real application. So, this application doesn't aim to be used for productive usage. See below the solution diagram of the EasyFranchise application:
 ![](documentation/images/easyfranchise-diagrams/Slide4.jpeg)
 
-You can find the code of the application components in this Github [repository](#).
+You can find the code of the application components in this Github [repository](code).
 
 ## Who Is This Mission For?
 The business scenario of this tutorial has been created with the partner as focus persona. The purpose of this project is to help SAP partners to get a quick start on developing a multitenant application and provide best practices.
@@ -23,14 +21,16 @@ The tutorial focus on the following aspects:
 The tutorial is provided on the "as-is" basis. Currently, there are no known issues for for the tutorial project.
 
 ## How to Obtain Support?
+Please check if you find an answer in the <a href="documentation/appendix/troubleshooting/README.md">troubleshooting</a> chapter.
 
-Please check if you find an answer in the [troubleshooting](documentation/appendix/troubleshooting/README.md) chapter.
-
-Create an issue to get support or to report a bug [here](issues/new/choose).
+Create an issue to get support or to report a bug <a href="/issues/new/choose" target="_blank">here</a>.
 
 ## How to Provide Feedback?
+Have you found the enablement material easy to understand? Are you missing something? What can we improve? Please <a href="/issues/new/choose" target="_blank">share</a> your feedback, so that we can improve the documentation and provide a better material for future stakeholders.
 
-Have you found the enablement material easy to understand? Are you missing something? What can we improve? Please [share](issues/new/choose) your feedback, so that we can improve the documentation and provide a better material for future stakeholders.
 
-## What's New?
-Check the details of our last releases [here](documentation/introduction/whats-new/README.md).
+## What's New
+Check the details of our last releases <a href="documentation/discover/whats-new/README.md">here</a>.
+
+## License
+Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the <a href="LICENSES/Apache-2.0.txt">LICENSE</a> file.
