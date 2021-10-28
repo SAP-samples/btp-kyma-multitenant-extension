@@ -1,4 +1,4 @@
-# Email Service
+# Understand the Email Service
 
 ![](../../images/kyma-diagrams-focus-components/Slide7.jpeg) 
 
@@ -12,7 +12,7 @@ The Email service is located within the *integration* namespace on Kyma. It is n
 ## Service Implementation
 
 Compared to the other components, this service is not tenant-aware as it simply sends emails to the given email addresses. 
-The service is implemented in the class [server.js](../../../code/email-service/server.js), where 2 APIs are implemented.
+The service is implemented in the class [server.js](/code/email-service/server.js), where 2 APIs are implemented.
 
 1. Method Notify Coordinator
 

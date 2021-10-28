@@ -1,4 +1,4 @@
-# Create Consumer Subaccount
+# Create a Consumer Subaccount
 
 For each new customer, the partner will need to create a dedicated SAP BTP subaccount.
 

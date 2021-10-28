@@ -1,4 +1,4 @@
-# Business Partner Service
+# Understand the Business Partner Service
 
 ![](../../images/kyma-diagrams-focus-components/Slide6.jpeg) 
 
@@ -17,7 +17,7 @@ Here is a detailled overview of the BP service connections:
 ## Understanding the OData endpoint of SAP S/4HANA
 OData (Open Data Protocol) is a standard that defines a set of best practices for building and consuming REST APIs. A metadata document defines available entities and methods. With this metadata you are able to execute read/filter/create/update/delete Rest API's to manipulate entities. For more details, see https://www.odata.org/documentation/odata-version-2-0).
 
-Read the follwoing chapter [Enable the Business Partner OData V2 Rest API in an SAP S/4HANA Cloud system](documentation/appendix/enable-odata-of-s4hana/README.md) 
+Read the follwoing chapter [Enable the Business Partner OData V2 Rest API in an SAP S/4HANA Cloud system](/documentation/appendix/enable-odata-of-s4hana/README.md) 
 which explains you how to enable the OData V2 Rest Endpoint for a communication arragement user. 
 
 The Business Partner data model is exposed via the following GET request (use Basic Auth with the communication arrangement user):
@@ -83,7 +83,7 @@ Here a JSON example showing the structure of the response (in reality there a mu
 
 ## Service Implementation
 
-The BP service is a Java module of the [parent pom](../../../code/backend/pom.xml):
+The BP service is a Java module of the [parent pom](/code/backend/pom.xml):
 ```
 <project>
 	<modules>
@@ -93,7 +93,7 @@ The BP service is a Java module of the [parent pom](../../../code/backend/pom.xm
 </project>
 ```
 
-[BPService.java](../../../code/backend/bp-service/src/main/java/dev/kyma/samples/easyfranchise/bpservice/BPService.java) implements the REST services.
+[BPService.java](/code/backend/bp-service/src/main/java/dev/kyma/samples/easyfranchise/bpservice/BPService.java) implements the REST services.
 The method *getBusinessPartner* first gets the destination details (SAP S/4HANA Cloud URL and authorization properties) from the destination configured in the subaccount and then performs the OData request against the SAP S/4HANA Cloud system.
 
 <!-- 

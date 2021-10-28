@@ -16,7 +16,7 @@ This section explains how to deploy each components manually to Kyma cluster.   
 
 The Approuter deployment is done through two steps.  The first step creates the required instances to XSUAA and the subscription service. The second step builds and deploy the actual Approuter image. 
 
-1. So we start with the deployment that creates the needed services. It's vital to make sure that there is no active subscription by running script [checkActiveSubscription.sh](../../../../code/approuter/checkActiveSubscription.sh).  Following example shows there is no active subscription:
+1. So we start with the deployment that creates the needed services. It's vital to make sure that there is no active subscription by running script [checkActiveSubscription.sh](/code/approuter/checkActiveSubscription.sh).  Following example shows there is no active subscription:
 
 ```shell
 > ./checkActiveSubscription.sh
@@ -25,7 +25,7 @@ Checking active subscription in cluster  shoot--kyma--c-84e9cbb  of region eu10
 0
 ```
 
-2. Kubernetes artifacts for XSUAA service, SaaS Registry service and Destination service are defined in [deployment-service.yaml](../../../../code/approuter/k8s/deployment_service.yaml).  It is necessary to adapt the following values in the file before it can be deployed to Kyma cluster:
+2. Kubernetes artifacts for XSUAA service, SaaS Registry service and Destination service are defined in [deployment-service.yaml](/code/approuter/k8s/deployment_service.yaml).  It is necessary to adapt the following values in the file before it can be deployed to Kyma cluster:
 
 - `<cluster-domain>` must be replaced with the domain of your Kyma cluster which can be taken from the console url for instance (e.g. if the console url is console.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com, then the cluster domain equals to c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com)
 
@@ -33,7 +33,7 @@ Checking active subscription in cluster  shoot--kyma--c-84e9cbb  of region eu10
 
 ![](images/subdomain.png)
 
-3. After that we can proceed with the deployment to the Kyma cluster Navigate into the [code/approuter](../../../../code/approuter):
+3. After that we can proceed with the deployment to the Kyma cluster Navigate into the [code/approuter](/code/approuter):
 
 ```shell
 kubectl apply -f ./k8s/deployment_service.yaml
@@ -46,7 +46,7 @@ docker build --no-cache=true --rm -t <docker-repository>:approuter-0.1  -f ./doc
 docker push <docker-repository>:approuter-0.1
 ```
 
-5. Before we can deploy the Approuter to the cluster we need to adapt [deployment.yaml](../../../../code/approuter/k8s/deployment.yaml) and replace the following placeholders:
+5. Before we can deploy the Approuter to the cluster we need to adapt [deployment.yaml](/code/approuter/k8s/deployment.yaml) and replace the following placeholders:
 
 - `<image-name>` the image name you just created
 - `<cluster-domain>` same as above
@@ -68,7 +68,7 @@ The next component is the SaaS Broker which handles on- and off-boarding of a ne
 
 We start with building the docker image:
 
-1. Navigate to the [code/broker](../../../../code/broker) folder to build and push the docker image:
+1. Navigate to the [code/broker](/code/broker) folder to build and push the docker image:
 
 ```shell
 docker build --no-cache=true --rm -t <docker-repository>:broker-0.1  -f ./docker/Dockerfile .
@@ -89,7 +89,7 @@ If the deployment was successful you can find the deployment and the new pod in 
 
 ### Configmap
 
-2. In order to store configuration we make use of a config map called backend-configmap. The config map stores the endpoints of the microservices, enables or disables the scheduler and contains the name of the Destination used for the connection to the S4/HANA system. You can have a look at it [here](../../../../code/backend/config/backend-configmap.yaml).
+2. In order to store configuration we make use of a config map called backend-configmap. The config map stores the endpoints of the microservices, enables or disables the scheduler and contains the name of the Destination used for the connection to the S4/HANA system. You can have a look at it [here](/code/backend/config/backend-configmap.yaml).
 
 3. As the configmap is mounted into all our microservices it needs to be deployed to the "backend" as well as the "integration" namespace. You can deploy the configmap using this two commands from your terminal:
 
@@ -112,7 +112,7 @@ After we have deployed the configmap and the secret (described in common tasks) 
 We start with the deployment of the BP Service. As this is the first service to be deployed,  we have to make sure that we build the whole java projects at least once.
 
 ##### Maven build:
-4. Go to the [code/backend](../../../../code/backend)  folder and build all projects using:
+4. Go to the [code/backend](/code/backend)  folder and build all projects using:
 
 ```shell
 mvn clean install
@@ -138,7 +138,7 @@ If the build was successful the output should look like this:
 
 ##### Build the docker image
 
-5. Navigate into the [code/backend/bp-service](../../../../code/backend/bp-service) subfolder and build the docker image:
+5. Navigate into the [code/backend/bp-service](/code/backend/bp-service) subfolder and build the docker image:
 
 ```shell
 docker build --no-cache=true --rm -t <docker-repository>:bp-service-0.1  -f ./docker/Dockerfile .
@@ -186,7 +186,7 @@ bp-service-0.1: digest: sha256:fc995e1040cd4c38b331f3c8ce4989c7716734db815d5126d
 
 ##### Deploy the service
 
-7. Before we can deploy the service we need to adapt the [deployment.yaml](../../../../code/backend/bp-service/k8s/deployment.yaml) and enter the imagename we have just pushed. Search for <image-name> and enter the image name used in the step before `<docker-repository>:bp-service-0.1`'. After that we can deploy the image to our cluster using the following command:
+7. Before we can deploy the service we need to adapt the [deployment.yaml](/code/backend/bp-service/k8s/deployment.yaml) and enter the imagename we have just pushed. Search for <image-name> and enter the image name used in the step before `<docker-repository>:bp-service-0.1`'. After that we can deploy the image to our cluster using the following command:
 
 ```shell
 kubectl apply -f ./k8s/deployment.yaml
@@ -200,7 +200,7 @@ service/bp-service created
 
 #### Easy Franchise Service
 
-8. We need to repeat the steps which we did to deploy the BP Service. As we did a full build in the previous deployment we can skip that step. Navigate into the folder [code/backend/ef-service](../../../../code/backend/ef-service)
+8. We need to repeat the steps which we did to deploy the BP Service. As we did a full build in the previous deployment we can skip that step. Navigate into the folder [code/backend/ef-service](/code/backend/ef-service)
 
 ```shell
 docker build --no-cache=true --rm -t <docker-repository>:ef-service-0.1  -f ./docker/Dockerfile .
@@ -215,7 +215,7 @@ kubectl apply -f ./k8s/deployment.yaml
 
 #### DB Service
 
-10. We need to repeat the steps which we did to deploy the BP Service. As we did a full build in the previous deployment we can skip that step. Navigate into the folder [code/backend/db-service](../../../../code/backend/db-service)
+10. We need to repeat the steps which we did to deploy the BP Service. As we did a full build in the previous deployment we can skip that step. Navigate into the folder [code/backend/db-service](/code/backend/db-service)
 
 ```shell
 docker build --no-cache=true --rm -t <docker-repository>:db-service-0.1  -f ./docker/Dockerfile .
@@ -235,7 +235,7 @@ The Email Service uses only a secret to store the credentials for the gmail acco
 ### Service Deployment 
 
 1. As the email service is based on node there is no need to build the service beforehand. This will be done automatically when we build our docker image.
-So we start with building and pushing the docker image. Navigate to the [code/email-service](../../../../code/email-service) folder.
+So we start with building and pushing the docker image. Navigate to the [code/email-service](/code/email-service) folder.
 
 ```shell
 docker build --no-cache=true --rm -t <docker-repository>:emailservice-0.1  -f ./docker/Dockerfile .
@@ -251,7 +251,7 @@ kubectl apply -f ./k8s/deployment.yaml
 ## Frontend Deployment
 Before deploying the UI, we need to update the global variable used in the frontend to call the right API.
 
-1. Open the file [main.js](../../../../code/ui/src/main.js)
+1. Open the file [main.js](/code/ui/src/main.js)
 2. Scroll down to the section to define the backend APIs
 3. Change the backend variable to: 
 
@@ -263,7 +263,7 @@ Vue.prototype.$backendApi = "/backend/easyfranchise/rest/efservice/v1";
 As the UI does not need any kind of secrets nor configmaps, we can directly proceed with the deployment of it. The UI itself will be deployed into the "Frontend" namespace, which is defined in the namespace attribute of the deployment.yaml.
 
 ### Service Deployment 
-4. So we start with building and  the docker image. Navigate to the [code/ui](../../../../code/backend/ui) folder:
+4. So we start with building and  the docker image. Navigate to the [code/ui](/code/backend/ui) folder:
 
 ```bash
 docker build --no-cache=true --rm -t <docker-repository>:ui-0.1  -f ./docker/Dockerfile .

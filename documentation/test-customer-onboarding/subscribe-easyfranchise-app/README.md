@@ -1,4 +1,4 @@
-# Subscribe EasyFranchise Application
+# Subscribe to the Easy Franchise Application
 The next step for the partner is to subscribe the multitenant Easy Franchise application to make it available from the customer subaccount.
 
 1. Expand the section Services in the left sidebar and click on **Service Marketplace** to show the different services available.

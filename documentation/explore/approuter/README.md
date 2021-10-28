@@ -1,8 +1,8 @@
-# Approuter
+# Understand the Approuter
 
 ![](../../images/kyma-diagrams-focus-components/Slide3.jpeg) 
 
-The Approuter is a Node.js [module](https://www.npmjs.com/package/@sap/approuter) that is available on NPM. It represents a single entry point to an application. It has the responsibility of performing authentication, authorization, and forwarding requests to the [Easy Franchise service](../ef-service/README.md).
+The Approuter is a Node.js [module](https://www.npmjs.com/package/@sap/approuter) that is available on NPM. It represents a single entry point to an application. It has the responsibility of performing authentication, authorization, and forwarding requests to the Easy Franchise service.
 
 Here are the major actions performed by the Approuter:
 * receive requests from end users, as it's the only entry point to the application and redirects end user to the SAP Authorization and Trust Management service to log in.
@@ -17,7 +17,7 @@ Here are the major actions performed by the Approuter:
 
 ## Configuring Approuter
 
-The routes are defined in [xs-app.json](../../../code/approuter/xs-app.json). For example, if the request URL pattern follows 'ui/path', the 'path' will be extracted and forwarded to destination 'ui' (destination setup will be explained in below section). A scope check (authorization check) will also be performed automatically by the Approuter against the SAP Authorization and Trust Management service instance before forwarding the request to corresponding destination. 
+The routes are defined in [xs-app.json](/code/approuter/xs-app.json). For example, if the request URL pattern follows 'ui/path', the 'path' will be extracted and forwarded to destination 'ui' (destination setup will be explained in below section). A scope check (authorization check) will also be performed automatically by the Approuter against the SAP Authorization and Trust Management service instance before forwarding the request to corresponding destination. 
 
 ```json
 {
@@ -60,7 +60,7 @@ The routes are defined in [xs-app.json](../../../code/approuter/xs-app.json). Fo
 }
 ```
 
-Destinations such as "ui" or "ef-service" are defined in the [config map](../../../code/approuter/k8s/deployment.yaml). The URL behind each destination points to the corresponding service, which handles the request.
+Destinations such as "ui" or "ef-service" are defined in the [config map](/code/approuter/k8s/deployment.yaml). The URL behind each destination points to the corresponding service, which handles the request.
 
 ```yaml
 apiVersion: v1
@@ -112,7 +112,7 @@ ar.beforeRequestHandler.use('/', function (req, res, next) {
 
 ## Extending the Approuter with a Custom Middleware
 
-The Approuter can typically be used as a standalone application to be the single entry point for other microservices. As the Easy Franchise application is multitenant, we need to provide the tenant ID by each request to the backend. Therefore, the Approuter is extended with a custom middleware. For that purpose, we use a custom [start script](../../../code/approuter/approuter-start.js), which is referenced in the [package.json](../../../code/approuter/package.json). With the help of this custom middleware, every request sent to the backend gets an HTTP header with tenant ID. The following code snippet shows the implementation: 
+The Approuter can typically be used as a standalone application to be the single entry point for other microservices. As the Easy Franchise application is multitenant, we need to provide the tenant ID by each request to the backend. Therefore, the Approuter is extended with a custom middleware. For that purpose, we use a custom [start script](/code/approuter/approuter-start.js), which is referenced in the [package.json](/code/approuter/package.json). With the help of this custom middleware, every request sent to the backend gets an HTTP header with tenant ID. The following code snippet shows the implementation: 
 > Note: This is a technical requirement of our application and might not be applicable in general. Alternatively, the backend component (for example, the Easy Franchise service) could extract the tenant ID directly from the forwarded JWT token.
 
 ```javascript
@@ -136,7 +136,7 @@ You can find more details on extending Approuter in [SAP BTP documentation](http
 
 ## SAP Authorization and Trust Management Service
 
-The definition of the custom scopes and role collections are defined in the SAP Authorization and Trust Management service instance. Details can be found in the file [deployment_service.yaml](../../../code/approuter/k8s/deployment_service.yaml). The instance defines two scopes *Display* and *Backend*. In addition to that, two roles templates *Viewer* and *Backend* are defined respectively. Lastly, two role-collections are defined using role templates. Note that the name of role-collections must be unique across different subaccounts, otherwise the creation of the SAP Authorization and Trust Management service instance will fail in case of a name conflict. In our case, the subaccount domain <provider-subdomain> is appended to make the role collection name unique. 
+The definition of the custom scopes and role collections are defined in the SAP Authorization and Trust Management service instance. Details can be found in the file [deployment_service.yaml](/code/approuter/k8s/deployment_service.yaml). The instance defines two scopes *Display* and *Backend*. In addition to that, two roles templates *Viewer* and *Backend* are defined respectively. Lastly, two role-collections are defined using role templates. Note that the name of role-collections must be unique across different subaccounts, otherwise the creation of the SAP Authorization and Trust Management service instance will fail in case of a name conflict. In our case, the subaccount domain <provider-subdomain> is appended to make the role collection name unique. 
 
 ![](images/role-collection.jpeg)
 

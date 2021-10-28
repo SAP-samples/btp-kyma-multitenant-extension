@@ -1,4 +1,4 @@
-# Configure Destination
+# Configure a Destination
 
 Once the consumer subaccount is created, the partner needs to establish the connection to the customer SAP S/4HANA Cloud system by configuring a destination.
 

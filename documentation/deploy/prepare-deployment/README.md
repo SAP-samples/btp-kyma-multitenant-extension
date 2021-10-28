@@ -14,7 +14,7 @@ For each of the components there are a set of Kubernetes yaml files for deployme
 * `provider-subdomain`
 * `image-name`
 
-1. If you are doing the manual deployment these placeholders must be adapted according to your own environment setup. For the script based deployment you can create a copy of the [.env-template](../../../../code/.env-template) and adapt the values there. The scripts will replace the values of the yaml files with the ones configured in your .env file.
+1. If you are doing the manual deployment these placeholders must be adapted according to your own environment setup. For the script based deployment you can create a copy of the [.env-template](/code/.env-template) and adapt the values there. The scripts will replace the values of the yaml files with the ones configured in your .env file.
 
    The neccessary values can be found following the description below.
    

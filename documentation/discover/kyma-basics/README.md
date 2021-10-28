@@ -1,4 +1,4 @@
-# Discover the basics of BTP, Kyma runtime
+# Discover the Basics of BTP, Kyma Runtime
 
 Before going deeper with this mission, we recommend to know the basics on how to use Kyma in a single tenant application.
 

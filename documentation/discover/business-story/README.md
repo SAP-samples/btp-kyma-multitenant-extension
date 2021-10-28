@@ -1,4 +1,4 @@
-# Business Story
+# Learn the Business Scenario of this Mission
 
 The SAP partner *Easy Franchise* wants to provide their customers *City Scooter* and *Bicycle Sharing* an application for managing their franchise business. The application is used by *City Scooter* and *Bicycle Sharing* employees to assign mentors to each new business partner. At the end of the process, the assigned mentor is informed and can start coaching/onboarding the new business partner (franchisee).
 

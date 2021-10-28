@@ -10,10 +10,10 @@ In this chapter you will learn how to deploy all components in your Kyma cluster
 
 ## Deployment Options
 
- In the following sections, we will explain two options to deploy the components. There is a [complete manual way](manual-deployment/README.md) of deploying the components or you can use the [build scripts](script-deployment/README.md) which are provided in each subfolder of the components.  Essentially the scripts do the same as explained in the manual deployment sections so we recommend to go through the manual deployment once to understand what is happening within the scripts. Either way,  there are some [common tasks](prepare-deployment/README.md) that need to be done before the actual deployment of the components which are described in the following section.
+ In the following sections, we will explain two options to deploy the components. There is a [complete manual way](/documentation/deploy/manual-deployment/README.md) of deploying the components or you can use the [build scripts](/documentation/deploy/script-deployment/README.md) which are provided in each subfolder of the components.  Essentially the scripts do the same as explained in the manual deployment sections so we recommend to go through the manual deployment once to understand what is happening within the scripts. Either way,  there are some [common tasks](/documentation/deploy/prepare-deployment/README.md) that need to be done before the actual deployment of the components which are described in the following section.
 
 
 ## Chapter content
-1. [Prepare the Deployment](prepare-deployment/README.md)
-2. [Deploy the Artifacts Manually](manual-deployment/README.md)
-3. [Build Script to Automate Deployment](script-deployment/README.md)
+1. [Prepare the Deployment](/documentation/deploy/prepare-deployment/README.md)
+2. [Deploy the Artifacts Manually](/documentation/deploy/manual-deployment/README.md)
+3. [Build Script to Automate Deployment](/documentation/deploy/script-deployment/README.md)

@@ -1,19 +1,19 @@
-# Database Service
+# Understand the Database Service
 
 ![](../../images/kyma-diagrams-focus-components/Slide5.jpeg) 
 
 Database Service (DB Service) is a REST service responsible for all SAP HANA database operations.
 
 DB Service is located within the *integration* namespace on Kyma. It is only accessible from the Kyma cluster. Here are the 2 main scenarios where the db service is called:
-* CRUD operations from the UI via [Easy Franchise Service](../ef-service/README.md)
-* During the subscription/deletion process of the application via the [Broker](../broker/README.md)
+* CRUD operations from the UI via Easy Franchise Service
+* During the subscription/deletion process of the application via the Broker
 
 
 # Service Implementation
 
  All REST services are implemented in 2 classes:
-* [DBService.java](../../../code/backend/db-service/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DBService.java) implements tenant aware API: each call requires the presence of tenant id as path parameter. This is the vast majority of calls.
-* [DBAdminService.java](../../../code/backend/db-service/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DBAdminService.java) implements admin calls that do not need the tenant info.
+* [DBService.java](/code/backend/db-service/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DBService.java) implements tenant aware API: each call requires the presence of tenant id as path parameter. This is the vast majority of calls.
+* [DBAdminService.java](/code/backend/db-service/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DBAdminService.java) implements admin calls that do not need the tenant info.
 
 The REST API service urls are structured as followed:  
 
@@ -104,7 +104,7 @@ We tried to follow JPA standards as much as possible. Our entities, queries, tra
 
 ## Entities
 
-Our entities used for mapping to/from database are [here](../../../code/backend/shared-code/src/main/java/dev/kyma/samples/easyfranchise/dbentities).
+Our entities used for mapping to/from database are [here](/code/backend/shared-code/src/main/java/dev/kyma/samples/easyfranchise/dbentities).
 
 This is one example:
 
@@ -144,14 +144,14 @@ public class Mentor {
 For most entities, we use a generated long value as primary key. The only exception is the entity Franchise, where the primary key is the business partner id coming from the SAP S/4HANA system.
 
 ## Schemas Operations during Onboarding/Offboarding
-We implement [multitenancy](../../discover/multitenancy/README.md) for database operations with a separate schema approach. See [Hibernate Multitenancy](https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#multitenacy) for details.
+We implement multitenancy for database operations with a separate schema approach. See [Hibernate Multitenancy](https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#multitenacy) for details.
 
 A tenant is added during the subaccount onboarding and deleted during the offboarding. The creation of schemas during the onboarding consists of the following steps:
 1. DB Service is called from the broker with new tenant id and subdomain as parameters. 
 2. Check if tenant/subdomain already exits.
 3. New DB user is created with a `create user` SQL query. For SAP HANA this means that also a new database schema with the same name is created and will be automatically used if this user logs on. The new database schema name is the provided subdomain in upper case letters. We have decided to use the subdomain instead of the tenant id as schema name because such a string (for example, `420f7362-184e-4907-97bf-289c22906084`) is too long as schema name of an SAP HANA database.
 4. A new entry is created in the table `TENANT` of EFADMIN schema with tenant ID, subdomain, and database schema name. This table will be used later on by each request to provide the mapping between tenant ID and schema name.
-5. Tables are created in the new database schema. The SQL commands are read from a [script file](../../../code/backend/shared-code/src/main/resources/create.sql).
+5. Tables are created in the new database schema. The SQL commands are read from a [script file](/code/backend/shared-code/src/main/resources/create.sql).
 6. Default values (for example, logo image) are written to the `Configuration` table in the new schema.
 
 
@@ -165,7 +165,7 @@ All tenant aware operations follow this procedure:
 
 1. REST API receives the call and extracts the tenant ID from path. 
 2. Look up the schema name based on the tenant ID in the `TENANT` table.
-3. Now that we have the schema name, a database connection can be opened to the right SAP HANA schema. Hibernate provides a set of API for creating schema aware connections. Details are implemented in [DB.java](../../../code/backend/dbservice/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DB.java). These schema/tenant aware connections are stored in connection pools, so that it is not necessary to create a new connection for every call.
+3. Now that we have the schema name, a database connection can be opened to the right SAP HANA schema. Hibernate provides a set of API for creating schema aware connections. Details are implemented in [DB.java](/code/backend/dbservice/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DB.java). These schema/tenant aware connections are stored in connection pools, so that it is not necessary to create a new connection for every call.
 4. Hibernate provides then a regular EntityManager instance to work with that database schema. All operations with that EntityManager are by default restricted to the tenant-specific schema.
 5. For _READ_ operations, the EntityManager instance is used to execute queries. Usually the result is one or more entity instances that are returned to the caller.
 6. For _WRITE_ operations, a transaction context is created and entities are written to the DB via `EntityManager.merge()`.

@@ -1,4 +1,4 @@
-# Learn the basics of SAP BTP
+# Learn the Basics of SAP BTP
 
 SAP Business Technology Platform is the extension platform from SAP. It enables developers to implement loosely coupled extension applications securely, thus implementing additional workflows or modules on top of the existing SAP cloud solution they already have. Before starting with developing extension applications, you need to understand how SAP Cloud Platform is structured so you can choose the best components for your use case.
 

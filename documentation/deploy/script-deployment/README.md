@@ -1,4 +1,4 @@
-# Deployment via Scripts
+# Build a Script to Automate the Deployment
 
 In the subfolder of each component, there is a shell script `build.sh` or `build_service.sh`.  Calling the script similar to below will deploy corresponding component to Kyma cluster.
 
@@ -13,7 +13,7 @@ In the subfolder of each component, there is a shell script `build.sh` or `build
 ## Preparation 
 If you run through the manual deployment before, revert the changes you have done to the ``.yaml`` files. The build scripts will modify them according to provided ``.env`` file.
 
-Check that you adapt the values in the [code/.env-template](../../../../code/.env-template) file. See chapter [Prepare the Deployment](../prepare-deployment/README.md)
+Check that you adapt the values in the [code/.env-template](/code/.env-template) file. See chapter [Prepare the Deployment](/documentation/prepare-deployment/README.md)
 
 ## Deployment sequence
 

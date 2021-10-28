@@ -1,4 +1,4 @@
-# User Interface
+# Understand the User Interface
 
 ![](../../images/kyma-diagrams-focus-components/Slide2.jpeg) 
 

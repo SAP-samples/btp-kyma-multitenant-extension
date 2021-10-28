@@ -1,4 +1,4 @@
-# Prerequisites
+# Make Sure the Prerequisites are Fulfilled
 
 To execute all the necessary steps of the tutorial, you will need the following systems, services and tools available:  
 

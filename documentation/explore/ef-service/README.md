@@ -1,15 +1,15 @@
-# Easy Franchise Service
+# Understand the Easy Franchise Service
 
 ![](../../images/kyma-diagrams-focus-components/Slide8.jpeg) 
 The Easy Franchise service provides all backend functionalities to consume the data from the UI. It's a kind of orchestrator and mainly dispatches incoming calls to the other backend services. The service is located in the *backend* namespace, while the other backend services are in *integration* namespace.
 
 ## Service Implementation
-All REST APIs are implemented in [EasyFranchiseService.java](../../../code/backend/ef-service/src/main/java/dev/kyma/samples/easyfranchise/EasyFranchiseService.java). The REST API service URLs are structured as followed:
+All REST APIs are implemented in [EasyFranchiseService.java](/code/backend/ef-service/src/main/java/dev/kyma/samples/easyfranchise/EasyFranchiseService.java). The REST API service URLs are structured as followed:
 ```
 https://**subaccount domain**.**cluser-id**.kyma.shoot.live.k8s-hana.ondemand.com/backend/easyfranchise/rest/efservice/v1/**entity name**/**additonal path parameters**
 ```
 
-The APIs require an HTTP header entry specifying the tenant ID: ``x-tenant-id: 28186c4d-53d7-4a08-9510-8f42bc396a93``. More details on how tenant ID is added by our Approuter can be found in this [section](../approuter/README.md#extend-approuter-by-injecting-custom-middleware).
+The APIs require an HTTP header entry specifying the tenant ID: ``x-tenant-id: 28186c4d-53d7-4a08-9510-8f42bc396a93``. More details on how tenant ID is added by our Approuter can be found in this [section](/documentation/explore/approuter/README.md#extend-approuter-by-injecting-custom-middleware).
 
 For example all mentors can be displayed by calling the following:
 ```
@@ -56,11 +56,11 @@ All REST services usually handle these topics:
 * Exception handling
 
 ## Rest Client
-As mentioned before, the Easy Franchise service has a kind of orchestrator role between the services and therefore needs open connections to the respective services. That's why we need a Java class for that purpose - usually a *REST Service Client* or more generally *Http Client*. There are a lot of options in standard Java packages or 3rd party frameworks, but we decided to use our own implementation in [Connection.java](../../../code/backend/shared-code/src/main/java/dev/kyma/samples/easyfranchise/communication/Connection.java). Please see the implementation for more details.
+As mentioned before, the Easy Franchise service has a kind of orchestrator role between the services and therefore needs open connections to the respective services. That's why we need a Java class for that purpose - usually a *REST Service Client* or more generally *Http Client*. There are a lot of options in standard Java packages or 3rd party frameworks, but we decided to use our own implementation in [Connection.java](/code/backend/shared-code/src/main/java/dev/kyma/samples/easyfranchise/communication/Connection.java). Please see the implementation for more details.
 
 ## Scheduler
-The scheduler is needed to run only one task: trigger via the [Email Service](../email-service/README.md) notifications to Mentor Coordinators when new business partners (Franchisees) are added in the SAP S/4HANA Cloud system.
-The scheduler service is implemented as part of the Easy Franchise service. Once activated, the service runs every 5 minutes. The service can be enabled or disabled in the [backend-configmap](../../../code/backend/config/backend-configmap.yaml) or at runtime via the following REST service:
+The scheduler is needed to run only one task: trigger via the Email Service notifications to Mentor Coordinators when new business partners (Franchisees) are added in the SAP S/4HANA Cloud system.
+The scheduler service is implemented as part of the Easy Franchise service. Once activated, the service runs every 5 minutes. The service can be enabled or disabled in the [backend-configmap](/code/backend/config/backend-configmap.yaml) or at runtime via the following REST service:
 ```
 /backend/easyfranchise/rest/efservice/v1/scheduler/on
 ```
@@ -81,7 +81,7 @@ curl -X <GET|PUT> http://<host>/easyfranchise/rest/efservice/<PATH>
 ```
 
 When running local and using the `local_dev=true` the header `x-tenant-id` is not used and the TENANT-ID is taken from a property file. 
-(Read more details in section [Start and Test the Microservices DB-Service, BP-Service and EF-Service](../../../run-app-locally/start-and-test-microservices/README.md))
+(Read more details in section [Start and Test the Microservices DB-Service, BP-Service and EF-Service](/documentation/prepare/run-app-locally/start-and-test-microservices/README.md))
 ```
 curl -X <GET|PUT> http://localhost:8080/easyfranchise/rest/efservice/<PATH>
 ```
