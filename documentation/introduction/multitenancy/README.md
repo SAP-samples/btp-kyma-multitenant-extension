@@ -9,8 +9,8 @@ When having multiple customers that use the same multitenant application, the se
 
   Here are the explanation of the steps in the previous diagram:
   1. As soon as a customer is onboarded, the SaaS Registry triggers the onboarding process. A request with all information about the new tenant (for example, tenant ID and subdomain) in the body is sent to the application broker.
-  1. The [broker](/documentation/exploration/broker/README.md) extracts the tenant ID and the subdomain out of the request body and triggers actions defined in the callbacks. In our case, the DB service is informed about the new onboarding.
-  1. The [Database service](/documentation/exploration/db-service/README.md) creates a new schema/user for the new customer. Standard tables and default configuration are automatically generated.
+  1. The [broker](documentation/exploration/broker/README.md) extracts the tenant ID and the subdomain out of the request body and triggers actions defined in the callbacks. In our case, the DB service is informed about the new onboarding.
+  1. The [Database service](./documentation/exploration/db-service/README.md) creates a new schema/user for the new customer. Standard tables and default configuration are automatically generated.
 
 
 ## Authentication Flow
