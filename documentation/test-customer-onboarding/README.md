@@ -1,4 +1,4 @@
-# Test customer Onboarding
+# Test Customer Onboarding
 
 ## Prerequisites
 
