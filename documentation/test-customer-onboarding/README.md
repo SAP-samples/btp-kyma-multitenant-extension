@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-You have gone through all the steps described in [Run the Application in Kyma](../deploy/README.md).
+You have gone through all the steps described in the chapter [Deploy](/documentation/deploy/README.md).
 
 ## Overview
 
@@ -15,13 +15,13 @@ Before starting with the onboarding of the customer, a partner will typically ne
 * Details of mentors
 
 This chapter is structured as followed:
-* [Create Consumer Subaccount](create-consumer-subaccount/README.md)
-* [Configure Destination](configure-destination/README.md)
-* [Subscribe EasyFranchise Application](subscribe-easyfranchise-app/README.md)
-* [Manage Users](manage-users/README.md)
-* [Run Application](run-application/README.md)
-* [[OPTIONAL] Test Multitenancy](test-multitenancy/README.md)
-* [Offboard a Customer](offboard-a-customer/README.md)
+* [Create Consumer Subaccount](/documentation/test-customer-onboarding/create-consumer-subaccount/README.md)
+* [Configure Destination](/documentation/test-customer-onboarding/configure-destination/README.md)
+* [Subscribe EasyFranchise Application](/documentation/test-customer-onboarding/subscribe-easyfranchise-app/README.md)
+* [Manage Users](/documentation/test-customer-onboarding/manage-users/README.md)
+* [Run Application](/documentation/test-customer-onboarding/run-application/README.md)
+* [[OPTIONAL] Test Multitenancy](/documentation/test-customer-onboarding/test-multitenancy/README.md)
+* [Offboard a Customer](/documentation/test-customer-onboarding/offboard-a-customer/README.md)
 
 
 
