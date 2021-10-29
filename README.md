@@ -1,5 +1,7 @@
 # Easy Franchise
 
+> Note: The content of this Github repository has been created as source for the SAP Discovery Center Mission [Develop a Multitenant Extension Application in SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3683/3726/). So we recommend to use directly the mission in the SAP Discovery Center.
+
 ## Description
 The application Easy Franchise has been build to help stakeholders to learn how to develop a multitenant application running on the Kyma environment of the SAP Business Technology Platform (SAP BTP) extending SAP S/4 HANA Cloud.
 
@@ -12,11 +14,11 @@ The repository has been structured into 2 different sections:
 Find more details in the solution diagram of the EasyFranchise application:
 ![](documentation/images/easyfranchise-diagrams/Slide4.jpeg)
 
-## Who Is This Tutorial For?
+## Who Is This Mission For?
 The business scenario of this tutorial has been created with the partner as focus persona. The purpose of this project is to help SAP partners to get a quick start on developing a multitenant application and provide best practices.
 This is of course not exclusively for SAP partner and can be very useful for every person looking for details on how to build a multitenant application running on Kyma. It is suitable for new or experienced developers on SAP BTP. 
 
-## Focus Topics of the Tutorial
+## Focus Topics of the Mission
 The tutorial focus on the following aspects:
 - Multitenancy
 - Kyma environment on SAP BTP
