@@ -263,7 +263,7 @@ Vue.prototype.$backendApi = "/backend/easyfranchise/rest/efservice/v1";
 As the UI does not need any kind of secrets nor configmaps, we can directly proceed with the deployment of it. The UI itself will be deployed into the "Frontend" namespace, which is defined in the namespace attribute of the deployment.yaml.
 
 ### Service Deployment 
-4. So we start with building and  the docker image. Navigate to the [code/ui](/code/backend/ui) folder:
+4. So we start with building and  the docker image. Navigate to the [code/ui](/code/ui) folder:
 
 ```bash
 docker build --no-cache=true --rm -t <docker-repository>:ui-0.1  -f ./docker/Dockerfile .
