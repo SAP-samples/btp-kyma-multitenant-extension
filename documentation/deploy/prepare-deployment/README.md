@@ -56,7 +56,7 @@ For each of the components there are a set of Kubernetes yaml files for deployme
 Before we can deploy the components we need to create the needed namespaces and the secrets used for the email service and the database.
 
 ### Get Kubeconfig
-1. Open the Kyma dashboard via the account cockpit. And download the Kubeconfig and save it locally as shown below:
+Open the Kyma dashboard via the account cockpit. And download the Kubeconfig and save it locally as shown below:
    
    ![subdomain screenshot](images/kyma-dashboard.png "kyma dashboard")
    
@@ -66,8 +66,6 @@ Before we can deploy the components we need to create the needed namespaces and 
    # assuming the kubeconfig file name is kubeconfig.yaml
    export KUBECONFIG=kubeconfig.yaml
    ```
-
-2. In order to execute all the neccessary steps of the tutorial you will need the follwing software available on your PC/Laptop.  
 
    > **_NOTE:_** The kubeconfig will expire after 8 hours.
 
