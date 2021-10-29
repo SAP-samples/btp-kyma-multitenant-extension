@@ -15,14 +15,12 @@ Before starting with the onboarding of the customer, a partner will typically ne
 * Details of mentors
 
 This chapter is structured as followed:
-* [Create Consumer Subaccount](/documentation/test-customer-onboarding/create-consumer-subaccount/README.md)
-* [Configure Destination](/documentation/test-customer-onboarding/configure-destination/README.md)
-* [Subscribe EasyFranchise Application](/documentation/test-customer-onboarding/subscribe-easyfranchise-app/README.md)
+* [Create a Consumer Subaccount](/documentation/test-customer-onboarding/create-consumer-subaccount/README.md)
+* [Configure a Destination](/documentation/test-customer-onboarding/configure-destination/README.md)
+* [Subscribe to the EasyFranchise Application](/documentation/test-customer-onboarding/subscribe-easyfranchise-app/README.md)
 * [Manage Users](/documentation/test-customer-onboarding/manage-users/README.md)
-* [Run Application](/documentation/test-customer-onboarding/run-application/README.md)
-* [[OPTIONAL] Test Multitenancy](/documentation/test-customer-onboarding/test-multitenancy/README.md)
-* [Offboard a Customer](/documentation/test-customer-onboarding/offboard-a-customer/README.md)
-
+* [Run the Application](/documentation/test-customer-onboarding/run-application/README.md)
+* [[OPTIONAL] Test the Multitenancy](/documentation/test-customer-onboarding/test-multitenancy/README.md)
 
 
 
