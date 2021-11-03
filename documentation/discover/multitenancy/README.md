@@ -5,7 +5,7 @@ Before starting the exploration of the applications components in the next chapt
 ## Separation of Data
 When having multiple customers that use the same multitenant application, the separation of the data is key. In our scenario, this is done by creating one schema/user for each customer during the onboarding. As soon as a customer is onboarded, the SaaS Provisioning service sends a request to the application broker, which provides the necessary API (callbacks). The broke will, for example, invoke the DB service to create a schema/user for the new customer.
 
-![](images/authentication-flow-02.jpeg)
+![](../../images/easyfranchise-diagrams/Slide6.jpeg)
 
   Here are the explanation of the steps in the previous diagram:
   1. As soon as a customer is onboarded, the SaaS Registry triggers the onboarding process. A request with all information about the new tenant (for example, tenant ID and subdomain) in the body is sent to the application broker.
@@ -16,7 +16,7 @@ When having multiple customers that use the same multitenant application, the se
 ## Authentication Flow
 Having the data separated, let's have a look on how to consume the right data for the right customer.
 
-![](images/authentication-flow-01.jpeg)
+![](../../images/easyfranchise-diagrams/Slide5.jpeg)
   Here are the explanation of the steps in the previous diagram:
   1. An end user opens the application in a browser. The browser sends a request to the Approuter.
   1. The end user is redirected to the SAP Authorization and Trust Management service to log in.
