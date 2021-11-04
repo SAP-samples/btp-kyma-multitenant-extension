@@ -165,7 +165,7 @@ All tenant aware operations follow this procedure:
 
 1. REST API receives the call and extracts the tenant ID from path. 
 2. Look up the schema name based on the tenant ID in the `TENANT` table.
-3. Now that we have the schema name, a database connection can be opened to the right SAP HANA schema. Hibernate provides a set of API for creating schema aware connections. Details are implemented in [DB.java](/code/backend/dbservice/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DB.java). These schema/tenant aware connections are stored in connection pools, so that it is not necessary to create a new connection for every call.
+3. Now that we have the schema name, a database connection can be opened to the right SAP HANA schema. Hibernate provides a set of API for creating schema aware connections. Details are implemented in [DB.java](/code/backend/db-service/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DB.java)). These schema/tenant aware connections are stored in connection pools, so that it is not necessary to create a new connection for every call.
 4. Hibernate provides then a regular EntityManager instance to work with that database schema. All operations with that EntityManager are by default restricted to the tenant-specific schema.
 5. For _READ_ operations, the EntityManager instance is used to execute queries. Usually the result is one or more entity instances that are returned to the caller.
 6. For _WRITE_ operations, a transaction context is created and entities are written to the DB via `EntityManager.merge()`.

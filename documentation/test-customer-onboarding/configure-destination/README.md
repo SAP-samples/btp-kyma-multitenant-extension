@@ -4,12 +4,10 @@ Once the consumer subaccount is created, the partner needs to establish the conn
 
 1. Verify first that you are in the correct consumer subaccount (here City Scooter) and click **Connectivity** on the left sidebar.
 
-![](images/go-to-connectivity.png)
-
+   ![](images/go-to-connectivity.png)
 2. Click on **Destinations** under Connectivity and create a new destination by clicking on **New Destination**.  
 
-![](images/create-destination-01.png)
-
+   ![](images/create-destination-01.png)
 3. Enter the following details to configure the destination pointing to the SAP S/4HANA system and then click the button **Save**. Those details need of course to be adapted based on your system.
     * Name: EasyFranchise-S4HANA (here it's important to keep this name)
     * Type: HTTP
@@ -28,8 +26,8 @@ Once the consumer subaccount is created, the partner needs to establish the conn
     * Proxy Type: Internet
     * Authentication: NoAuthentication
 
-![](images/create-destination-02.png)
+   ![](images/create-destination-02.png)
     
 4. Click now the button **Check Connection** and verify that the connection has been established. Then close the pop-up window.
 
-    ![](images/create-destination-03.png)
+   ![](images/create-destination-03.png)

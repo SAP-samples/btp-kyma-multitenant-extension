@@ -56,7 +56,7 @@ Note:
 
 - An APIRule for subscription is created so that the callback is reachable. Those callbacks need to be implemented by the application provider (discussed above).
 
-- Two placeholders `<provider-subdomain>` and `<cluster-domain>` are defined below, and will be replaced by deployment script. Please refer to section [ManualDeployment](/documentation/deploy/deployment/ManualDeployment.md) for more details.
+- Two placeholders `<provider-subdomain>` and `<cluster-domain>` are defined below, and will be replaced by deployment script. Please refer to section [ManualDeployment](/documentation/deploy/manual-deployment/README.md) for more details.
 
 ```yaml
 # Resource to create instance for SaaS Registry services

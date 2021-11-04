@@ -23,10 +23,10 @@ The tutorial is provided on the "as-is" basis. Currently, there are no known iss
 ## How to Obtain Support?
 Please check if you find an answer in the [troubleshooting](/documentation/appendix/troubleshooting/README.md) chapter.
 
-Create an issue to get support or to report a bug [here](issues/new/choose).
+Create an issue to get support or to report a bug [here](https://github.com/SAP-samples/btp-kyma-multitenant-extension/issues/new/choose).
 
 ## How to Provide Feedback?
-Have you found the enablement material easy to understand? Are you missing something? What can we improve? Please [share](issues/new/choose) your feedback, so that we can improve the documentation and provide a better material for future stakeholders.
+Have you found the enablement material easy to understand? Are you missing something? What can we improve? Please [share](https://github.com/SAP-samples/btp-kyma-multitenant-extension/issues/new/choose) your feedback, so that we can improve the documentation and provide a better material for future stakeholders.
 
 ## What's New
 Check the details of our last releases [here](/documentation/discover/whats-new/README.md).

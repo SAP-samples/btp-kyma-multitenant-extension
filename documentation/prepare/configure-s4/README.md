@@ -12,4 +12,4 @@ You can find more details at SAP Help Portal: [APIs for Business Partner](https:
 
 ## Business Partner Mock Server
 
-For more information, see [How to use the Business Partner Mock Server](/documentation/appendix/business-partner-mock/readme.md)
+For more information, see [How to use the Business Partner Mock Server](/documentation/appendix/business-partner-mock/README.md)

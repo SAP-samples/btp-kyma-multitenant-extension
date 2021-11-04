@@ -4,7 +4,7 @@ If the SAP S/4HANA Cloud system is not available, you can deploy our Business Pa
 
 ## Business Partner Data
 
-The mock server simply reads all entities in the [BusinessPartner-sample.json](/code/busines-partner-mock-server/BusinessPartner-sample.json) file and returns it to the calling application.
+The mock server simply reads all entities in the [BusinessPartner-sample.json](/code/business-partner-mock-server/BusinessPartner-sample.json) file and returns it to the calling application.
 
 ## Start the Business Partner Mock Server Locally
 
@@ -80,4 +80,4 @@ For the next steps you need to have your SAP BTP, Kyma environment ready as desc
 
 ## Using Multiple Instances
 
-In case you want to use multiple instances of the mock server to simulate more than one SAP S/4HANA Cloud system, you need to adapt all occurences of **business-partner-mock** in the [deployment.yaml](/code/busines-partner-mock-server/k8s/deployment.yaml), for example to **business-partner-mock-2**. You should also adapt the business partner data in [BusinessPartner-sample.json](/code/busines-partner-mock-server/BusinessPartner-sample.json) so that it returns different data than the other instance. Then, you can deploy the second instance as described in the chapter above.
+In case you want to use multiple instances of the mock server to simulate more than one SAP S/4HANA Cloud system, you need to adapt all occurences of **business-partner-mock** in the [deployment.yaml](/code/business-partner-mock-server/k8s/deployment.yaml), for example to **business-partner-mock-2**. You should also adapt the business partner data in [BusinessPartner-sample.json](/code/business-partner-mock-server/BusinessPartner-sample.json) so that it returns different data than the other instance. Then, you can deploy the second instance as described in the chapter above.

@@ -4,7 +4,7 @@
 The Easy Franchise service provides all backend functionalities to consume the data from the UI. It's a kind of orchestrator and mainly dispatches incoming calls to the other backend services. The service is located in the *backend* namespace, while the other backend services are in *integration* namespace.
 
 ## Service Implementation
-All REST APIs are implemented in [EasyFranchiseService.java](/code/backend/ef-service/src/main/java/dev/kyma/samples/easyfranchise/EasyFranchiseService.java). The REST API service URLs are structured as followed:
+All REST APIs are implemented in [EasyFranchiseService.java](/code/backend/ef-service/src/main/java/dev/kyma/samples/easyfranchise/EFService.java). The REST API service URLs are structured as followed:
 ```
 https://**subaccount domain**.**cluser-id**.kyma.shoot.live.k8s-hana.ondemand.com/backend/easyfranchise/rest/efservice/v1/**entity name**/**additonal path parameters**
 ```
@@ -81,7 +81,7 @@ curl -X <GET|PUT> http://<host>/easyfranchise/rest/efservice/<PATH>
 ```
 
 When running local and using the `local_dev=true` the header `x-tenant-id` is not used and the TENANT-ID is taken from a property file. 
-(Read more details in section [Start and Test the Microservices DB-Service, BP-Service and EF-Service](/documentation/prepare/run-app-locally/start-and-test-microservices/README.md))
+(Read more details in section [Start and Test the Microservices DB-Service, BP-Service and EF-Service](/documentation/prepare/test-app-locally/README.md))
 ```
 curl -X <GET|PUT> http://localhost:8080/easyfranchise/rest/efservice/<PATH>
 ```
