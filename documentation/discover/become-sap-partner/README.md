@@ -1,6 +1,6 @@
 # Become an SAP Partner
 
-To become a SAP partner, you have to fulfil the prerequisites to be able to develop, publish, market a solution on SAP BTP and sell and deploy to your customers.
+To become an SAP partner, you have to fulfil the prerequisites to be able to develop, publish, market a solution on SAP BTP and sell and deploy to your customers.
 
 For new partners, apply online at [SAP.com](https://www.sap.com/partner/become.html). 
 

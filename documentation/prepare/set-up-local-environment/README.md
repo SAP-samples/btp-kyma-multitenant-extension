@@ -123,3 +123,38 @@ Server: Docker Engine - Community
 
 ### Docker Hub Account
 To be able to deploy the application, you will first need a place to store your images. If you don't have an image repositry already available in your company, you can create a [Docker Hub Account](https://docs.docker.com/get-started/#download-and-install-docker) to store the images.
+
+
+### jq 
+
+[jq](https://stedolan.github.io/jq/) is a lightweight and flexible command-line JSON processor for UNIX.
+
+It will be needed by calling manual or script based deployment.
+
+
+1. Check if you have **jq** installed:
+
+   ```
+   jq --version
+   ```
+2. If you need to install, you can do this with the following command: 
+   ```
+   sudo apt-get install jq
+   ```
+
+## Get the Project Source 
+
+Choose one of the options to get the sources on your local disk:
+
+* [Download](https://github.com/SAP-samples/btp-kyma-multitenant-extension/archive/refs/heads/main.zip) the zip and extract the source files.
+
+* Use the [git clone](https://git-scm.com/) command: 
+  ```
+  git clone https://github.com/SAP-samples/btp-kyma-multitenant-extension.git
+  ```
+  
+* Clone the repository via the GitHub CLI:
+  ```
+  gh repo clone SAP-samples/btp-kyma-multitenant-extension
+  ```
+

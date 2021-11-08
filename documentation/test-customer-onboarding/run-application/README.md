@@ -35,6 +35,26 @@ As mentioned in the previous section, the application URL has been shared with t
    ![](images/notification-overview.png)
 
 
+## Find Data in the SAP HANA
 
+Lets have a look at the data persisted in **SAP HANA**
 
+1. Open the **SAP HANA Database Explorer**
+   * Open Subaccount **Easy Franchise** in a browser. Open space **hana**.
+   * In the opened space **hana** select **SAP  HANA Cloud** in the left side menu. 
+   * Select your Database. Open the **Actions**  and select **Open In SAP HANA Database Explorer**
+  
+   ![](images/open-database-explorer.png)
+2. Add your Database for the EFADMIN user if not done. 
+3. Expand the Tables and find the table **TENANT**.
+4. Open the data contend of the TENANT or use an sql window and run `SELECT * FROM TENANT` to see which rows you have now. 
+    
+   You should find one ore more records. Each subscription will create a new record. A local test run might have also added a row. 
 
+    ![](images/tenant-table-data.png)
+5. In the records search for the one with the fitting subdomain. Remember the **SCHEMA** and **PASSWORD** value. 
+6. Open the context menu of your database and **Create a new Database with a different User**. Provide the remembered **SCHEMA**  value as Database user. Use the password of the **TENANT** record. 
+7. Find the The table **Mentor** just added database. Open the data view and find the mentors you have added via the application.
+
+   ![](images/mentor-table.png)
+8. Browse throw the data of the other tables as well.    

@@ -15,3 +15,6 @@ The next step for the partner is to subscribe the multitenant Easy Franchise app
 
 1. Verify that the subscription process was successful.
 ![](images/create-subscription-04.png)
+
+
+> Hint: In case your subscription fails, check [Failing Application Subscription](/documentation/appendix/troubleshooting/subscription-failing/README.md) in the troubleshooting guide.

@@ -1,5 +1,5 @@
-# Offboarden a Customer
-Once a customer decide not to use the application anymore, the partner needs to offboard him.
+# Offboard a Customer
+Once a customer decide not to use the application anymore, the partner needs to offboard this customer.
 
 1. The first step is to remove the application subscription in the customer subaccount. Open the SAP BTP cockpit and click on **Instances and Subscriptions** under **Services** in the left sidebar. 
 

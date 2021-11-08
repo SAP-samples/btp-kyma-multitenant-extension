@@ -203,7 +203,7 @@ app.delete('/callback/v1.0/tenants/*', async function (req, res) {
     try {
         const response = await axios.put(url, content, config );
         if(response.status == 200){
-            console.log("delete database schema finished succesfully " + response.data);
+            console.log("delete database schema finished successfully " + response.data);
         }
     }catch (err) {
         console.log("delete database schema finished with error");
