@@ -10,7 +10,7 @@ Once the customer subaccount is created, the partner needs to establish the conn
    ![](images/create-destination-01.png)
 3. Enter the following details to configure the destination pointing to the SAP S/4HANA system and then click the button **Save**. Those details need of course to be adapted based on your system.
 
-    In case you want to use the SAP S/4HANA system, you need a **Communication Arrangement User** with the right permission for  `https://<your S/4 hostname>-api.s4hana.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER`. Read in the appendix chapter [Enable the Business Partner OData V2 Rest API in an SAP S/4HANA Cloud System](documentation/appendix/enable-odata-of-s4hana/README.md) if you need more details. 
+    In case you want to use the SAP S/4HANA system, you need a **Communication Arrangement User** with the right permission for  `https://<your S/4 hostname>-api.s4hana.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER`. Read in the appendix chapter [Enable the Business Partner OData V2 Rest API in an SAP S/4HANA Cloud System](/documentation/appendix/enable-odata-of-s4hana/README.md) if you need more details. 
     * Name: EasyFranchise-S4HANA (here it's important to keep this name)
     * Type: HTTP
     * Description: Destination to SAP S/4HANA system

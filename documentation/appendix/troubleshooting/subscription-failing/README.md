@@ -1,6 +1,6 @@
 # Failing Application Subscription
 
-Issue: The subscription as described in the chapter [Subscribe to the Easy Franchise Application](documentation/test-customer-onboarding/subscribe-easyfranchise-app/README.md) fails. 
+Issue: The subscription as described in the chapter [Subscribe to the Easy Franchise Application](/documentation/test-customer-onboarding/subscribe-easyfranchise-app/README.md) fails. 
 
 Reason: HANA doesn't allow access from all IP addresses
 
