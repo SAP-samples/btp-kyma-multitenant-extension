@@ -17,4 +17,4 @@ The next step for the partner is to subscribe the multitenant Easy Franchise app
 ![](images/create-subscription-04.png)
 
 
-> Hint: In case your subscription fails, check [Failing Application Subscription](/documentation/appendix/troubleshooting/subscription-failing/README.md) in the troubleshooting guide.
+> Hint: In case your subscription fails, check [Failing Application Subscription](/documentation/troubleshooting/subscription-failing/README.md) in the troubleshooting guide.

@@ -77,7 +77,7 @@ Follow the following steps to verify that the setup was successful.
 3. Check that you have a running Kyma environment.
    
    ![](images/success.png)
-4. Click **Link to dashboard** under **Kyma Envitoment**. The Kyma dashboard should open in a new browser tab.
+4. Click **Link to dashboard** under **Kyma Environment**. The Kyma dashboard should open in a new browser tab.
    
    ![](images/kymadashboard.png)
 

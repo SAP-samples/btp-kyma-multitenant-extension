@@ -39,7 +39,7 @@ You can find all requirements to execute the tutorial described [here](/document
 The tutorial is provided on the "as-is" basis. Currently, there are no known issues for for the tutorial project.
 
 ## How to Obtain Support?
-Please check if you find an answer in the [troubleshooting](/documentation/appendix/troubleshooting/README.md) chapter.
+Please check if you find an answer in the [troubleshooting](/documentation/troubleshooting/README.md) chapter.
 
 Create an issue to get support or to report a bug [here](https://github.com/SAP-samples/btp-kyma-multitenant-extension/issues/new/choose).
 

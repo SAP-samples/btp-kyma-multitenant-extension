@@ -39,7 +39,7 @@ If you plan to use deployment scripts, please adhere to following sequence.
 
    ```shell
    # execute in approuter folder
-   build.sh [--env=../.env]
+   ./build.sh [--env=../.env]
    ```
 
 3. Deploy backend
@@ -47,33 +47,33 @@ If you plan to use deployment scripts, please adhere to following sequence.
    Full deployment of all components
    ```shell
    ### execute in backend folder
-   full-build.sh [--env=../.env]
+   ./full-build.sh [--env=../.env]
    ```
    Individual deployment
    ```shell
    ### execute in each component folder (db-service, ef-service, bp-service)
-   build.sh [--env=../.env]
+   ./build.sh [--env=../.env]
    ```
 
 4. Deploy broker 
 
    ```shell
    # execute in broker folder
-   build.sh [--env=../.env]
+   ./build.sh [--env=../.env]
    ```
 
 5. Deploy ui
 
    ```shell
    # execute in ui folder
-   build.sh [--env=../.env]
+   ./build.sh [--env=../.env]
    ```
 
 6. Email service
 
    ```shell
    ### execute in email-service folder
-   build.sh [--env=../.env]
+   ./build.sh [--env=../.env]
    ```
 
 

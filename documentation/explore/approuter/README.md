@@ -12,7 +12,7 @@ Here are the major actions performed by the Approuter:
 
   Here is the explanation of the steps in the previous diagram:
   1. As soon as a customer is onboarded, the SaaS Registry triggers the onboarding process. Call goes first via Approuter, which receives the tenant ID in the body request.
-  1. The broker extracts the tenant ID and subdomain out of the request body and triggers actions defined in the callbacks. In our case, the database service is informed about the new oonboarding.
+  1. The broker extracts the tenant ID and subdomain out of the request body and triggers actions defined in the callbacks. In our case, the database service is informed about the new onboarding.
   1. The Database service creates a new schema for the new customer and standard tables and data are automatically generated.
 
 ## Configuring Approuter

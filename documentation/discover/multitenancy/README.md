@@ -3,7 +3,7 @@
 Before starting the exploration of the applications components in the next chapter or even with the step-by-step guide, we thought it will be good to have a summary page explaining the key points of the [multitenancy concept](https://blogs.sap.com/2018/09/26/multitenancy-architecture-on-sap-cloud-platform-cloud-foundry-environment/) used in the Easy Franchise application. In general, multitenancy can be achieved in various ways. We show here only one example of implementing it but be aware that this may of course be different based on your needs.
 
 ## Separation of Data
-When having multiple customers that use the same multitenant application, the separation of the data is key. In our scenario, this is done by creating one schema/user for each customer during the onboarding. As soon as a customer is onboarded, the SaaS Provisioning service sends a request to the application broker, which provides the necessary API (callbacks). The broke will, for example, invoke the DB service to create a schema/user for the new customer.
+When having multiple customers that use the same multitenant application, the separation of the data is key. In our scenario, this is done by creating one schema/user for each customer during the onboarding. As soon as a customer is onboarded, the SaaS Provisioning service sends a request to the application broker, which provides the necessary API (callbacks). The broker will, for example, invoke the DB service to create a schema/user for the new customer.
 
 ![](../../images/easyfranchise-diagrams/Slide6.jpeg)
 

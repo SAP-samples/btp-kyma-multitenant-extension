@@ -120,7 +120,7 @@ A communication arrangement is always based on one communication scenario and ma
 10. Copy the URL and save it for the next step to test the API. The URL is of the format: `https://<your S/4 hostname>-api.s4hana.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER`
 
 
-> *Hint:* If you want to define a destination for the **Communication Arrangement User**, check if you need the URL with or without the path `/sap/opu/odata/sap/API_BUSINESS_PARTNER`. It depends on how the destination configuration in the customer subaccount.
+> *Hint:* Later on by defining a destination consuming this OData V2 API, you will need to insert the URL. Based on you application implementation you may insert the path  `/sap/opu/odata/sap/API_BUSINESS_PARTNER` direcly in the URL of the destination or in the application code.
 
 Result: You have created a communication arrangement for the Business Partner API using scenario SAP_COM_0008 so that the Business Partner OData Rest API can be accessed externally from SAP Cloud Platform 
 
