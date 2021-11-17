@@ -164,6 +164,7 @@ The Business Partner service, the Database service and the Easy Franchise servic
     => => writing image sha256:3ccf24626b5c9e9e16627583bb53ffbedd2901e6a90cb19bcede7bc61987609e                                                                                                                              0.0s
     => => naming to docker.io/easyfranchise/kyma-multitentant:bp-service-0.1
     ```
+    
 2. Now execute the following command to push the docker image to your docker repository:
    ```shell
    docker push <docker-repository>:bp-service-0.1
