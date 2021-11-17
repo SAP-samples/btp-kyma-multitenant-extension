@@ -147,7 +147,7 @@ The Business Partner service, the Database service and the Easy Franchise servic
    If the build was successful the output should look like this: 
    
    ```shell
-   [+] Building 7.5s (10/10) FINISHED
+     [+] Building 7.5s (10/10) FINISHED
      => [internal] load build definition from Dockerfile                0.1s
      => => transferring dockerfile: 438B                                0.0s
      => [internal] load .dockerignore                                   0.1s
@@ -164,7 +164,7 @@ The Business Partner service, the Database service and the Easy Franchise servic
      => => exporting layers                                             0.4s
      => => writing image sha256:3ccf24626b5c9e9e16627583bb53ffbedd29... 0.0s
      => => naming to docker.io/easyfranchise/kyma-multitentant:bp-service-0.1
-    ```
+   ```
    
 2. Now execute the following command to push the docker image to your docker repository:
    ```shell
