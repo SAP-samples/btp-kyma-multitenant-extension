@@ -148,7 +148,7 @@ The Business Partner service, the Database service and the Easy Franchise servic
    
    ```shell
      [+] Building 7.5s (10/10) FINISHED
-     => [internal] load build definition from Dockerfile                0.1s
+     => [internal] load build definition from Dockerfile                0.2s
      => => transferring dockerfile: 438B                                0.0s
      => [internal] load .dockerignore                                   0.1s
      => => transferring context: 2B                                     0.0s
