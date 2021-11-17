@@ -143,7 +143,29 @@ The Business Partner service, the Database service and the Easy Franchise servic
    ```shell
    docker build --no-cache=true --rm -t <docker-repository>:bp-service-0.1  -f ./docker/Dockerfile .
    ```
-    
+   
+   If the build was successful the output should look like this: 
+   
+   ```shell
+   [+] Building 7.5s (10/10) FINISHED
+    => [internal] load build definition from Dockerfile                                                                                                                                                                      0.2s
+    => => transferring dockerfile: 438B                                                                                                                                                                                      0.0s
+    => [internal] load .dockerignore                                                                                                                                                                                         0.1s
+    => => transferring context: 2B                                                                                                                                                                                           0.0s
+    => [internal] load metadata for docker.io/library/sapmachine:16                                                                                                                                                          4.4s
+    => [auth] library/sapmachine:pull token for registry-1.docker.io                                                                                                                                                         0.0s
+    => [1/4] FROM docker.io/library/sapmachine:16@sha256:6faf1bebbac63db37ffa20cb06e3a13e636edf4505f271e0c22951a19c5ab292                                                                                                    0.0s
+    => [internal] load build context                                                                                                                                                                                         2.0s
+    => => transferring context: 37.95MB                                                                                                                                                                                      2.0s
+    => CACHED [2/4] WORKDIR /var/app                                                                                                                                                                                         0.0s
+    => [3/4] ADD target/bp-service.jar /var/app/bp-service.jar                                                                                                                                                               0.1s
+    => [4/4] ADD target/dependency/* /var/app/                                                                                                                                                                               0.2s
+    => exporting to image                                                                                                                                                                                                    0.5s
+    => => exporting layers                                                                                                                                                                                                   0.4s
+    => => writing image sha256:3ccf24626b5c9e9e16627583bb53ffbedd2901e6a90cb19bcede7bc61987609e                                                                                                                              0.0s
+    => => naming to docker.io/easyfranchise/kyma-multitentant:bp-service-0.1
+    ```
+   
 2. Now execute the following command to push the docker image to your docker repository:
    ```shell
    docker push <docker-repository>:bp-service-0.1
