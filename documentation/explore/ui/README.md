@@ -1,12 +1,12 @@
 # Understand the User Interface
 
-![](../../images/kyma-diagrams-focus-components/Slide2.jpeg) 
+![](../../images/kyma-diagrams-focus-components/Slide2.jpeg)
 
 The user interface of the Easy Franchise application is developed with [SAP Fundamental Vue Library](https://sap.github.io/fundamental-styles/?path=/docs/introduction-overview--page). [SAP Fundamental Styles](https://sap.github.io/fundamental-styles/?path=/docs/introduction-overview--page) is a lightweight presentation layer, that can be used with various UI frameworks. With Fundamental Library Styles, consistent SAP Fiori apps in any web-based technology can be built. In this tutorial Vue is used as a framework to develop graphical user interfaces.
 
 # Structure of Application
 
-The Easy Franchise application contains 4 different UI screens and each screen is divided in UI components.
+The Easy Franchise application contains four different UI screens and each screen is divided in UI components.
 
 ## Main.js
 
@@ -44,12 +44,12 @@ As soon as a page is loaded or refreshed, the mounted function loads all franchi
 
 ## FranchisesOverview.vue
 
-In this component, the start page of the application is developed, where all the available franchises are shown in a table. This component can access all the franchises via properties from the App.vue page, where they were loaded from the backend. 
+In this component, the start page of the application is developed, where all the available franchises are shown in a table. This component can access all the franchises via properties from the App.vue page, where they were loaded from the backend.
 The franchises are divided between new and already existing franchises. As long as a franchise does not have any mentor assigned, it is shown as a new franchise. By clicking a franchise on the table, the detailed page of the franchise is loaded.
 
 ## FranchiseDetails.vue
 
-When choosing a franchise, the ID of this franchise is used to get the data from the backend. This data is then shown in the franchise details page, where it is possible to assign mentors to the franchise. 
+When choosing a franchise, the ID of this franchise is used to get the data from the backend. This data is then shown in the franchise details page, where it is possible to assign mentors to the franchise.
 If no mentor is selected yet, a button to assign mentors is displayed. This button then opens a modal with available mentors to be chosen from. By choosing **Assign and inform mentor**, the mentor is saved to the backend and an email is sent to the new mentor.
 After a mentor is selected, the contact details of the mentors are shown instead of the button. Also, it is possible to change the mentor in this area.
 

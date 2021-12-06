@@ -136,12 +136,27 @@ public class EFUtil {
     }
 
     /**
+     * To be deprecated
+     * this method should be deprecated if sendMailToCoordinatorForMentorsWithoutFranchisee is no longer required (i.e. scheduler is no longer needed)
      * Read BusinessPartners from S4 and merge with Franchises from DB.
      * @param tenantId
      * @return
      */
     public static List<UIFranchise> getUiFranchisees(String tenantId) {
-        A_BusinessPartner aBusinessParnter = getBusinessPartnerFromS4(tenantId);
+        A_BusinessPartner aBusinessParnter = getBusinessPartnerFromS4(tenantId, ""); // no authorization header
+        List<Franchise> franchises = getFranchisesFromDB(tenantId);        
+    
+        return assembleFranchiseesForUI(tenantId, aBusinessParnter, franchises);
+    }
+
+    /**
+     * Read BusinessPartners from S4 and merge with Franchises from DB.
+     * @param tenantId
+     * @param authorizationHeader -- authorization header containers current user info, which will forworaded to destination service when principal propagaion destination is used for S4 system
+     * @return
+     */
+    public static List<UIFranchise> getUiFranchisees(String tenantId, String authorizationHeader) {
+        A_BusinessPartner aBusinessParnter = getBusinessPartnerFromS4(tenantId, authorizationHeader);
         List<Franchise> franchises = getFranchisesFromDB(tenantId);        
     
         return assembleFranchiseesForUI(tenantId, aBusinessParnter, franchises);
@@ -216,8 +231,15 @@ public class EFUtil {
         return null;
     }
 
-    private static A_BusinessPartner getBusinessPartnerFromS4(String tenantId) {
+    private static A_BusinessPartner getBusinessPartnerFromS4(String tenantId, String authorizationHeader) {
         ConnectionParameter param = new ConnectionParameter(Util.getBPServiceUrl(tenantId) + "bupa");
+        if(authorizationHeader != null && !authorizationHeader.isEmpty()){
+            //authrizatiionHeader is not empty
+            param.token = authorizationHeader;
+            param.authorizationType = ConnectionParameter.AuthorizationType.BearerToken; // pass in the authorization token, but not used as no authentication is required when calling BPService    
+        }else{
+            param.authorizationType = ConnectionParameter.AuthorizationType.NO_AUTH;
+        }
         param.setAcceptJsonHeader();
         Connection.call(param);
 

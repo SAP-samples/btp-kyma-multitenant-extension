@@ -217,11 +217,11 @@ public class Util {
         Properties props = readProperties(BACKEND_CONFIG_PATH);
 
         Destination destination = new Destination();
-        destination.url = props.getProperty(S4HANA_DESTINATION_PROPERTY_NAME + ".URL");
-        destination.user = props.getProperty(S4HANA_DESTINATION_PROPERTY_NAME + ".User");
-        destination.password = props.getProperty(S4HANA_DESTINATION_PROPERTY_NAME + ".Password");
-        destination.authentication = props.getProperty(S4HANA_DESTINATION_PROPERTY_NAME + ".Authentication");
-        destination.type = props.getProperty(S4HANA_DESTINATION_PROPERTY_NAME + ".Type");
+        destination.destinationConfiguration.URL = props.getProperty(S4HANA_DESTINATION_PROPERTY_NAME + ".URL");
+        destination.destinationConfiguration.User = props.getProperty(S4HANA_DESTINATION_PROPERTY_NAME + ".User");
+        destination.destinationConfiguration.Password = props.getProperty(S4HANA_DESTINATION_PROPERTY_NAME + ".Password");
+        destination.destinationConfiguration.Authentication = props.getProperty(S4HANA_DESTINATION_PROPERTY_NAME + ".Authentication");
+        destination.destinationConfiguration.Type = props.getProperty(S4HANA_DESTINATION_PROPERTY_NAME + ".Type");
         return destination;
     }
 

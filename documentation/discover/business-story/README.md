@@ -10,7 +10,7 @@ Here is a high-level overview of the multitenant approach:
 
 # Solution Details
 
-The SAP partner develops an Kyma-based multitenant application on SAP BTP.
+The SAP partner develops a Kyma-based multitenant application on SAP BTP.
 
 All multitenant microservices of the application will run in the Kyma environment. In addition to that, the SAP partner uses an SAP HANA database to persist the data of the application. As SAP HANA is not yet available in Kyma today, the database will be running in the Cloud Foundry environment.
 
@@ -45,5 +45,5 @@ Here is a technical overview of the partner application:
 * Assigns mentors to business partners (franchisees)
 * Get email notification, when a new business partner is created in the SAP S/4HANA Cloud system
 
-**Mentor** 
+**Mentor**
 * Get email notification, when assigned as mentor to a franchisee

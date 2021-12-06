@@ -4,21 +4,21 @@ As mentioned in the previous section, the application URL has been shared with t
 
 
 1. Copy the URL sent by the partner and start the application in a browser.
-    > Note: You can find your app URL by clicking on **Instances and Subscriptions** under **Services**.
+    > Note: You can find your app URL by choosing **Instances and Subscriptions** under **Services**.
 
    ![](images/start-application.png)
-2. By running the application the first time, you will be prompted to go to the **Admin Corner** and do the initial configuration. Click on the button **Go to admin corner**.
+
+2. By running the application the first time, you will be prompted to go to the **Admin Corner** and do the initial configuration. Choose **Go to admin corner**.
 
    ![](images/go-to-admin-corner.png)
 
-3. Configure the general settings of the application and click the button **Update settings**.
+3. Configure the general settings of the application and choose **Update settings**.
     * Name of the company: City Scooter
     * Logo of the company: https://raw.githubusercontent.com/matthieupelatan/easy-franchise-assets/main/images/logo-city-scooter.png
 
    ![](images/admin-corner-default.png)
 
-
-4. Add mentors by clicking on **Add mockdata** and verify that the data has been generated.
+4. Add mentors by choosing **Add mockdata** and verify that the data has been generated.
 
    ![](images/admin-corner-configuration.png)
 
@@ -37,24 +37,27 @@ As mentioned in the previous section, the application URL has been shared with t
 
 ## Find Data in the SAP HANA
 
-Lets have a look at the data persisted in **SAP HANA**
+Lets have a look at the data persisted in **SAP HANA**.
 
-1. Open the **SAP HANA Database Explorer**
+1. Open the **SAP HANA Database Explorer**.
    * Open Subaccount **Easy Franchise** in a browser. Open space **hana**.
-   * In the opened space **hana** select **SAP  HANA Cloud** in the left side menu. 
-   * Select your Database. Open the **Actions**  and select **Open In SAP HANA Database Explorer**
-  
+   * In the opened space **hana** select **SAP  HANA Cloud** in the left side menu.
+   * Select your database. Open the **Actions** and select **Open In SAP HANA Database Explorer**.
+
    ![](images/open-database-explorer.png)
-2. Add your Database for the EFADMIN user if not done. 
-3. Expand the Tables and find the table **TENANT**.
-4. Open the data contend of the TENANT or use an sql window and run `SELECT * FROM TENANT` to see which rows you have now. 
-    
-   You should find one ore more records. Each subscription will create a new record. A local test run might have also added a row. 
+
+2. Add your database for the EFADMIN user if not done.
+3. Expand the tables and find the table **TENANT**.
+4. Open the data contend of the TENANT or use an SQL window and run `SELECT * FROM TENANT` to see which rows you have now.
+
+   You should find one ore more record. Each subscription will create a new record. A local test run might have also added a row.
 
     ![](images/tenant-table-data.png)
-5. In the records search for the one with the fitting subdomain. Remember the **SCHEMA** and **PASSWORD** value. 
-6. Open the context menu of your database and **Create a new Database with a different User**. Provide the remembered **SCHEMA**  value as Database user. Use the password of the **TENANT** record. 
-7. Find the The table **Mentor** just added database. Open the data view and find the mentors you have added via the application.
+
+5. In the records search for the one with the fitting subdomain. Remember the **SCHEMA** and **PASSWORD** value.
+6. Open the context menu of your database and **Create a new Database with a different User**. Provide the remembered **SCHEMA** value as Database user. Use the password of the **TENANT** record.
+7. Find the table **Mentor** just added database. Open the data view and find the mentors you have added via the application.
 
    ![](images/mentor-table.png)
-8. Browse throw the data of the other tables as well.    
+
+8. Browse throw the data of the other tables as well.

@@ -108,9 +108,20 @@ public class EFService extends BaseRS {
     @Path("franchisee")
     public Response getFranchisees(@Context UriInfo uri, @Context HttpHeaders headers, @Context ContainerRequestContext resContext) {
         logger.info(Util.createLogDetails(resContext, headers));
+        
+        //extract authorization header from AppRouter
+        String authorizationHeader;
+        if (headers != null && headers.getHeaderString(HttpHeaders.AUTHORIZATION) != null){
+            authorizationHeader = headers.getHeaderString(HttpHeaders.AUTHORIZATION).replace("Bearer","");
+            logger.info("EFService: header(" + HttpHeaders.AUTHORIZATION + ")= " + authorizationHeader);
+        }else{
+            authorizationHeader = "";
+            logger.info("EF Service: No Authorization header found");
+        }
+
         try {
             var tenantId = Util.validateTenantAccess(headers);
-            List<UIFranchise> uif = EFUtil.getUiFranchisees(tenantId);
+            List<UIFranchise> uif = EFUtil.getUiFranchisees(tenantId, authorizationHeader);
             return createOkResponse(JsonbBuilder.create().toJson(uif));
         } catch (WebApplicationException e) {
             logger.error(e.getMessage(), e);

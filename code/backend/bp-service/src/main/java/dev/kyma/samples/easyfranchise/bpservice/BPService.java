@@ -19,7 +19,7 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
-
+import jakarta.ws.rs.core.HttpHeaders;
 /**
  * Rest service for S/4HANA  connectivity
  *
@@ -48,11 +48,22 @@ public class BPService extends BaseRS {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("bupa")
-    public Response getBusinessPartner(@PathParam("tenantId") String tenantId, @Context UriInfo uri, @Context ContainerRequestContext resContext) {
+    public Response getBusinessPartner(@PathParam("tenantId") String tenantId, @Context UriInfo uri, @Context HttpHeaders headers, @Context ContainerRequestContext resContext) {
     	logger.info(Util.createLogDetails(resContext));
-		String subdomain = getSubdomain(tenantId);   	    
+		String subdomain = getSubdomain(tenantId);   	
+
+        //extract authorization header from EFService call
+        String authorizationHeader;
+        if (headers != null && headers.getHeaderString(HttpHeaders.AUTHORIZATION) != null){
+            authorizationHeader = headers.getHeaderString(HttpHeaders.AUTHORIZATION).replace("Bearer","");
+            logger.info("BPService: header(" + HttpHeaders.AUTHORIZATION + ")= " + authorizationHeader);
+        }else{
+            authorizationHeader = "";
+            logger.info("BPService: No Authorization header found ");
+        }
         try {
-            ConnectionParameter param = DestinationUtil.getDestinationData(subdomain, Util.getS4HanaDestinationName()).setAcceptJsonHeader();
+            ConnectionParameter param = DestinationUtil.getDestinationData(subdomain, Util.getS4HanaDestinationName(), authorizationHeader).setAcceptJsonHeader();
+            
             // set subdomain dynamically as search term
             String searchString = BUSINESS_PARTNER_ODATA_REQUEST.replace("<cf-subdomain>", subdomain);
             param.updateUrl(param.getUrl() + searchString);

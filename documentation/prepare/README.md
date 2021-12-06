@@ -1,9 +1,9 @@
 # Prepare
 
-This section lists all preparation steps necessary to be able to follow the step-by-step guide.
+Here you can find all the prerequisites to follow the step-by-step guide.
 
-* [Set up the development environment](/documentation/prepare/set-up-local-environment/README.md)
-* [Set up the provider subaccount in SAP BTP](/documentation/prepare/setup-btp-environment/README.md)
-* [Get and configure the SAP HANA Cloud database](/documentation/prepare/configure-hana/README.md)
-* [SAP S/4HANA Cloud or Business Partner mock server](/documentation/prepare/configure-s4/README.md)
-* [[OPTIONAL]Test the application locally](/documentation/prepare/test-app-locally/README.md)
+* [Set Up the Development Environment](/documentation/prepare/set-up-local-environment/README.md)
+* [Set Up the Provider Subaccount in SAP BTP](/documentation/prepare/setup-btp-environment/README.md)
+* [Get and Configure the SAP HANA Cloud Database](/documentation/prepare/configure-hana/README.md)
+* [Set Up SAP S/4HANA Cloud or Business Partner Mock Server](/documentation/prepare/configure-s4/README.md)
+* [[OPTIONAL] Test the Easy Franchise Application Locally](/documentation/prepare/test-app-locally/README.md)

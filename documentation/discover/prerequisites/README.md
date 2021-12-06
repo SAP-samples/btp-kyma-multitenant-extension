@@ -1,13 +1,13 @@
-# Make Sure the Prerequisites are Fulfilled
+# Make Sure the Prerequisites Are Fulfilled
 
-To execute all the necessary steps of the tutorial, you will need the following systems, services and tools available:  
+To execute all the necessary steps of the tutorial, you will need the following systems, services, and tools available:
 
 ## Systems & Services
 
-* SAP S/4HANA Cloud system or you can use our mock server
+* SAP S/4HANA Cloud system or you can use our mock server.
 * Global account in SAP Business Technology Platform (SAP BTP)
   * Kyma runtime enabled
-  * SAP HANA Cloud
+  * SAP HANA Cloud service
   * Destination service
 
 ## Tools
@@ -16,6 +16,6 @@ To execute all the necessary steps of the tutorial, you will need the following 
 * [maven](https://maven.apache.org/install.html)
 * [Node.js](https://nodejs.org/en/download/)
 * [Docker](https://hub.docker.com/)
-* [Docker Hub Account](https://docs.docker.com/get-started/#download-and-install-docker) 
+* [Docker Hub Account](https://docs.docker.com/get-started/#download-and-install-docker)
 * [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/#kubectl)
 

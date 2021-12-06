@@ -28,6 +28,8 @@ public class ServerApp {
         try {
             jettyServer.start();
             jettyServer.join();
+        } catch (Exception e) {
+            logger.error("unexpected Exception: " + e.getMessage(), e);            
         } finally {
             jettyServer.destroy();
         }

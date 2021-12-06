@@ -1,21 +1,21 @@
 # Understand the Database Service
 
-![](../../images/kyma-diagrams-focus-components/Slide5.jpeg) 
+![](../../images/kyma-diagrams-focus-components/Slide5.jpeg)
 
 Database Service (DB Service) is a REST service responsible for all SAP HANA database operations.
 
-DB Service is located within the *integration* namespace on Kyma. It is only accessible from the Kyma cluster. Here are the 2 main scenarios where the db service is called:
+DB Service is located within the *integration* namespace on Kyma. It is only accessible from the Kyma cluster. Here are the two main scenarios where the Database service is called:
 * CRUD operations from the UI via Easy Franchise Service
 * During the subscription/deletion process of the application via the Broker
 
 
 # Service Implementation
 
- All REST services are implemented in 2 classes:
+ All REST services are implemented in two classes:
 * [DBService.java](/code/backend/db-service/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DBService.java) implements tenant aware API: each call requires the presence of tenant id as path parameter. This is the vast majority of calls.
 * [DBAdminService.java](/code/backend/db-service/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DBAdminService.java) implements admin calls that do not need the tenant info.
 
-The REST API service urls are structured as followed:  
+The REST API service URLs are structured as followed:
 
 ````
 https://<subaccount domain>.<cluser-id>.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/dbservice/v1/<subaccount id>/<entity name>/<additonal path parameters>
@@ -27,7 +27,7 @@ Example full service URL for reading all Mentors from SAP HANA database could be
 https://dbservice.c-97d8b1a.kyma.shoot.live.k8s-hana.ondemand.com/easyfranchise/rest/dbservice/v1/420f7362-184e-4907-97bf-289c22906084/mentor
 ```
 
-Implementation follows JAX-RS standards as described in [Jakarta RESTful Web Services 3.0 API Specification](https://jakarta.ee/specifications/restful-ws/3.0/apidocs/).
+The implementation follows JAX-RS standards as described in [Jakarta RESTful Web Services 3.0 API Specification](https://jakarta.ee/specifications/restful-ws/3.0/apidocs/).
 
 A typical GET REST service:
 
@@ -92,7 +92,7 @@ PUT calls are similar:
     }
 ```
 
-Note that we use JAX-RS automatic marshalling only for input parameters. See **Mentor m** in the previous example. The **@Consume** annotation enables parsing of JSON input. We do not use automatic unmashalling for returning a JSON string. Instead, all REST services that return JSON convert the result to string by directly using JSON utility classes. The reason is that you often want to filter anything you return by a REST service before you actually send it. 
+Note that we use JAX-RS automatic marshalling only for input parameters. See **Mentor m** in the previous example. The **@Consume** annotation enables parsing of JSON input. We do not use automatic un-mashalling for returning a JSON string. Instead, all REST services that return JSON convert the result to string by directly using JSON utility classes. The reason is that you often want to filter anything you return by a REST service before you actually send it.
 
 # Persistence Implementation
 
@@ -114,7 +114,7 @@ This is one example:
 public class Mentor {
 
     public static final String QUERY_GETALL_ENTITIES = "Mentor.getAll";
-    
+
     // define primary key and use DB default key generation strategy
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -130,7 +130,7 @@ public class Mentor {
     @OneToMany
     @JoinColumn(referencedColumnName = "Id", name = "MentorId")
     private List<Franchise> franchises = new ArrayList<>();
-    
+
     // getters and setters not shown
 
     @Override
@@ -143,11 +143,12 @@ public class Mentor {
 
 For most entities, we use a generated long value as primary key. The only exception is the entity Franchise, where the primary key is the business partner id coming from the SAP S/4HANA system.
 
-## Schemas Operations during Onboarding/Offboarding
+## Schemas Operations During Onboarding/Offboarding
+
 We implement multitenancy for database operations with a separate schema approach. See [Hibernate Multitenancy](https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#multitenacy) for details.
 
 A tenant is added during the subaccount onboarding and deleted during the offboarding. The creation of schemas during the onboarding consists of the following steps:
-1. DB Service is called from the broker with new tenant id and subdomain as parameters. 
+1. DB Service is called from the broker with new tenant id and subdomain as parameters.
 2. Check if tenant/subdomain already exits.
 3. New DB user is created with a `create user` SQL query. For SAP HANA this means that also a new database schema with the same name is created and will be automatically used if this user logs on. The new database schema name is the provided subdomain in upper case letters. We have decided to use the subdomain instead of the tenant id as schema name because such a string (for example, `420f7362-184e-4907-97bf-289c22906084`) is too long as schema name of an SAP HANA database.
 4. A new entry is created in the table `TENANT` of EFADMIN schema with tenant ID, subdomain, and database schema name. This table will be used later on by each request to provide the mapping between tenant ID and schema name.
@@ -155,15 +156,17 @@ A tenant is added during the subaccount onboarding and deleted during the offboa
 6. Default values (for example, logo image) are written to the `Configuration` table in the new schema.
 
 
-#### Schema users
+#### Schema Users
+
 We have 2 different kinds of users (and their default schemas) in use:
 * EFADMIN schema, which is a single schema for maintaining info of all the other schemas. Only the table `TENANT` is available in EFADMIN schema. It's needed to store tenant ID, subdomain, and DB SCHEMA name of each tenant.
 * Customer schemas, which are storing the entities specific to each customer.
 
 #### Tenant Aware Operations
+
 All tenant aware operations follow this procedure:
 
-1. REST API receives the call and extracts the tenant ID from path. 
+1. REST API receives the call and extracts the tenant ID from path.
 2. Look up the schema name based on the tenant ID in the `TENANT` table.
 3. Now that we have the schema name, a database connection can be opened to the right SAP HANA schema. Hibernate provides a set of API for creating schema aware connections. Details are implemented in [DB.java](/code/backend/db-service/src/main/java/dev/kyma/samples/easyfranchise/dbservice/DB.java)). These schema/tenant aware connections are stored in connection pools, so that it is not necessary to create a new connection for every call.
 4. Hibernate provides then a regular EntityManager instance to work with that database schema. All operations with that EntityManager are by default restricted to the tenant-specific schema.
@@ -172,7 +175,7 @@ All tenant aware operations follow this procedure:
 
 # List of API Endpoints
 
-The path of all APIs begins always with `/easyfranchise/rest/dbservice/v1/<TENANT-ID>`. It is then followed by the path listed below for each individual REST call. 
+The path of all APIs begins always with `/easyfranchise/rest/dbservice/v1/<TENANT-ID>`. It is then followed by the path listed below for each individual REST call.
 
 | Path                         | Description                    | Curl Example                                                                                                                                                                                    |
 |:-----------------------------|:-------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

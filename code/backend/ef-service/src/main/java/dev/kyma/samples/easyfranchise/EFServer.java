@@ -44,6 +44,8 @@ public class EFServer {
             logger.info("server url: " + s);            
             EFUtil.doAfterStartup();
             jettyServer.join();
+        } catch (Exception e) {
+            logger.error("unexpected Exception: " + e.getMessage(), e);
         } finally {
             jettyServer.destroy();
         }

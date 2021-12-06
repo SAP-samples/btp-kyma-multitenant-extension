@@ -19,7 +19,6 @@ import dev.kyma.samples.easyfranchise.Util;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 import jakarta.ws.rs.WebApplicationException;
-
 /**
  * Utility methods to work with Destinations and the Destination Service.
  *
@@ -34,6 +33,7 @@ public class DestinationUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(DestinationUtil.class);
 
+    // get credential toekn (no user info) using destination service clientid and clientsecret
     private static String getDestinationServiceXSUAAToken(String subDomain) {
         // Read XSUAA URI and replace the subdomain
         String xsuaaUri = readFileToString(XSUAA_URI);
@@ -52,48 +52,113 @@ public class DestinationUtil {
         String jwtToken;
         try {
             jwtToken = tokenFlows.clientCredentialsTokenFlow().execute().getAccessToken();
+            //logger.info("DestinationUtil clientCredentialsTokenFlow: " + jwtToken);
         } catch (IllegalArgumentException | TokenFlowException e) {
-            throw new WebApplicationException("Failed to create xsuaa token for destination service", e, 550);
+            throw new WebApplicationException("Failed to create credential token for destination service", e, 550);
 
         }
         return jwtToken;
     }
 
-    public static ConnectionParameter getDestinationData(String subDomain, String destinationName) throws Exception {
+
+    // get user token by exchanging via token from Approuter
+    private static String getDestinationServiceUserToken(String subDomain, String authorizationHeader) {
+        // Read XSUAA URI and replace the subdomain
+        String xsuaaUri = readFileToString(XSUAA_URI);
+        xsuaaUri = xsuaaUri.replace(
+                xsuaaUri.substring(xsuaaUri.indexOf("://") + 3, xsuaaUri.indexOf(".authentication")), subDomain);
+        logger.info("xsuaaUri: " + xsuaaUri);
+        logger.info("subDomain:" + subDomain);
+        //logger.info("authorizationHeader: "+ authorizationHeader);
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        DefaultOAuth2TokenService defaultOAuth2TokenService = new DefaultOAuth2TokenService(httpClient);
+        OAuth2ServiceConfiguration serviceConfiguration = new OAuth2ServiceConfiguration(
+                readFileToString(DESTINATION_CLIENT_ID), readFileToString(DESTINATION_CLIENT_SECRET), xsuaaUri);
+        XsuaaDefaultEndpoints xsuaaDefaultEndpoints = new XsuaaDefaultEndpoints(serviceConfiguration);
+
+        XsuaaTokenFlows tokenFlows = new XsuaaTokenFlows(defaultOAuth2TokenService, xsuaaDefaultEndpoints,
+                serviceConfiguration.getClientIdentity());
+        String jwtToken;
+        try {
+            jwtToken = tokenFlows.userTokenFlow()
+                                 .token(authorizationHeader)
+                                 .subdomain(subDomain)
+                                 .execute()
+                                 .getAccessToken();
+            //logger.info("DestinationUtil userTokenFlow: " + jwtToken);
+        } catch (IllegalArgumentException | TokenFlowException e) {
+            throw new WebApplicationException("Failed to create user token for destination service", e, 550);
+
+        }
+        return jwtToken;
+    }
+
+    /*
+    authroizationHeader is only required if desitnation is using principal configuration (type OAuth2SAMLBearerAssertion)
+    */
+    public static ConnectionParameter getDestinationData(String subDomain, String destinationName, String authorizationHeader) throws Exception {
         Destination destination = null;
         if (Util.isLocalDev()) {
             destination = Util.getS4HANADestinationForLocalDev(destinationName);
         } else {
-            destination = getDestinationfromDestinationService(subDomain, destinationName);
+            destination = getDestinationfromDestinationService(subDomain, destinationName, authorizationHeader);//retrieve destination info from destination service
         }
 
-        if (destination.type != null && destination.type.equalsIgnoreCase("http") && destination.authentication != null
-                && (destination.authentication.equalsIgnoreCase("BasicAuthentication")
-                        || destination.authentication.equalsIgnoreCase("NoAuthentication"))) {
-            ConnectionParameter p = new ConnectionParameter(destination.url);
+        if (destination != null && 
+            destination.isHTTPDestination() && 
+            (destination.isBasicAuthentication() || 
+             destination.isNoAuthentication() )) {
+            ConnectionParameter p = new ConnectionParameter(destination.destinationConfiguration.URL);
 
-            if (destination.authentication.equalsIgnoreCase("BasicAuthentication")) {
-                p.user = destination.user;
-                p.pass = destination.password;
+            if (destination.isBasicAuthentication()) {
+                p.user = destination.destinationConfiguration.User;
+                p.pass = destination.destinationConfiguration.Password;
                 p.authorizationType = ConnectionParameter.AuthorizationType.Basic;
             }
             return p;
+        } else if ( destination != null && 
+                    destination.isHTTPDestination() && 
+                    destination.isOAuth2SAMLBearerAssertion()){
+            // use principal propagation destination
+            logger.info("principal propagation with OAuth2SAMLBearerAssertion ");
+            ConnectionParameter p = new ConnectionParameter(destination.destinationConfiguration.URL);
+            
+            p.authorizationType = ConnectionParameter.AuthorizationType.BearerToken;
+            p.token = destination.authTokens[0].value;
+
+            return p;
+
         } else {
             throw new WebApplicationException(
-                    "Unsupported Destination, only tpye=http and authentication=Basic Authentication allowed for destination name="
-                            + destinationName + ". But found type=" + destination.type + " and authentication= "
-                            + destination.authentication,
+                    "Unsupported Destination, only tpye=http and authentication=Basic or OAuth2SAMLBearerAssertion allowed for destination name="
+                            + destinationName + ". But found type=" + destination.destinationConfiguration.Type + " and authentication= "
+                            + destination.destinationConfiguration.Authentication,
                     550);
-        }
+        } 
     }
 
-    private static Destination getDestinationfromDestinationService(String subDomain, String destinationName)
+    private static Destination getDestinationfromDestinationService(String subDomain, String destinationName, String authorizationHeader)
             throws TokenFlowException, Exception {
 
-        ConnectionParameter param = new ConnectionParameter(readFileToString(DESTINATION_URI)
-                + "/destination-configuration/v1/subaccountDestinations/" + destinationName);
+        // ConnectionParameter param = new ConnectionParameter(readFileToString(DESTINATION_URI)
+        //         + "/destination-configuration/v1/subaccountDestinations/" + destinationName);
 
-        param.token = getDestinationServiceXSUAAToken(subDomain);
+        // call Destination service Find a destination API https://api.sap.com/api/SAP_CP_CF_Connectivity_Destination/tryout
+        // "Find a destination" API will automatically return the token for S4 Hana system 
+        ConnectionParameter param = new ConnectionParameter(readFileToString(DESTINATION_URI)
+                + "/destination-configuration/v1/destinations/" + destinationName);
+
+        if(authorizationHeader == null || authorizationHeader.isEmpty()){
+            // no authorization header, create a credentialtoken without userinfo, 
+            // in which case Destination with pricipal propagation (OAuth2SAMLBearerAssertion) is not possible, only Basic authentication works
+
+            param.token = getDestinationServiceXSUAAToken(subDomain);
+
+        }else {
+            // using pricipal propagation,  exchange user token from EFservice (set by Approuter) to user token using destination credentials
+            param.token = getDestinationServiceUserToken(subDomain, authorizationHeader);
+        }
         param.authorizationType = ConnectionParameter.AuthorizationType.BearerToken;
         param.setAcceptJsonHeader();
 
@@ -106,8 +171,10 @@ public class DestinationUtil {
                         "Failed to get destination " + destinationName + " with status: " + param.status, 550);
         }
 
-        Jsonb jsonb = JsonbBuilder.create();
-        Destination destination = jsonb.fromJson(param.content, Destination.class);
+        //logger.info("getDestinationfromDestinationService: " + param.content);
+
+        Destination destination = JsonbBuilder.create().fromJson(param.content, Destination.class);
+        logger.debug(destination.toString());
         return destination;
     }
 
