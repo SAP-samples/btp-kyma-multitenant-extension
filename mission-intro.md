@@ -9,8 +9,7 @@ You can find the code of the application components in this GitHub [repository](
 
 ## Who Is This Mission For?
 
-The business scenario of this tutorial has been created with the partner as focus persona. The purpose of this project is to help SAP partners to get a quick start on developing a multitenant application and provide best practices.
-This is of course not exclusively for SAP partner and can be very useful for every person looking for details on how to build a multitenant application running on Kyma. It is suitable for new or experienced developers on SAP BTP.
+The business scenario of this tutorial has been created with the partner as focus persona. The purpose of this project is to help SAP partners to get a quick start on developing a multitenant application and provide best practices. This is of course not exclusively for SAP partner and can be useful for every person looking for details on how to build a multitenant application running on Kyma. It is suitable for new or experienced developers on SAP Business Technology Platform (SAP BTP).
 
 ## Focus Topics of the Mission
 
