@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Mission presentation</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="css/sap-theme.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		<link rel="stylesheet" href="plugin/drawer/drawer.css" />
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section id="home" data-background-image="images/banner-04.jpg" data-background-size="cover">
+					<h1>Develop a Multitenant Extension Application in SAP BTP, Kyma Runtime</h1>
+					<h2>Alexander Rieder, Matthieu Pelatan</h2>
+					<h3>December 2021</h3>
+				</section>
+				
+				<section>
+					<h1>Agenda</h1>
+					<p class="fragment fade-up">Introduction</p>
+					<p class="fragment fade-up">Multitenancy concept</p>
+					<p class="fragment fade-up">Mission overview</p>
+					<p class="fragment fade-up">Demo</p>
+					<p class="fragment fade-up">Outlook</p>
+					<p class="fragment fade-up">Q&A</p>
+				</section>
+				
+				<section  data-state="make-it-pop">
+					<section>
+						<h1>Introduction</h1>
+						<aside class="notes">
+							This is a test for my notes ;)
+						  </aside>
+					</section>
+					
+					<section>
+						<h1 class="sectionTitle">Who is Mission for?</h1>
+						<p>Lorem ipsum</p>
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Business Story</h1>
+						<img src="https://raw.github.tools.sap/saas-extension-on-kyma/easyfranchise-main/master/documentation/discover/business-story/images/Business-Concept-Multi-tenant.drawio.png?token=AAAA6KUD7IPNBOA6UM7ULCTBXMIRY" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Application Architecture</h1>
+						<img src="https://raw.github.tools.sap/saas-extension-on-kyma/easyfranchise-main/master/documentation/images/easyfranchise-diagrams/Slide4.jpeg?token=AAAA6KSVORNOW7PHUDB5XH3BXME4G" />
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h1>Multitenancy Concept</h1>
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Seperation of Data</h1>
+						<img src="https://raw.github.tools.sap/saas-extension-on-kyma/easyfranchise-main/master/documentation/images/easyfranchise-diagrams/Slide6.jpeg?token=AAAA6KR4TC5W55WFNGB4FJDBXMJEM" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Authentication Flow</h1>
+						<img src="https://raw.github.tools.sap/saas-extension-on-kyma/easyfranchise-main/master/documentation/images/easyfranchise-diagrams/Slide5.jpeg?token=AAAA6KQHVWFHBY6UKANR5R3BXMVHC" />
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h1>Mission Overview</h1>
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">SAP Discovery Center</h1>
+						<img src="images/discovery-center.png" />
+						<p><a class="link" href="https://discovery-center.cloud.sap/protected/index.html" target="_blank">Link to SAP Discovery Center</a></p>
+					</section>
+					
+					<section>
+						<h1 class="sectionTitle">Mission Structure</h1>
+						<img src="images/mission-overview.jpg" />
+						<p><a class="link" href="https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3683/3726/" target="_blank">Link to mission</a></p>
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Support</h1>
+						<p class="fragment fade-up">FAQ</p>
+						<p class="fragment fade-up">Troubleshooting</p>
+						<p class="fragment fade-up">Coaching</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Demo</h1>
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Diagram</h1>
+						<p>TODO: diagram to be added</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Outlook</h1>
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Roadmap</h1>
+						<p>TODO: diagram to be added</p>
+					</section>
+				</section>
+
+				<section data-background-image="images/banner-q&a.jpg" data-background-size="cover">
+					<h1>Q&A</h1>
+				</section>
+				
+				<section>
+					<img src="images/sap-outro-white-bg.jpg" width="100%"/>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/menu/menu.js"></script>
+		<script src="plugin/drawer/drawer.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'c',
+				drawer: {
+					colors: ["#008fd3", "#609a7f", "#a8a340", "#f0ab00"],
+					pathSize: 4, // (optional) path size in px, default 4
+				},
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMenu, RevealDrawer ]
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,44 @@
+/**
+ * SAP Layout + Custom CSS
+ */
+.leftAlign{
+	text-align: left;
+}
+.rightAlign{
+	text-align: right;
+}
+.whiteFont{
+	color: #fff !important;
+}
+.sectionTitle{
+	font-size: 0.8em !important;
+	text-transform: unset !important;
+}
+.link{
+	background: url(../images/282532-info-icon-small.png) left center no-repeat;
+	background-size: 15px;
+	padding-left: 20px;
+	font-size: 0.3em;
+}
+.slides{
+	background-image: url(../images/sap-logo-white-bg.png);
+	background-repeat: no-repeat;
+	background-size: 200px;
+	background-position: bottom right;
+}
+#home{
+	margin-top: 10%;
+	text-align: left;
+}
+#home h1{
+	font-size: 1em;
+	text-transform: unset;
+}
+#home h2{
+	font-size: 0.6em;
+	text-transform: unset;
+}
+#home h3{
+	font-size: 0.4em;
+	text-transform: unset;
+}
