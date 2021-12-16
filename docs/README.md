@@ -1,5 +1,5 @@
 # Presentation
-Slides to present the mission "Develop a Multitenant Extension Application in SAP BTP, Kyma Runtime".
+Slides to present the mission "Develop a Multitenant Extension Application in SAP BTP, Kyma Runtime".  
 Presentation has been built based on [reveal.js](https://revealjs.com/).
 
 # Keybindings
@@ -9,7 +9,7 @@ Presentation has been built based on [reveal.js](https://revealjs.com/).
 | Present in full size mode | F |
 | Exit full size mode | Esc |
 | Hide slides | V |
-| Display speaker notes |
+| Display speaker notes | S |
 | Toggle drawing board | T |
 | Refresh frawing board | Command + R |
 

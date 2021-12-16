@@ -23,6 +23,11 @@
 					<h1>Develop a Multitenant Extension Application in SAP BTP, Kyma Runtime</h1>
 					<h2>Alexander Rieder, Matthieu Pelatan</h2>
 					<h3>December 2021</h3>
+					<aside class="notes">
+						* Enablement Team of the SAP BTP
+						* Slides at the end
+						* FAQ at the end
+					</aside>
 				</section>
 				
 				<section>
@@ -36,48 +41,125 @@
 				</section>
 				
 				<section  data-state="make-it-pop">
-					<section>
-						<h1>Introduction</h1>
+					<section data-background-image="images/banner-283884-new.png" data-background-size="cover">
+						<h1 class="whiteH1">Introduction</h1>
 						<aside class="notes">
-							This is a test for my notes ;)
-						  </aside>
+							* Extension
+							* Multitenancy
+							* Kyma runtime
+							* Freedom to use non SAP Framework and Tools 
+							* Partners
+						</aside>
 					</section>
 					
 					<section>
-						<h1 class="sectionTitle">Who is Mission for?</h1>
-						<p>Lorem ipsum</p>
+						<h1 class="sectionTitle">Who is the Mission for?</h1>
+						<p class="longText mb-40">The business scenario of this mission has been created with the <span class="special-02">partner as focus persona</span>. The purpose of this project is to help SAP partners to get a quick start on developing a multitenant application and provide best practices.</p>
+						<p class="longText mb-40">This is of course not exclusively for SAP partner and can be useful for <span class="special-02">every person</span> looking for details on how to build a multitenant application running on Kyma.</p>
+						<p class="longText mb-40">It is suitable for new or experienced developers on SAP Business Technology Platform.</p>
 					</section>
 
 					<section>
+						<h1 class="sectionTitle">Type of SaaS Solution</h1>
+						<img src="images/extension-type.png" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle mb-80">Business Story</h1>
+						<img src="images/business-story-single-tenant.drawio.png" />
+					</section>
+					
+					<section>
 						<h1 class="sectionTitle">Business Story</h1>
-						<img src="https://raw.github.tools.sap/saas-extension-on-kyma/easyfranchise-main/master/documentation/discover/business-story/images/Business-Concept-Multi-tenant.drawio.png?token=AAAA6KUD7IPNBOA6UM7ULCTBXMIRY" />
+						<img src="images/business-story-multitenant.drawio.png" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Application Overview</h1>
+						<img src="images/scenario-diagram.png" />
+						<aside class="notes">
+							<ul>
+								<li>Everything in the Global Account of the Partner</li>
+								<li>CF only because of HANA Cloud (native integration planned Q1)</li>
+								<li>Separtion of components into namespaces, to show how it works</li>
+								<li>Only Approuter and SaaS-Broker is exposed to the internet</li>
+								<li>Communication to S/4 via Destination Service</li>
+								<li>HANA DB is shared between the customers; Data separation via Schemas/Users</li>
+							</ul>
+						</aside>
+					</section>
+
+				</section>
+				
+				<section>
+					<section data-background-image="images/banner-282402.jpg" data-background-size="cover">
+						<h1 class="whiteH1">Multitenancy Concept</h1>
 					</section>
 
 					<section>
 						<h1 class="sectionTitle">Application Architecture</h1>
-						<img src="https://raw.github.tools.sap/saas-extension-on-kyma/easyfranchise-main/master/documentation/images/easyfranchise-diagrams/Slide4.jpeg?token=AAAA6KSVORNOW7PHUDB5XH3BXME4G" />
-					</section>
-				</section>
-				
-				<section>
-					<section>
-						<h1>Multitenancy Concept</h1>
+						<img src="images/Slide4.jpeg" />
 					</section>
 
 					<section>
-						<h1 class="sectionTitle">Seperation of Data</h1>
-						<img src="https://raw.github.tools.sap/saas-extension-on-kyma/easyfranchise-main/master/documentation/images/easyfranchise-diagrams/Slide6.jpeg?token=AAAA6KR4TC5W55WFNGB4FJDBXMJEM" />
+						<h1 class="sectionTitle">Separation of Data</h1>
+						<img src="images/Slide6.jpeg" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle mb-80">Separation of Data Details</h1>
+						<div class="container30">
+							<img src="images/Slide6.jpeg" />
+						</div>
+						<div class="container70 mb-80">
+							<ol>
+								<li>As soon as a customer is onboarded, the SaaS Registry triggers the onboarding process. A request with all information about the new tenant (for example, tenant ID and subdomain) in the body is sent to the application broker.</li>
+								<li>The broker extracts the tenant ID and the subdomain out of the request body and triggers actions defined in the callbacks. In our case, the DB service is informed about the new onboarding.</li>
+								<li>The Database service creates a new schema/user for the new customer. Standard tables and default configuration are automatically generated.</li>
+							</ol>
+						</div>
 					</section>
 
 					<section>
 						<h1 class="sectionTitle">Authentication Flow</h1>
-						<img src="https://raw.github.tools.sap/saas-extension-on-kyma/easyfranchise-main/master/documentation/images/easyfranchise-diagrams/Slide5.jpeg?token=AAAA6KQHVWFHBY6UKANR5R3BXMVHC" />
+						<img src="images/Slide5.jpeg" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Authentication Flow Details</h1>
+						<div class="container30">
+							<img src="images/Slide5.jpeg"/>
+						</div>
+						<div class="container70">
+							<ol>
+								<li>An end user opens the application in a browser. The browser sends a request to the Approuter.</li>
+								<li>The end user is redirected to the SAP Authorization and Trust Management service to log in.</li>
+								<li>After a successful login, the SAP Authorization and Trust Management service sends a JWT token to Approuter, which extracts the tenant ID. The tenant ID will be needed later to call the data from the right tenant.</li>
+								<li>The Approuter redirects to UI.</li>
+								<li>The UI sends a request to backend API via the Approuter.</li>
+								<li>The Approuter injects the tenant ID in the request as a header and forwards the request to the Easy Franchise service.</li>
+								<li>The Easy Franchise service receives request as an orchestrator and forwards it to the respective microservice including the tenant ID. Here, it's part of the URL, which makes it simpler to log or debug at development time.</li>
+								<li>The Database service requests data from the respective tenant.</li>
+								<li>The Business Partner service gets information from the destination in the respective subaccount and calls the SAP S/4HANA Cloud system.</li>
+							</ol>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<section data-background-image="images/banner-282697.jpg" data-background-size="cover"> 
+						<h1 class="whiteH1">Demo</h1>
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Demo Steps</h1>
+						<img src="images/demo-steps.png" />
 					</section>
 				</section>
 				
 				<section>
-					<section>
-						<h1>Mission Overview</h1>
+					<section data-background-image="images/banner-285469.jpg" data-background-size="cover">
+						<h1 class="whiteH1">Mission Overview</h1>
 					</section>
 
 					<section>
@@ -93,40 +175,31 @@
 					</section>
 
 					<section>
-						<h1 class="sectionTitle">Support</h1>
-						<p class="fragment fade-up">FAQ</p>
-						<p class="fragment fade-up">Troubleshooting</p>
-						<p class="fragment fade-up">Coaching</p>
+						<h1 class="sectionTitle">Mission details</h1>
+						<p class="fragment fade-up">Step-by-step guide</p>
+						<p class="fragment fade-up">Mock Server included</p>
+						<p class="fragment fade-up">Support via coaching</p>
+						<p class="fragment fade-up">Troubleshooting & FAQ</p>
+						<p class="fragment fade-up">Feedback survey</p>
 					</section>
 				</section>
 
 				<section>
-					<section>
-						<h1>Demo</h1>
+					<section data-background-image="images/banner-276323.jpg" data-background-size="cover">
+						<h1 class="whiteH1">Outlook</h1>
 					</section>
 
 					<section>
-						<h1 class="sectionTitle">Diagram</h1>
-						<p>TODO: diagram to be added</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h1>Outlook</h1>
-					</section>
-
-					<section>
-						<h1 class="sectionTitle">Roadmap</h1>
-						<p>TODO: diagram to be added</p>
+						<img src="images/future-activities.png" />
 					</section>
 				</section>
 
 				<section data-background-image="images/banner-q&a.jpg" data-background-size="cover">
-					<h1>Q&A</h1>
+					<h1 class="whiteH1">Q&A</h1>
 				</section>
 				
 				<section>
+					<h1 class="whiteFont">Disclaimer</h1>
 					<img src="images/sap-outro-white-bg.jpg" width="100%"/>
 				</section>
 			</div>
@@ -147,7 +220,7 @@
 				hash: true,
 				slideNumber: 'c',
 				drawer: {
-					colors: ["#008fd3", "#609a7f", "#a8a340", "#f0ab00"],
+					colors: ["#008fd3", "#609a7f", "#a8a340", "#fec128"],
 					pathSize: 4, // (optional) path size in px, default 4
 				},
 				// Learn about plugins: https://revealjs.com/plugins/

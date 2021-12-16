@@ -1,6 +1,15 @@
 /**
  * SAP Layout + Custom CSS
  */
+ .longText{
+	font-size: 0.6em;
+ }
+ .mb-40{
+	 margin-bottom: 40px !important;
+ }
+ .mb-80{
+	margin-bottom: 80px !important;
+}
 .leftAlign{
 	text-align: left;
 }
@@ -10,8 +19,18 @@
 .whiteFont{
 	color: #fff !important;
 }
+.whiteH1{
+	color: #fff !important;
+	text-shadow: 1px 1px 20px #717171 !important;
+}
+.special-01{
+	color: #008fd3 !important;
+}
+.special-02{
+	color: #f0ab00 !important;
+}
 .sectionTitle{
-	font-size: 0.8em !important;
+	font-size: 1.2em !important;
 	text-transform: unset !important;
 }
 .link{
@@ -42,3 +61,38 @@
 	font-size: 0.4em;
 	text-transform: unset;
 }
+.container30{
+	float: left;
+	width: 30%;
+}
+.container70{
+	float: left;
+	width: 70%;
+}
+.container30 li,
+.container70 li{
+	font-size: 0.4em;
+	margin-bottom: 15px;
+}
+ol {
+	list-style: none !important;
+	counter-reset: item;
+}
+ol li {
+	counter-increment: item;
+}
+ol li:before {
+	margin-right: 10px;
+	height: 21px;
+	content: counter(item);
+	background: #fec128;
+	border-radius: 100%;
+	color: white;
+	width: 1.3em;
+	text-align: center;
+	display: inline-block;
+}
+ .noMargin{
+	 margin-top: 0 !important;
+	 margin-bottom: 0 !important;
+ }
