@@ -1,4 +1,4 @@
-# Easy Franchise
+# Easy Franchise: Develop a Multitenant Extension Application in SAP BTP, Kyma Runtime
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-kyma-multitenant-extension)](https://api.reuse.software/info/github.com/SAP-samples/btp-kyma-multitenant-extension)
 
@@ -24,7 +24,7 @@ This is of course not exclusively for SAP partner and can be useful for every pe
 
 ## Focus Topics of the Mission
 
-The tutorial focus on the following aspects:
+The tutorial focuses on the following aspects:
 - Multitenancy
 - Kyma environment on SAP BTP
 - Partner ecosystem
