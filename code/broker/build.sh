@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# build and deploy the docker image
-#
-#
 
 echo "================================================================================================="
 echo "This script is only used during development to quickly deploy updates to a DEV cluster. "

@@ -165,18 +165,18 @@ spec:
           - $XSAPPNAME(application,sap-provisioning,tenant-onboarding)
     role-templates:
       - name: Viewer
-        description: Viewer Role-Template
+        description: Easy Franchise Viewer Role-Template
         scope-references: [$XSAPPNAME.Display]
       - name: Backend
-        description:  Backend Role-Template
+        description:  Easy Franchise Backend Role-Template
         scope-references: [$XSAPPNAME.Backend]
     role-collections:
-      - name: Easy Franchise (UAA) Viewer Role Collection <provider-subdomain>
-        description: Viewer Role-Collection
+      - name: Easy Franchise Viewer (<provider-subdomain>)
+        description: Easy Franchise Viewer Role-Collection
         role-template-references: [$XSAPPNAME.Viewer]
-      - name: Easy Franchise (UAA) Backend Role Collection <provider-subdomain>
-        description: Backend Role-Collection
-        role-template-references: [$XSAPPNAME.Backend]
+      - name: Easy Franchise Backend (<provider-subdomain>)
+        description: Easy Franchise Backend Role-Collection
+        role-template-references: [$XSAPPNAME.Backend]       
 ...
 ```
 

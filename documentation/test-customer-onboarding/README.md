@@ -20,7 +20,4 @@ This section is structured as followed:
 * [Subscribe to the Easy Franchise Application](/documentation/test-customer-onboarding/subscribe-easyfranchise-app/README.md)
 * [Manage Users](/documentation/test-customer-onboarding/manage-users/README.md)
 * [Run the Application](/documentation/test-customer-onboarding/run-application/README.md)
-* [[OPTIONAL] Test the Multitenancy](/documentation/test-customer-onboarding/test-multitenancy/README.md)
-
-
-
+* [OPTIONAL: Test the Multitenancy](/documentation/test-customer-onboarding/test-multitenancy/README.md)

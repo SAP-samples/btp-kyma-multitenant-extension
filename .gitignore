@@ -18,6 +18,7 @@ code/c-97d8b1a-easyfranchisedev
 code/.env-dev-c-97d8b1a
 code/.env
 code/.env-dev
+deployment*.properties
 # local env files
 .env.local
 .env.*.local

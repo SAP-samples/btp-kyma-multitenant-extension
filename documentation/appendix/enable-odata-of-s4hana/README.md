@@ -64,9 +64,7 @@ A communication system is a semantic representation of the system which will con
     ![](./images/createinbounduser2.png)
 
 12. In the field *User for Outbound Communication*, create a new user by clicking the *+* icon.
-    Even if you don not need an outbound user, as your S/4HANA Cloud system will not call an external system, the user creation is needed to be able to create a *Communication Arrangement*  successfully in the next step.
-
-     Choose *+* near *User for InbounOutbound Communication*.
+    Even if you do not need an outbound user, as your S/4HANA Cloud system will not call an external system, the user creation is needed to be able to create a *Communication Arrangement*  successfully in the next step.
 
     ![Add Outbound User](./images/addoutbounduser.png)
 

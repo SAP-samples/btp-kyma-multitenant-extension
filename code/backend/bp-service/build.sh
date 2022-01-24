@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# build and deploy the docker image
-#
-#
-
 echo "================================================================================================="
 echo "This script is only used during development to quickly deploy updates to a DEV cluster. "
 echo "It is not called by the Jenkins. You should also not use it to patch or update a live cluster."
@@ -79,7 +75,7 @@ else
   REPOSITORY=${EASYFRANCHISE_DOCKER_REPOSITORY}
 fi
 
-# make sure .env match the correct cluster_domain info
+# make sure .env match the correct cluster_domain info 
 KYMA_CLUSTER_CONFIG="$(kubectl config view)"
 if [[ ${KYMA_CLUSTER_CONFIG} != *"$CLUSTER_DOMAIN"* ]];then
     echo -e "Error: Check your configuration, current Kyma cluster does not match \033[1;31m $CLUSTER_DOMAIN \033[0m defined in provided .env file"
