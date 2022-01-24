@@ -1,5 +1,10 @@
 # What's New
 
+## 2022-01-24
+  * Changed name of Role Collections
+  * Enhanced Service Marketplace Entry with more detailed subscription
+  * Documentation optimisation
+
 ## 2021-12-02
    * Code updates to enable principal propagation for future mission extensions. Documentation & logs optimisation.
 

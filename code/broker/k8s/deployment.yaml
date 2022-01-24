@@ -69,6 +69,24 @@ spec:
     app: broker
   type: ClusterIP
 ---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: saas-broker-role
+  namespace: integration
+rules:
+  - apiGroups:      
+      - gateway.kyma-project.io #needed      
+    resources:
+      - apirules #needed      
+    verbs:
+      - create
+      - update
+      - patch
+      - delete
+      - get
+      - list
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -79,6 +97,6 @@ subjects:
     name: default
     namespace: integration
 roleRef:
-  kind: ClusterRole
-  name: kyma-namespace-admin
+  kind: Role
+  name: saas-broker-role
   apiGroup: rbac.authorization.k8s.io  

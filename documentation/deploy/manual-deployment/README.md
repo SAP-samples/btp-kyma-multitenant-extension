@@ -2,16 +2,16 @@
 
 This section explains how to deploy each component manually to the Kyma cluster. The following steps give an overview of the components discussed.
 
-- [Deploy the Approuter](#deploy-the-approuter)
-- [Deploy the Broker](#deploy-the-broker)
-- [Deploy the Backend Components](#deploy-the-backend-components)
-  - [Deploy the Configmap](#deploy-the-configmap)
-  - [Run Maven Build](#run-Maven-build)
-  - [Deploy the Business Partner Service](#deploy-the-business-partner-service)
-  - [Deploy the Easy Franchise Service](#deploy-the-easy-franchise-service)
-  - [Deploy the Database Service](#deploy-the-database-service)
-- [Deploy Email Service](#deploy-email-service)
-- [Deploy the UI](#deploy-the-ui)
+- [Deploy the Approuter](/documentation/deploy/manual-deployment#deploy-the-approuter)
+- [Deploy the Broker](/documentation/deploy/manual-deployment#deploy-the-broker)
+- [Deploy the Backend Components](/documentation/deploy/manual-deployment#deploy-the-backend-components)
+  - [Deploy the Configmap](/documentation/deploy/manual-deployment#deploy-the-configmap)
+  - [Run Maven Build](/documentation/deploy/manual-deployment#run-Maven-build)
+  - [Deploy the Business Partner Service](/documentation/deploy/manual-deployment#deploy-the-business-partner-service)
+  - [Deploy the Easy Franchise Service](/documentation/deploy/manual-deployment#deploy-the-easy-franchise-service)
+  - [Deploy the Database Service](/documentation/deploy/manual-deployment#deploy-the-database-service)
+- [Deploy Email Service](/documentation/deploy/manual-deployment#deploy-email-service)
+- [Deploy the UI](/documentation/deploy/manual-deployment#deploy-the-ui)
 
 ## Deploy the Approuter
 

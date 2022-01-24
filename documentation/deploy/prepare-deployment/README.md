@@ -14,7 +14,7 @@ The **kubectl** command line tool lets you control your clusters. You will use i
 
    ```shell
    # assuming the kubeconfig file name is kubeconfig.yaml
-   export KUBECONFIG=kubeconfig.yaml
+   export KUBECONFIG=kubeconfig.yml
    ```
 3. Using the following command you can recheck, if your configuration was successful:
 

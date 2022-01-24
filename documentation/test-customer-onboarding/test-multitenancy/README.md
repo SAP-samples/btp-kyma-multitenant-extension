@@ -1,4 +1,4 @@
-# [OPTIONAL] Test the Multitenancy
+# OPTIONAL: Test the Multitenancy
 
 As this tutorial explains how to create a multitenant application, you probably want to test the multitenancy. In the previous sections, we have onboarded the customer City Scooter. We have prepared some data in the Business Partner mock server to onboard a second customer called Bike Sharing. This is of course optional and not needed for the rest of the tutorial.
 

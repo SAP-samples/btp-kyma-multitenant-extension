@@ -373,7 +373,7 @@ The REST calls of the Easy Franchise service are used from the UI. Let's have a 
             "streetName": "Dietmar-Hopp-Allee"
         } ...
     ]
-    ```
+   ```
 
 ## 2. Run the Email Service Locally
 

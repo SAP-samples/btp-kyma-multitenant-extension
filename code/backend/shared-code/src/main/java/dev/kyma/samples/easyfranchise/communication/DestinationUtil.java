@@ -69,6 +69,7 @@ public class DestinationUtil {
                 xsuaaUri.substring(xsuaaUri.indexOf("://") + 3, xsuaaUri.indexOf(".authentication")), subDomain);
         logger.info("xsuaaUri: " + xsuaaUri);
         logger.info("subDomain:" + subDomain);
+        authorizationHeader = authorizationHeader.strip();
         //logger.info("authorizationHeader: "+ authorizationHeader);
 
         CloseableHttpClient httpClient = HttpClients.createDefault();

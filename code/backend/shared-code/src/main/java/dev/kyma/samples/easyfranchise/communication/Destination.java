@@ -7,7 +7,7 @@ public class Destination {
     public AuthTokens[] authTokens; 
 
     public String toString(){
-        return "Destination: subaccountId = " + owner.SubaccountId + "InstanceId = " + owner.InstanceId + 
+        String self = "Destination: subaccountId = " + owner.SubaccountId + "InstanceId = " + owner.InstanceId + 
                 " Name = " + destinationConfiguration.Name + " Type = " + destinationConfiguration.Type + 
                 " URL = " + destinationConfiguration.URL + " Authentication = " + destinationConfiguration.Authentication + 
                 " ProxyType = " + destinationConfiguration.ProxyType + " tokenServiceURLType = " + destinationConfiguration.tokenServiceURLType + 
@@ -15,9 +15,13 @@ public class Destination {
                 " authnContextClassRef = " + destinationConfiguration.authnContextClassRef + "clientKey = " + destinationConfiguration.clientKey + 
                 " nameIdFormat = " + destinationConfiguration.nameIdFormat + " tokenServiceUser = " + destinationConfiguration.tokenServiceUser + 
                 " tokenServiceURL = " + destinationConfiguration.tokenServiceURL + " tokenServicePassword = " + destinationConfiguration.tokenServicePassword + 
-                " User = " + destinationConfiguration.User + " Password =  <redacted>" + 
-                " AuthToken.type = " + authTokens[0].type + " AuthToken.value = " + authTokens[0].value + 
-                " AuthToken.expires_in = " + authTokens[0].expires_in + " AuthToken.scope = " +  authTokens[0].scope;
+                " User = " + destinationConfiguration.User + " Password =  <redacted>";
+        if(authTokens != null && authTokens[0] != null){
+           self = self + " AuthToken.type = " + authTokens[0].type + " AuthToken.value = " + authTokens[0].value + 
+            " AuthToken.expires_in = " + authTokens[0].expires_in + " AuthToken.scope = " +  authTokens[0].scope;
+        }
+
+        return self;
     }
 
     public boolean isHTTPDestination(){
