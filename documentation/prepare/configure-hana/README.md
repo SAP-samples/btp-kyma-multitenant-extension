@@ -87,15 +87,17 @@ The following steps describe how to create an user **EFADMIN**.
 
 Later in the tutorial, you need some of the properties to configure the JDBC connection.
 
-1. Open the **SAP HANA Cloud Central** and select your SAP HANA Database instance. Find the property values:
+1. Open the **SAP HANA Cloud Central**
+   
+   ![](images/openSAPHANACloudCenter.png)
+2. In the **SAP HANA Cloud Central** select your SAP HANA Database instance. Find the property values:
    - *db.name*: The name of your SAP HANA Database. In this case, it is **EasyFranchiseHANADB**.
    - *db.sqlendpoint*: Choose `...` and use **Copy SQL Endpoint**. This will copy the endpoint details to the clipboard.
       For example, you might get something like `01234567-89fe-012c-a000-000cd00000fa.hana.prod-eu10.hanacloud.ondemand.com:443`.
 
-
    ![](images/findProps.png)
 
-2. For the database user properties, use the *EFADMIN*:
+1. For the database user properties, use the *EFADMIN*:
    - *db.admin*: EFADMIN (or your individual database admin user name)
    - *db.password*: the password
 
