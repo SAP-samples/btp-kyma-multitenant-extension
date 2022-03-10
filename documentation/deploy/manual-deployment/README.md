@@ -1,6 +1,6 @@
 # Deploy the Artifacts Manually <!-- omit in toc -->
 
-This section explains how to deploy each component manually to the Kyma cluster. The following steps give an overview of the components discussed.
+This section explains how to deploy each component manually to the Kyma cluster. The following steps give an overview of the components discussed:
 
 - [Deploy the Approuter](/documentation/deploy/manual-deployment#deploy-the-approuter)
 - [Deploy the Broker](/documentation/deploy/manual-deployment#deploy-the-broker)
@@ -23,7 +23,7 @@ The Approuter deployment is done through two steps. The first step creates the r
    > ./checkActiveSubscription.sh
    ```
 
-   If there are no subscriptions the response should be like this:
+   If there are no subscriptions, the response should be like this:
 
    ```
    Checking active subscription in cluster  shoot--kyma--c-84e9cbb  of region eu10

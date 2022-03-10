@@ -2,7 +2,7 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-kyma-multitenant-extension)](https://api.reuse.software/info/github.com/SAP-samples/btp-kyma-multitenant-extension)
 
-> Note: The content of this Github repository has been created as source for the SAP Discovery Center Mission [Develop a Multitenant Extension Application in SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3683/3726/). So we recommend to use directly the mission in the SAP Discovery Center.
+> Note: The content of this GitHub repository has been created as source for the SAP Discovery Center Mission [Develop a Multitenant Extension Application in SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3683/3726/). So we recommend using directly the mission in the SAP Discovery Center.
 
 ## Description
 
@@ -33,12 +33,12 @@ The tutorial focuses on the following aspects:
 
 ## Requirements
 
-You can find all requirements to execute the tutorial [here](/documentation/discover/prerequisites/README.md).
+You can find all requirements to execute the tutorial in this [section](/documentation/discover/prerequisites/README.md).
 
 ## Where to Start?
 
 * You want to understand the scenario, the problem statement, or the architecture? Start with the section [discover](/documentation/discover/README.md).
-* You would like to explore application components? Start exploring [here](/documentation/explore/README.md).
+* You would like to explore application components? Start [exploring](/documentation/explore/README.md) and get more details.
 * As developer you want to try it out? Start directly with the [preparation steps](/documentation/prepare/README.md).
 * Code is your world? You don't want to waste time with reading explanations or architecture details? Here is the [code](/code/README.md).
 
@@ -50,7 +50,7 @@ The tutorial is provided on the "as-is" basis. Currently, there are no known iss
 
 Check if you find an answer in the [troubleshooting](/documentation/troubleshooting/README.md) section.
 
-Create an issue to get support or to report a bug [here](https://github.com/SAP-samples/btp-kyma-multitenant-extension/issues/new/choose).
+Create an issue to get support or to report a bug using [GitHub](https://github.com/SAP-samples/btp-kyma-multitenant-extension/issues/new/choose).
 
 ## How to Provide Feedback?
 
@@ -58,7 +58,7 @@ Have you found the enablement material easy to understand? Are you missing somet
 
 ## What's New
 
-Check the details of our last releases [here](/documentation/discover/whats-new/README.md).
+Check the details of our last [releases](/documentation/discover/whats-new/README.md).
 
 ## License
 

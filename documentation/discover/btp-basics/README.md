@@ -2,7 +2,7 @@
 
 SAP Business Technology Platform (SAP BTP) is the extension platform from SAP. It enables developers to implement loosely coupled extension applications securely, thus implementing additional workflows, or modules on top of the existing SAP cloud solution they already have. Before starting with developing extension applications, you need to understand how SAP BTP is structured so you can choose the best components for your use case.
 
-Pay attention on the Cloud Foundry environment, global accounts, and subaccounts. The automated extension configuration is not available on trial.
+Pay attention on the Cloud Foundry environment, global accounts, and subaccounts. The automated extension configuration is not available on SAP BTP trial.
 
 These are the best resources to start from:
 
