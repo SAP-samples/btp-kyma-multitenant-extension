@@ -2,44 +2,44 @@
 
 1. Create `default-env.json` in the folder **approuter** with the following content:
 
-	```json
-	{
-	    "destinations" : 
-	    [      
-		{"name":"ef-ui","url":"http://localhost:8080","forwardAuthToken" : true},
-		{"name":"ef-service","url":"http://localhost:8888","forwardAuthToken" : true}
-	    ],
-		"TENANT_HOST_PATTERN": "^(.*).localhost",
-	    "VCAP_SERVICES": {
-			"xsuaa": [
-				{
-			"name": "xsuaa-service",                
-					"label": "xsuaa",				
-					"tags": [
-						"xsuaa"
-					],
-					"credentials": {
-						"apiurl": "xxx",
-						"clientid": "xxx",
-						"clientsecret": "xxx",
-			    "credential-type": "xxx",
-						"identityzone": "xxx",
-						"identityzoneid": "xxx",
-						"sburl": "xxx",
-						"subaccountid": "xxx",
-						"tenantid": "xxx",
-						"tenantmode": "xxx",
-						"trustedclientidsuffix": "xxx",
-						"uaadomain": "xxx",
-						"url": "xxx",
-						"verificationkey": "xxx",
-						"xsappname": "xxx",
-						"zoneid": "xxx"
-					}
-				}
-			]
-	    }
-	}
+    ```json
+    {
+        "destinations" : 
+        [      
+            {"name":"ef-ui","url":"http://localhost:8080","forwardAuthToken" : true},
+            {"name":"ef-service","url":"http://localhost:8888","forwardAuthToken" : true}
+        ],
+        "TENANT_HOST_PATTERN": "^(.*).localhost",
+        "VCAP_SERVICES": {
+            "xsuaa": [
+                {
+                    "name": "xsuaa-service",                
+                    "label": "xsuaa",                
+                    "tags": [
+                        "xsuaa"
+                    ],
+                    "credentials": {
+                        "apiurl": "xxx",
+                        "clientid": "xxx",
+                        "clientsecret": "xxx",
+                        "credential-type": "xxx",
+                        "identityzone": "xxx",
+                        "identityzoneid": "xxx",
+                        "sburl": "xxx",
+                        "subaccountid": "xxx",
+                        "tenantid": "xxx",
+                        "tenantmode": "xxx",
+                        "trustedclientidsuffix": "xxx",
+                        "uaadomain": "xxx",
+                        "url": "xxx",
+                        "verificationkey": "xxx",
+                        "xsappname": "xxx",
+                        "zoneid": "xxx"
+                    }
+                }
+            ]
+        }
+    }
 
 	```
 

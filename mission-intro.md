@@ -28,7 +28,7 @@ The tutorial is provided on the "as-is" basis. Currently, there are no known iss
 
 First check if you find an answer in the [troubleshooting](/documentation/troubleshooting/README.md) section.
 
-Create an issue to get support or to report a bug [here](https://github.com/SAP-samples/btp-kyma-multitenant-extension/issues/new/choose).
+Create an issue to get support or to report a bug in [GitHub](https://github.com/SAP-samples/btp-kyma-multitenant-extension/issues/new/choose).
 
 ## How to Provide Feedback?
 
