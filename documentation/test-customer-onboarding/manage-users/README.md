@@ -15,10 +15,10 @@ That would mean that the partner would now typically add one or more mentor coor
 
    ![](images/add-role-collection-02.png)
 
-4. Search for **Easy Franchise**, then select **Easy Franchise (UAA) Backend Role Collection** and choose **Assign Role Collection**.
+4. Search for **Easy Franchise**, then select **Easy Franchise Backend Role (`<subdomain>`) Collection** and choose **Assign Role Collection**.
 
    ![](images/add-role-collection-03.png)
 
-5. The application is now configured and ready to be used by the customer. As partner you can share the link of the application with the end-user (in our case you ;)). You can find the URL of the app by choosing **Instances and Subscriptions** under **Services**. The link is under the link **Easy Franchise (Multitenant)**.
+5. The application is now configured and ready to be used by the customer. As partner you can share the link of the application with the end-user (in our case you ;)). You can find the URL of the app by choosing **Instances and Subscriptions** under **Services**. The link is under the link **Easy Franchise (`<subdomain>`)**.
 
    ![](images/start-application.png)
