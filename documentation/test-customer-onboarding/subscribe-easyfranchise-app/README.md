@@ -5,7 +5,7 @@ The next step for the partner is to subscribe the multitenant Easy Franchise app
 1. Expand the section Services in the left sidebar and choose **Service Marketplace** to show the different services available.
 ![](images/go-to-service-marketplace.png)
 
-1. Click on the 3 dots of the Easy Franchise service and select **Create** to start the subscription process.
+1. Click on the 3 dots of the Easy Franchise application and select **Create** to start the subscription process.
 ![](images/create-subscription-01.png)
 
 1. Keep all the default settings in the new opened pop-up window and choose**Create**.

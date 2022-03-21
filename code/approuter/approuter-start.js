@@ -9,32 +9,12 @@ ar.beforeRequestHandler.use('/backend', function (req, res, next) {
     if (!token) {    
         res.statusCode = 403;
         res.end("Missing JWT Token");
-    }else {
+    } else {
         const decodedToken = jwt_decode(token);
         const tenant = decodedToken && decodedToken.zid;
         req.headers['x-tenant-id'] = tenant;
-        console.log("set header x-tenant-id to tenant id : "+ tenant);
         next();
     }
-
-
-    //console.log(req.user.token);
-    //console.log(req.user.token.accessToken);
-    //console.log(xsenv.getServices({uaa:{tag:'xsuaa'}}));
-    // xssec.createSecurityContext(req.user.token.accessToken, xsenv.getServices({uaa:{tag:'xsuaa'}}).uaa, function(error, securityContext) {
-    //     if (error) {
-    //         res.statusCode = 401;
-    //         res.end("Security context creation failed: " + error);
-    //     }
-    //     if (securityContext.checkLocalScope("Display")) {
-    //         res.statusCode = 200;
-    //         console.log("authorization checked!");
-    //         next();
-    //     } else {
-    //         res.statusCode = 403;
-    //         res.end("User does not have proper role to access the app.");
-    //     }
-    // });
 });
 
 ar.beforeRequestHandler.use('/userInfo', function (req, res, next) {

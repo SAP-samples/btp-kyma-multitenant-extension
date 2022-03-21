@@ -4,7 +4,7 @@
 
 The **kubectl** command line tool lets you control your clusters. You will use it to deploy the applications artifacts. But first you need to provide the details of the cluster.
 
-1. Open the Kyma dashboard using the account cockpit and download the kubeconfig file.
+1. Open the SAP BTP Cockpit and navigate to the overview page of the subaccount where Kyma is enabled. There you will find the url to download the kubeconfig file. 
 
    ![](images/kyma-dashboard.png)
 
@@ -22,7 +22,7 @@ The **kubectl** command line tool lets you control your clusters. You will use i
    kubectl config view
    ```
 
-> Note: The kubeconfig will expire after 8 hours, so that you have to do the previous steps regularly.
+> Note: Make sure that you have installed the Kubernetes OpenID Connect (OIDC) authentication plugin in order to use the command line tool. 
 
 ## Create Namespaces
 
@@ -71,7 +71,7 @@ For manual deployment as well for the scripts-based deployment, you need to prov
 
   ![subdomain screenshot](images/subdomain.png "subdomain")
 
-- *CLUSTER_DOMAIN*: the full Kyma cluster domain. You can find the cluster name in the downloaded **kubeconfig** file or in the URL of the Kyma dashboard, for example, `c-08e5ce3.kyma.shoot.live.k8s-hana.ondemand.com`.
+- *CLUSTER_DOMAIN*: the full Kyma cluster domain. You can find the cluster name in the downloaded **kubeconfig** file or in the Kyma dashboard, for example, `c-1ddaa90.kyma.ondemand.com`.
 
   ![](images/kymaConsole.png)
 

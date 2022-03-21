@@ -443,7 +443,7 @@ The Email service should listen to http://localhost:3002. Check out the [API End
 
 ## 3. Run User Interface Locally
 
-> Note: To simplify debugging in the browser, we recommend installing the browser extension [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) for Google Chrome.
+> Note: To simplify debugging in the browser, we recommend installing the browser extension [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg) for Google Chrome.
 
 1. Go back to your IDE and open the **ui** folder of the application.
 2. Navigate to the **src** folder and open the file **main.js**.

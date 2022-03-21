@@ -8,6 +8,7 @@ To execute all the necessary steps of the tutorial, you will need the following 
 * [Docker](https://hub.docker.com/)
 * [Docker Hub Account](https://docs.docker.com/get-started/#download-and-install-docker)
 * [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/#kubectl)
+* [Kubernetes OpenID Connect (OIDC) authentication](https://github.com/int128/kubelogin)
 
 ## Windows User
 
@@ -90,6 +91,10 @@ The output should look like this:
 ```shell
 Client Version: version.Info{Major:"1", Minor:"21", GitVersion:"v1.21.3", GitCommit:"ca643a4d1f7bfe34773c74f79527be4afd95bf39", GitTreeState:"clean", BuildDate:"2021-07-15T21:04:39Z", GoVersion:"go1.16.6", Compiler:"gc", Platform:"linux/amd64"}
 ```
+
+### Kubernetes OpenID Connect (OIDC)
+
+To login to your Kyma Cluster you also need the OpenID Connect plugin for the Kubectl. The plugin can be installed as described [here](https://github.com/int128/kubelogin#getting-started).
 
 ### Docker
 

@@ -49,7 +49,6 @@ Now that we have created the provider subaccount, we will add entitlements.
    * Step 3 - **Review**: Review your settings and choose **Create**.
 8. Enabling Kyma will take around 30 minutes.
 
-
 ## Create a Cloud Foundry Space
 
 We need a space in the Cloud Foundry environment, where we can create the **SAP HANA Cloud Instance**.
@@ -61,16 +60,6 @@ We need a space in the Cloud Foundry environment, where we can create the **SAP 
 
    ![](images/Create-Space.png)
 
-## Assign Role Collection for the Kyma Environment
-
-This step can only be done, if the creation process of the Kyma Environment is finished. The needed Role Collections appear only once the Kyma environment has been enabled.
-
-1. Navigate to the **Role Collections**.
-2. You should see two Kyma-related role collections: **KymaRuntimeNamespaceAdmin** and **KymaRuntimeNamespaceDeveloper**.
-3. Choose **KymaNamespaceAdmin** and press **Edit**. In the new dialog, assign your user to the role collection and save the changes.
-4. Finally assign your user also to the role **KymaRuntimeNamespaceDeveloper**.
-
-   ![](images/Assign-Role-Collection.png)
 
 ##  Validate Account Setup
 
@@ -85,4 +74,6 @@ Follow the steps to verify that the setup was successful:
 4. Choose **Link to dashboard** under **Kyma Environment**. The Kyma dashboard should open in a new browser tab.
 
    ![](images/kymadashboard.png)
+
+   Per default, the user that has enabled the Kyma Environment is granted with the cluster admin role. In order to give access to further users have a look at the [Kyma Help Documentation](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/148ae38b7d6f4e61bbb696bbfb3996b2.html?locale=en-US). You need to follow the steps described under Kyma 2.x. 
 
