@@ -1,7 +1,7 @@
 # What's New
 
 ## 2022-03-18
-   * Updated mission description to reflect changes for Kyma 2.x (Description for Kyma 1.x can be found in the [troubleshooting section](/documentation/troubleshooting/kyma1/README.md))
+   * Updated mission description to reflect changes for Kyma 2.x
 
 ## 2022-01-24
   * Changed name of Role Collections
