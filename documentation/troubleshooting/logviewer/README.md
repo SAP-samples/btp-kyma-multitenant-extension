@@ -6,7 +6,7 @@ There are two preconfigured ways to view logs:
 
 ## Pod Logs
 
-1. To view the pod logs open the **Kyma dashboard** (see [this page at the bottom](/documentation/prepare/setup-btp-environment/README.md) for help). Then select the namespace that contains the pod you are interested in. Expand the **Workloads** in the left side menu.
+1. To view the pod logs open the **Kyma dashboard** (see [this page at the bottom](../../prepare/setup-btp-environment/README.md) for help). Then select the namespace that contains the pod you are interested in. Expand the **Workloads** in the left side menu.
 1. Choose a pod and click the three dots on the right-hand side to open a small menu.
 1. Select **Show Logs** to open the log viewer.
 
