@@ -5,7 +5,7 @@ The application called Easy Franchise is an extension of SAP S/4HANA Cloud and h
 
 ![](documentation/images/easyfranchise-diagrams/Slide4.jpeg)
 
-You can find the code of the application components in this GitHub [repository](/code).
+You can find the code of the application components in this GitHub [repository](code).
 
 ## Who Is This Mission For?
 
@@ -26,7 +26,7 @@ The tutorial is provided on the "as-is" basis. Currently, there are no known iss
 
 ## How to Obtain Support?
 
-First check if you find an answer in the [troubleshooting](/documentation/troubleshooting/README.md) section.
+First check if you find an answer in the [troubleshooting](documentation/troubleshooting/README.md) section.
 
 Create an issue to get support or to report a bug in [GitHub](https://github.com/SAP-samples/btp-kyma-multitenant-extension/issues/new/choose).
 
@@ -36,7 +36,7 @@ Have you found the enablement material easy to understand? Are you missing somet
 
 ## What's New
 
-Check the details of our last releases [here](/documentation/discover/whats-new/README.md).
+Check the details of our last releases [here](documentation/discover/whats-new/README.md).
 
 ## License
 

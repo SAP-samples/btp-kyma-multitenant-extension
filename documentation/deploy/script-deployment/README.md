@@ -14,7 +14,7 @@ In the subfolder of each component, there is a shell script `build.sh` or `build
 
 If you run through the manual deployment before, revert the changes you have done in the `.yaml` files. The build scripts will modify them according to the provided `.env` file.
 
-Check that you adapt the values in the [code/.env-template](/code/.env-template) file. See section [Prepare the Deployment](/documentation/deploy/prepare-deployment/README.md) for more details.
+Check that you adapt the values in the [code/.env-template](../../../code/.env-template) file. See section [Prepare the Deployment](../prepare-deployment/README.md) for more details.
 
 ## Deployment Sequence
 

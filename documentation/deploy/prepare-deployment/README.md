@@ -103,7 +103,7 @@ For manual deployment as well for the scripts-based deployment, you need to prov
 
 For each of the components, there is a set of Kubernetes YAML files for deployment under folder **k8s**. All of these YAML files contain one or more placeholder values. The script replaces the values of the YAML files with the ones configured in your environment file.
 
-1. Copy the file [code/.env-template](/code/.env-template) to `code/.env`.
+1. Copy the file [code/.env-template](../../../code/.env-template) to `code/.env`.
 
 2. Modify the file and provide your values for:
    * EASYFRANCHISE_DOCKER_REPOSITORY
