@@ -1,7 +1,10 @@
 <template>
   <div id="adminCorner">
     <h1 class="mt-5 mb-5 text-center">Administration Corner</h1>
-
+    <fd-alert type="information" dismissible>
+      Disclaimer: This page should be visible only for the application administatrator of the customer via an authorization concept. For sake of simplicity, we haven't implemented any restrictions here.
+    </fd-alert>
+    
     <!-- Manage settings section -->
     <div class="container">
         <div class="row">

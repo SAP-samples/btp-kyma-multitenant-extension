@@ -19,12 +19,13 @@ To host the Easy Franchise application, we will create a provider subaccount.
 Now that we have created the provider subaccount, we will add entitlements.
 
 1. Navigate to the **Entitlements** page.
-2. Choose **Configure Entitlements** and then choose **Add Service Plans**.
-3. Search for **Kyma runtime**.
-4. Select the suggested plan.
-5. Select Entitlement **SAP HANA Cloud** and mark the plan **hana**.
-6. Choose **Add 2 Service Plans**.
-7. Save your changes.
+1. Choose **Configure Entitlements** and then choose **Add Service Plans**.
+1. Search for **Kyma runtime**.
+1. Select the suggested plan.
+1. Select Entitlement **SAP HANA Cloud** and mark the plan **hana**.
+1. Search for **Authorization and Trust Management Service** and choose the plan **broker**
+1. Choose **Add 3 Service Plans**.
+1. Save your changes.
 
    ![](images/Configure-Entitlements.png)
 
