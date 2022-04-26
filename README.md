@@ -2,7 +2,7 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-kyma-multitenant-extension)](https://api.reuse.software/info/github.com/SAP-samples/btp-kyma-multitenant-extension)
 
-> **Important Information**
+> **Important Information**   
 Based on feedback and further development, we are continuously working on improving this mission. As a result we will soon provide an optimized version of this mission.
 This require breaking changes in the documentation structure and some updates in the code. Therefore we strongly recommend:
     - To the persons who started the mission, to finalize the mission till 25.05.2022
