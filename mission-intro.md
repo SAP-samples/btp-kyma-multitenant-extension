@@ -2,10 +2,10 @@
 
 > **Important Information**  
 Based on feedback and further development, we are continuously working on improving this mission. As a result we will soon provide an optimized version of this mission.
-This require breaking changes in the documentation structure and some updates in the code. Therefore we strongly recommend:
-    - To the persons who started the mission, to finalize the mission till 25.05.2022
-    - To the persons who want to start the mission, to wait and start the mission from the 25.05.2022
-All changes will be documented in the mission change log. And the old mission version will be available in a separate branch in the GitHub repository.
+This require breaking changes in the documentation structure and some updates in the code. Therefore we strongly recommend:  
+    - To the persons who started the mission, to finalize the mission till 25.05.2022  
+    - To the persons who want to start the mission, to wait and start the mission from the 25.05.2022  
+All changes will be documented in the mission change log. And the old mission version will be available in a separate branch in the GitHub repository.  
 Thanks for your understanding.
 
 In this mission, you will learn how to develop a multitenant application running on the Kyma environment of the SAP Business Technology Platform (SAP BTP).
