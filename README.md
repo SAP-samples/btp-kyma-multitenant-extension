@@ -2,12 +2,12 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-kyma-multitenant-extension)](https://api.reuse.software/info/github.com/SAP-samples/btp-kyma-multitenant-extension)
 
-> **Important Information**   
+> **Important Information**  
 Based on feedback and further development, we are continuously working on improving this mission. As a result we will soon provide an optimized version of this mission.
-This require breaking changes in the documentation structure and some updates in the code. Therefore we strongly recommend:
-    - To the persons who started the mission, to finalize the mission till 25.05.2022
-    - To the persons who want to start the mission, to wait and start the mission from the 25.05.2022
-All changes will be documented in the mission change log. And the old mission version will be available in a separate branch in the GitHub repository.
+This require breaking changes in the documentation structure and some updates in the code. Therefore we strongly recommend:  
+    - To the persons who started the mission, to finalize the mission till 25.05.2022  
+    - To the persons who want to start the mission, to wait and start the mission from the 25.05.2022  
+All changes will be documented in the mission change log. And the old mission version will be available in a separate branch in the GitHub repository.  
 Thanks for your understanding.
 
 > Note: The content of this GitHub repository has been created as source for the SAP Discovery Center Mission [Develop a Multitenant Extension Application in SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3683/3726/). So we recommend using directly the mission in the SAP Discovery Center.
