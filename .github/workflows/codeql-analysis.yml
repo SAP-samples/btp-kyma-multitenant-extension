@@ -52,9 +52,11 @@ jobs:
       name: Build Java Project
       run: |
         echo "*************************** Build Java Application ********************************"
+        
+        echo "*************************** UnInstall openJDK 11   ********************************"
+        sudo apt-get remove openjdk-11-jre openjdk-11-jdk --purge
         echo "*************************** Install openJDK 17     ********************************"
-        sudo apt-get update
-        sudo apt-get install openjdk-17-jre
+        sudo apt-get update        
         sudo sudo apt-get install openjdk-17-jdk
         echo "*************************** Check version          ********************************"
         java -version 
