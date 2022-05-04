@@ -51,10 +51,14 @@ jobs:
     - if: matrix.language == 'java' 
       name: Build Java Project
       run: |
-        echo "Build Java Application"
+        echo "*************************** Build Java Application ********************************"
+        echo "*************************** Install openJDK 17     ********************************"
         sudo apt-get update
+        sudo apt-get install openjdk-17-jre
         sudo sudo apt-get install openjdk-17-jdk
-        java -version        
+        echo "*************************** Check version          ********************************"
+        java -version 
+        echo "*************************** Build Java Application ********************************"       
         cd ./code/backend/
         mvn clean install
 
