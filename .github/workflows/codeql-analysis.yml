@@ -74,10 +74,10 @@ jobs:
 
     - if: matrix.language == 'java' 
       name: Build Java      
-      - run: |
-       echo "Run, Build Application using script"
-       cd ./code/backend/
-       mvn clean install
+      run: |
+        echo "Run, Build Application using script"
+        cd ./code/backend/
+        mvn clean install
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
