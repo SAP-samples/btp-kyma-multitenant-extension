@@ -40,6 +40,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Install jq tool
+        run: |
+          sudo apt-get update
+          sudo sudo apt-get install openjdk-17-jdk
+
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
@@ -63,8 +68,13 @@ jobs:
 
     #   If the Autobuild fails above, remove it and uncomment the following three lines. 
     #   modify them (or add more) to build your code if your project, please refer to the EXAMPLE below for guidance.
+    - if: matrix.language == 'javascript' 
+    	name: Autobuild
+      uses: github/codeql-action/autobuild@v2
 
-    - run: |
+    - if: matrix.language == 'java' 
+      name: Build Java      
+      - run: |
        echo "Run, Build Application using script"
        cd ./code/backend/
        mvn clean install
