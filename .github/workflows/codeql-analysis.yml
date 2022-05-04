@@ -66,7 +66,8 @@ jobs:
 
     - run: |
        echo "Run, Build Application using script"
-       ./code/backend/mvn clean install
+       cd ./code/backend/
+       mvn clean install
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
