@@ -18,7 +18,7 @@ Here is a detailed overview of the BP service connections:
 
 OData (Open Data Protocol) is a standard that defines a set of best practices for building and consuming REST APIs. A metadata document defines available entities and methods. With this metadata, you are able to execute read/filter/create/update/delete Rest APIs to manipulate entities. See the [OData documentation](https://www.odata.org/documentation/odata-version-2-0) for more details.
 
-Read the following section [Enable the Business Partner OData V2 Rest API in an SAP S/4HANA Cloud system](../../appendix/enable-odata-of-s4hana/README.md),
+Read the following section [Enable the Business Partner OData V2 Rest API in an SAP S/4HANA Cloud system](../../../documentation/appendix/enable-odata-of-s4hana/README.md),
 which explains you how to enable the OData V2 Rest Endpoint for a communication arrangement user.
 
 The Business Partner data model is exposed via the following GET request (use Basic Auth with the communication arrangement user):
@@ -86,7 +86,7 @@ Here a JSON example showing the structure of the response (in reality there are 
 
 ## Service Implementation
 
-The BP service is a Java module of the [parent pom](../../../code/backend/pom.xml):
+The BP service is a Java module of the [parent pom](../../../code/easyfranchise/source/backend/pom.xml):
 
 ```
 <project>
@@ -97,14 +97,14 @@ The BP service is a Java module of the [parent pom](../../../code/backend/pom.xm
 </project>
 ```
 
-[BPService.java](../../../code/backend/bp-service/src/main/java/dev/kyma/samples/easyfranchise/bpservice/BPService.java) implements the REST services.
+[BPService.java](../../../code/easyfranchise/source/backend/bp-service/src/main/java/dev/kyma/samples/easyfranchise/bpservice/BPService.java) implements the REST services.
 The method *getBusinessPartner* first gets the destination details (SAP S/4HANA Cloud URL and authorization properties) from the destination configured in the subaccount and then performs the OData request against the SAP S/4HANA Cloud system.
 
 <!--
 ## Workaround for running the application locally
 When running BP Services local the problem arises how to access the SAP S/4HANA Cloud system. In the final Kyma runtime the destination definition of the customer subaccount will be used. But as we don't want to  mock all of this, a system property *local_dev=true* is introduced so that the local run can differ from the kyma run. In local run destination details area read from a `hiddenconfig.properties`.
 
-The method *getDestinationData* of [DestinationUtil.java](../../../code/backend/shared-code/src/main/java/dev/kyma/samples/easyfranchise/communication/DestinationUtil.java) makes use of *local_dev*  system property as the following code snippet shows:
+The method *getDestinationData* of [DestinationUtil.java](../../../code/easyfranchise/source/backend/shared-code/src/main/java/dev/kyma/samples/easyfranchise/communication/DestinationUtil.java) makes use of *local_dev*  system property as the following code snippet shows:
 ```
     public static ConnectionParameter getDestinationData(String subDomain, String destinationName) throws Exception {
         Destination destination = null;

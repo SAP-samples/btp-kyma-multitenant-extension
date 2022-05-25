@@ -1,19 +1,11 @@
 # Welcome to the Mission
 
-> **Important Information**  
-Based on feedback and further development, we are continuously working on improving this mission. As a result we will soon provide an optimized version of this mission.
-This require breaking changes in the documentation structure and some updates in the code. Therefore we strongly recommend:  
-    - To the persons who started the mission, to finalize the mission till 25.05.2022  
-    - To the persons who want to start the mission, to wait and start the mission from the 25.05.2022  
-All changes will be documented in the mission change log. And the old mission version will be available in a separate branch in the GitHub repository.  
-Thanks for your understanding.
-
 In this mission, you will learn how to develop a multitenant application running on the Kyma environment of the SAP Business Technology Platform (SAP BTP).
 The application called Easy Franchise is an extension of SAP S/4HANA Cloud and has been build based using microservices. Due to the complexity of this topic, our team has taken some compromise compared to a real application. So, this application doesn't aim to be used for productive usage. See the following solution diagram of the EasyFranchise application:
 
 ![](documentation/images/easyfranchise-diagrams/Slide4.jpeg)
 
-You can find the code of the application components in this GitHub [repository](code).
+You can find the code of the application components in this GitHub [repository](/code).
 
 ## Who Is This Mission For?
 
@@ -34,7 +26,7 @@ The tutorial is provided on the "as-is" basis. Currently, there are no known iss
 
 ## How to Obtain Support?
 
-First check if you find an answer in the [troubleshooting](documentation/troubleshooting/README.md) section.
+First check if you find an answer in the [troubleshooting](/documentation/troubleshooting/README.md) section.
 
 Create an issue to get support or to report a bug in [GitHub](https://github.com/SAP-samples/btp-kyma-multitenant-extension/issues/new/choose).
 
@@ -44,7 +36,7 @@ Have you found the enablement material easy to understand? Are you missing somet
 
 ## What's New
 
-Check the details of our last releases [here](documentation/discover/whats-new/README.md).
+Check the details of our last releases [here](/documentation/discover/whats-new/README.md).
 
 ## License
 

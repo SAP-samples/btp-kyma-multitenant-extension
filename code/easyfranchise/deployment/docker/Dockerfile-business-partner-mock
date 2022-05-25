@@ -1,0 +1,12 @@
+FROM node:latest
+
+EXPOSE 8081
+
+COPY code/easyfranchise/source/business-partner-mock-server/package.json .
+RUN npm install
+
+COPY code/easyfranchise/source/business-partner-mock-server/server.js .
+COPY code/easyfranchise/source/business-partner-mock-server/BusinessPartner-sample.json .
+
+CMD ["node", "server.js"]
+

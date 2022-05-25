@@ -15,7 +15,7 @@ The broker provides the following callbacks:
 
 - getDependencies: Return a list of dependent services. In our scenario **Destination** service is returned as dependent service.
 
-The full implementation can be found in [server.js](../../../code/broker/server.js) under folder [broker](../../../code/broker).
+The full implementation can be found in [server.js](../../../code/easyfranchise/source/broker/server.js) under folder [broker](../../../code/easyfranchise/source/broker).
 
 See the [official documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/3971151ba22e4faa9b245943feecea54.html) for more details.
 
@@ -23,7 +23,7 @@ See the [official documentation](https://help.sap.com/viewer/65de2977205c403bbc1
 
 Our callbacks are implemented using Node.js. Then the application is dockerized and deployed to Kyma along side a Kubernetes service to expose the application within Kyma cluster.
 
-The full deployment YAML file can be found in [deployment.yaml](../../../code/broker/k8s/deployment.yaml).
+The full deployment YAML file can be found in [deployment.yaml](../../../code/easyfranchise/deployment/k8s/broker.yaml).
 
 The tenant-specific application URL is exposed through APIRule, which needs to be created dynamically through onboarding/offboarding process using [Kubernetes client for NodeJs](https://github.com/kubernetes-client/javascript). To create such APIRule, proper RoleBinding is granted through following definition:
 
@@ -56,7 +56,7 @@ Note:
 
 - An APIRule for subscription is created so that the callback is reachable. Those callbacks need to be implemented by the application provider (discussed above).
 
-- Two placeholders `<provider-subdomain>` and `<cluster-domain>` are defined below, and will be replaced by deployment script. See section [ManualDeployment](../../deploy/manual-deployment/README.md) for more details.
+- Two placeholders `<provider-subdomain>` and `<cluster-domain>` are defined below, and will be replaced by deployment script. See section [ManualDeployment](../../../documentation/deploy/manual-deployment/README.md) for more details.
 
 ```yaml
 # Resource to create instance for SaaS Registry services

@@ -64,18 +64,18 @@ Here are the steps using the Kyma Dashboard:
 
 # Determine Placeholder Values
 
-For manual deployment as well for the scripts-based deployment, you need to provide multiple parameters.
+For manual deployment you need to provide multiple parameters.
 
-- *EASYFRANCHISE_DOCKER_REPOSITORY*: a Docker registry to store images, for example https://hub.docker.com/.
-- *PROVIDER_SUBDOMAIN*: the subdomain of the subaccount, where your application is deployed, for example, easyfranchise.
+- *Docker Repository*: a Docker registry to store images, for example https://hub.docker.com/.
+- *Subdomain*: the subdomain of the subaccount, where your application is deployed, for example, easyfranchise.
 
   ![subdomain screenshot](images/subdomain.png "subdomain")
 
-- *CLUSTER_DOMAIN*: the full Kyma cluster domain. You can find the cluster name in the downloaded **kubeconfig** file or in the Kyma dashboard, for example, `c-1ddaa90.kyma.ondemand.com`.
+- *Cluster Domain*: the full Kyma cluster domain. You can find the cluster name in the downloaded **kubeconfig** file or in the Kyma dashboard, for example, `c-1ddaa90.kyma.ondemand.com`.
 
   ![](images/kymaConsole.png)
 
-- *image-name*: The following code snippet shows the example of a Kubernetes deployment file containing the place-holder "image-name". The deployment script will build the "image-name" out of `EASYFRANCHISE_DOCKER_REPOSITORY` and replace it with actual image name. For the manual deployment, you will find a suggestion for the image name in the respective step.
+- *image-name*: The following code snippet shows the example of a Kubernetes deployment file containing the place-holder "image-name". You will find a suggestion for the image name in the respective deployment step.
 
   ```yaml
   apiVersion: apps/v1
@@ -99,23 +99,12 @@ For manual deployment as well for the scripts-based deployment, you need to prov
           name: ui
   ```
 
-## Create Environment File for Script-based Deployment
-
-For each of the components, there is a set of Kubernetes YAML files for deployment under folder **k8s**. All of these YAML files contain one or more placeholder values. The script replaces the values of the YAML files with the ones configured in your environment file.
-
-1. Copy the file [code/.env-template](../../../code/.env-template) to `code/.env`.
-
-2. Modify the file and provide your values for:
-   * EASYFRANCHISE_DOCKER_REPOSITORY
-   * PROVIDER_SUBDOMAIN
-   * CLUSTER_DOMAIN
-
 ## Deploy Database Secret
 
 A secret contains access information, that should not be saved in your code. That means that they should be created manually.
 The database secret contains information such as databasename, sqlendpoint, databasename username, and password.
 
-1. Create a secret file (for example, `db-secret.yaml`) that stores the information about the database. You can use the following template and adapt it with your information:
+1. Update the [db-secret.yaml](../../../code/easyfranchise/deployment/k8s/db-secret.yaml) file which stores the information about the database with the correct values for your database. The snippet below shows the information contained in the secret: 
 
    ```yaml
    apiVersion: v1
@@ -144,36 +133,6 @@ The database secret contains information such as databasename, sqlendpoint, data
 
    ```shell
    secret/db-config configured
-   ```
-
-## Deploy Email Secret
-
-As the Email service is sending mails, you need to provide information such as email user and password.
-
-1. Use the following template to create the secret file (for example, `email-secret.yaml`). Update `<email username>` and `<email password>`.
-
-   ```yaml
-   apiVersion: v1
-   kind: Secret
-   metadata:
-     name: email-secret
-     namespace: integration
-   type: kubernetes.io/basic-auth
-   stringData:
-     username: <email username>
-     password: <email password>
-   ```
-
-2. As the Email service will be deployed into the integration namespace, the attribute namespace in the secret should be set to integration. Use the following command to deploy the secret:
-
-   ```shell
-   kubectl apply -f <path to secret>
-   ```
-
-   If the command was successful, the output should look like this:
-
-   ```shell
-   secret/email-secret configured
    ```
 
 ## Registry Secret

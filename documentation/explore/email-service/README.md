@@ -11,8 +11,10 @@ The Email service is located within the *integration* namespace on Kyma. It is n
 
 ## Service Implementation
 
-Compared to the other components, this service is not tenant-aware as it simply sends emails to the given email addresses. 
-The service is implemented in the class [server.js](../../../code/email-service/server.js), where 2 APIs are implemented.
+Compared to the other components, this service is not tenant-aware as it simply sends emails to the given email addresses.
+The service is implemented in the class [server.js](../../../code/easyfranchise/source/email-service/server.js), where 2 APIs are implemented.
+
+To configure the email used to send the notifications, the customer admin has to go on the admin corner of the page and add the technical email address in the section **General Settings**.
 
 1. Method Notify Coordinator
 

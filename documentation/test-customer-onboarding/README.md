@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-You have gone through all the steps described in section [Deploy](../deploy/README.md).
+You have gone through all the steps described in section [Deploy](../../documentation/deploy/README.md).
 
 ## Overview
 
@@ -15,9 +15,9 @@ Before starting with the onboarding of the customer, a partner will typically ne
 * Details of mentors
 
 This section is structured as followed:
-* [Create a Consumer Subaccount](create-consumer-subaccount/README.md)
-* [Configure a Destination](configure-destination/README.md)
-* [Subscribe to the Easy Franchise Application](subscribe-easyfranchise-app/README.md)
-* [Manage Users](manage-users/README.md)
-* [Run the Application](run-application/README.md)
-* [OPTIONAL: Test the Multitenancy](test-multitenancy/README.md)
+* [Create a Consumer Subaccount](../../documentation/test-customer-onboarding/create-consumer-subaccount/README.md)
+* [Configure a Destination](../../documentation/test-customer-onboarding/configure-destination/README.md)
+* [Subscribe to the Easy Franchise Application](../../documentation/test-customer-onboarding/subscribe-easyfranchise-app/README.md)
+* [Manage Users](../../documentation/test-customer-onboarding/manage-users/README.md)
+* [Run the Application](../../documentation/test-customer-onboarding/run-application/README.md)
+* [OPTIONAL: Test the Multitenancy](../../documentation/test-customer-onboarding/test-multitenancy/README.md)
