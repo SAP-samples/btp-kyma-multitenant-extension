@@ -3,7 +3,7 @@
 ### On SAP Side
 
    * SAP is responsible for operating the overall infrastructure of SAP BTP, including monitoring, patching, applying software updates, and maintaining the infrastructure and underlying operating systems. SAP is also responsible for technical operations such as monitoring SAP BTP services, providing health check services, managing capacity, performing troubleshooting and housekeeping, implementing regular updates, and managing incidents.
-   * SAP creates your global account and provides you with the resources and services you've purchased.
+   * SAP creates your global account and provides the resources and services you've purchased.
    * Finally, SAP is responsible for SAP HANA database platform operations, including hardware configuration management, backup and recovery, space management, security management, and providing SAP HANA data center service point revisions as self-service update options.
 
 ### On the Partner/Customer Side

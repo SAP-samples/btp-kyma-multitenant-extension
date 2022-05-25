@@ -61,8 +61,7 @@ We need a space in the Cloud Foundry environment, where we can create the **SAP 
 
    ![](images/Create-Space.png)
 
-
-##  Validate Account Setup
+## Validate Account Setup
 
 Follow the steps to verify that the setup was successful:
 
@@ -76,5 +75,4 @@ Follow the steps to verify that the setup was successful:
 
    ![](images/kymadashboard.png)
 
-   Per default, the user that has enabled the Kyma Environment is granted with the cluster admin role. In order to give access to further users have a look at the [Kyma Help Documentation](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/148ae38b7d6f4e61bbb696bbfb3996b2.html?locale=en-US). You need to follow the steps described under Kyma 2.x. 
-
+   Per default, the user that has enabled the Kyma Environment is granted with the cluster admin role. In order to give access to further users have a look at the [Kyma Help Documentation](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/148ae38b7d6f4e61bbb696bbfb3996b2.html?locale=en-US). You need to follow the steps described under Kyma 2.x.

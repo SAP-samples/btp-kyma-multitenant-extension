@@ -1,0 +1,11 @@
+FROM node:latest
+
+EXPOSE 3002
+
+COPY code/easyfranchise/source/email-service/package.json .
+RUN npm install
+
+COPY code/easyfranchise/source/email-service/server.js .
+
+CMD ["node", "server.js"]
+

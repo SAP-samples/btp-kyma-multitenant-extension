@@ -1,5 +1,14 @@
 # What's New
 
+## 2022-05-25
+> Important note: This release brings major changes to the existing mission.
+
+   * Updated code structure to optimize deployment (old structure is still available under the branch main_old_structure)
+   * New chapter on how to connect an S/4 HANA onPremise System via SAP Cloud Connector
+   * Integration of BTP Setup Automator to prepare the BTP account and deploy the EasyFranchise application
+   * Implementation of multitenant aware e-Mail configuration
+   * Optimization of the deployment script
+
 ## 2022-03-18
    * Updated mission description to reflect changes for Kyma 2.x
 

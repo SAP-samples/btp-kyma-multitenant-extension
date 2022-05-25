@@ -10,22 +10,22 @@ Optionally, you may want to run the application locally before you deploy it in 
 
 In this section you will learn how to build and run the Database service, the Business Partner Service, and the Easy Franchise service locally.
 To understand the coding, read these exploration sections:
-* [Information about the Java Microservices](../../explore/README.md#additional-information-about-the-java-microservices)
-* [Database Service](../../explore/db-service/README.md)
-* [Business Partner Service](../../explore/bp-service/README.md)
-* [Easy Franchise Service](../../explore/ef-service/README.md)
+* [Information about the Java Microservices](../../../documentation/explore/README.md#additional-information-about-the-java-microservices)
+* [Database Service](../../../documentation/explore/db-service/README.md)
+* [Business Partner Service](../../../documentation/explore/bp-service/README.md)
+* [Easy Franchise Service](../../../documentation/explore/ef-service/README.md)
 
 ### Prerequisites
 
-- You have installed Java and Maven as described in the section [Local Development Setup](../set-up-local-environment/README.md).
-- You have prepared the SAP HANA Cloud properties for a JDBC connection as described in section [Get and Configure your SAP HANA Cloud Instance](../configure-hana/README.md).
-- You have an SAP S/4HANA Cloud system or a Business Partner mock server up and running as described in section [SAP S/4HANA or Business Partner Mock Server](../configure-s4/README.md).
+- You have installed Java and Maven as described in the section [Local Development Setup](../../../documentation/prepare/set-up-local-environment/README.md).
+- You have prepared the SAP HANA Cloud properties for a JDBC connection as described in section [Get and Configure your SAP HANA Cloud Instance](../../../documentation/prepare/configure-hana/README.md).
+- You have an SAP S/4HANA Cloud system or a Business Partner mock server up and running as described in section [SAP S/4HANA or Business Partner Mock Server](../../../documentation/prepare/configure-s4/README.md).
 
 ### Configure Properties
 
 For your local run, you have to configure some properties in a `hiddenconfig.properties` file:
 1. Clone the sources of this GitHub [repository](https://github.com/SAP-samples/btp-kyma-multitenant-extension) or download and extract the ZIP file to your local system.
-2. Copy the file [code/backend/shared-code/src/main/resources/hiddenconfig-template.properties](../../../code/backend/shared-code/src/main/resources/hiddenconfig-template.properties) to `hiddenconfig.properties` in the same folder.
+2. Copy the file [code/backend/shared-code/src/main/resources/hiddenconfig-template.properties](../../../code/easyfranchise/source/backend/shared-code/src/main/resources/hiddenconfig-template.properties) to `hiddenconfig.properties` in the same folder.
 3. Maintain your SAP HANA Cloud JDBC connection properties in the `db.*` section. This should look like this:
 
    ```
@@ -35,9 +35,9 @@ For your local run, you have to configure some properties in a `hiddenconfig.pro
    db.password: your_efadmin_password
    ```
 
-   See [How to find JDBC Connection Properties](../configure-hana#how-to-find-jdbc-connection-properties) for more details.
+   See [How to find JDBC Connection Properties](../../../documentation/prepare/configure-hana#how-to-find-jdbc-connection-properties) for more details.
 
-4. Update the `s4hana.destination.*` properties. You can either use your SAP S/4HANA Cloud system, or the [Business Partner mock server](../../../code/business-partner-mock-server).
+4. Update the `s4hana.destination.*` properties. You can either use your SAP S/4HANA Cloud system, or the [Business Partner mock server](../../../code/easyfranchise/source/business-partner-mock-server).
 
    If you use the SAP Business Partner mock server to run the application locally, use:
 
@@ -59,12 +59,12 @@ For your local run, you have to configure some properties in a `hiddenconfig.pro
    s4hana.destination.Type: http
    ```
 
-   If you don't have a **Communication User** learn how to get one in section [Enable the Business Partner OData V2 Rest API in an SAP S/4HANA Cloud System](../../appendix/enable-odata-of-s4hana/README.md).
+   If you don't have a **Communication User** learn how to get one in section [Enable the Business Partner OData V2 Rest API in an SAP S/4HANA Cloud System](../../../documentation/appendix/enable-odata-of-s4hana/README.md).
 
 ### Build
 
 Build the project:
-1. Open a command line window and change to directory to [code/backend](../../../code/backend) containing the main [pom.xml](../../../code/backend/pom.xml). Run the following Maven command:
+1. Open a command line window and change to directory to [code/backend](../../../code/easyfranchise/source/backend) containing the main [pom.xml](../../../code/easyfranchise/source/backend/pom.xml). Run the following Maven command:
 
    ```mvn clean install```
 
@@ -93,7 +93,7 @@ Build the project:
 
 1. Run the following commands to start the services. Start each in a separate command line window and in the correct folder.
 
-   In folder [code/backend/ef-service](../../../code/backend/ef-service):
+   In folder [code/backend/ef-service](../../../code/easyfranchise/source/backend/ef-service):
 
    ||command (``> cd ef-service``)|
    |:-----|:----|
@@ -101,14 +101,14 @@ Build the project:
    |unix   |```java -cp "./target/*:./target/dependency/*" -Dlocal_dev=true dev.kyma.samples.easyfranchise.EFServer 8080```|
 
 
-   In folder [code/backend/bp-service](../../../code/backend/bp-service):
+   In folder [code/backend/bp-service](../../../code/easyfranchise/source/backend/bp-service):
 
    ||command (``> cd bp-service``)|
    |:-----|:----|
    |windows|```java -cp ".\target\*;.\target\dependency\*" -Dlocal_dev=true dev.kyma.samples.easyfranchise.ServerApp 8100```|
    |unix   |```java -cp "./target/*:./target/dependency/*" -Dlocal_dev=true dev.kyma.samples.easyfranchise.ServerApp 8100```|
 
-   In folder [code/backend/db-service](../../../code/backend/db-service):
+   In folder [code/backend/db-service](../../../code/easyfranchise/source/backend/db-service):
 
    ||command (``> cd db-service``)|
    |:-----|:----|
@@ -128,7 +128,7 @@ Build the project:
 
 Database tables in EFADMIN schema are not existing yet.
 [Hibernate](https://hibernate.org/orm/) creates the tables at runtime when they are needed for the first time.
-To understand how this works, see section [Database Service](../../explore/db-service/README.md) for more details.
+To understand how this works, see section [Database Service](../../../documentation/explore/db-service/README.md) for more details.
 
 Let's now execute the first REST call to trigger the table creation. This tutorial uses [curl](https://curl.se/), but feel free to use any other REST tool of your choice.
 Windows users have to rely on unix-like shells to execute the curl commands we present here. Using *curl* for windows would require a different command syntax.
@@ -215,7 +215,7 @@ Most of the properties of a franchisee are read from the SAP S/4HANA Cloud syste
    https://<S4-HANA-CLOUD-PATH>/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner
    ```
 
-2. The class [BPService.java](../../../code/backend/bp-service/src/main/java/dev/kyma/samples/easyfranchise/bpservice/BPService.java) just queries for business partners. For a more detailed explanation, see section [Business Partner Service](../../explore/bp-service/README.md).
+2. The class [BPService.java](../../../code/easyfranchise/source/backend/bp-service/src/main/java/dev/kyma/samples/easyfranchise/bpservice/BPService.java) just queries for business partners. For a more detailed explanation, see section [Business Partner Service](../../../documentation/explore/bp-service/README.md).
     Now, let's call a REST API in our Business Partner service. If you chose a different tenant ID above, update the request accordingly:
 
     ```
@@ -379,8 +379,8 @@ The REST calls of the Easy Franchise service are used from the UI. Let's have a 
 
 ### Prerequisites
 
-- You have Node.js installed as described in the section [Development Setup](../set-up-local-environment/README.md)
-- You have an email account, which can be used to send emails (for example, Gmail)
+- You have Node.js installed as described in the section [Development Setup](../../../documentation/prepare/set-up-local-environment/README.md)
+- You have a gmail account, which can be used to send emails
 
 ### Configure Properties
 
@@ -388,15 +388,15 @@ The Email service prepares the notification and sends it to a mail server, which
 
 Add your username/password in the following command ans run it in a terminal:
 
-```shell
-export EMAIL_USERNAME=<Username>
-export EMAIL_PASSWORD=<Password>
-```
-> Note: If you are also using Gmail, be sure that 2FA is disabled. To verify this, see [Google Account Security](https://myaccount.google.com/security).
+ ```curl --verbose -X PUT "http://localhost:8080/easyfranchise/rest/efservice/v1/config/notificationconfig" -H "Content-Type: application/json" -d '{"email":"gmail account","password":"gmail application password"}'```
+
+   Remember that the original REST call would have to provide the tenantId via header `-H 'x-tenant-id: {tenantId}'`. In the local run, it's taken from the `hiddenconfig.properties` file.
+
+> Note: Due to recent changes in the google security settings you need to use an application password for authentication see [Google Account Security]https://myaccount.google.com/apppasswords).
 
 ### Build
 
-1. Open a command line window and navigate to the directory [code/email-service](../../../code/email-service).
+1. Open a command line window and navigate to the directory [code/email-service](../../../code/easyfranchise/source/email-service).
 
 2. Build the project:
 
@@ -438,7 +438,7 @@ Application listening on port 3002
 
 ### Test the Email Service
 
-The Email service should listen to http://localhost:3002. Check out the [API Endpoints](../../explore/email-service/README.md#list-of-api-endpoints) in the Explore section.
+The Email service should listen to http://localhost:3002. Check out the [API Endpoints](../../../documentation/explore/email-service#list-of-api-endpoints) in the Explore section.
 
 
 ## 3. Run User Interface Locally

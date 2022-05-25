@@ -4,9 +4,9 @@ Welcome to this tutorial explaining how SAP partners can develop a multitenant e
 
 Before starting the tutorial, here is all you need to know:
 
-* [Become an SAP Partner](become-sap-partner/README.md)
-* [Onboard to SAP BTP as an SAP partner](onboard-partner-on-btp/README.md)
-* [Business story](business-story/README.md)
-* [Multitenancy](multitenancy/README.md)
-* [Prerequisites](prerequisites/README.md)
-* [What's New](whats-new/README.md)
+* [Become an SAP Partner](../../documentation/discover/become-sap-partner)
+* [Onboard to SAP BTP as an SAP partner](../../documentation/discover/onboard-partner-on-btp/README.md)
+* [Business story](../../documentation/discover/business-story/README.md)
+* [Multitenancy](../../documentation/discover/multitenancy/README.md)
+* [Prerequisites](../../documentation/discover/prerequisites/README.md)
+* [What's New](../../documentation/discover/whats-new/README.md)

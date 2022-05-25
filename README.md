@@ -2,14 +2,6 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-kyma-multitenant-extension)](https://api.reuse.software/info/github.com/SAP-samples/btp-kyma-multitenant-extension)
 
-> **Important Information**  
-Based on feedback and further development, we are continuously working on improving this mission. As a result we will soon provide an optimized version of this mission.
-This require breaking changes in the documentation structure and some updates in the code. Therefore we strongly recommend:  
-    - To the persons who started the mission, to finalize the mission till 25.05.2022  
-    - To the persons who want to start the mission, to wait and start the mission from the 25.05.2022  
-All changes will be documented in the mission change log. And the old mission version will be available in a separate branch in the GitHub repository.  
-Thanks for your understanding.
-
 > Note: The content of this GitHub repository has been created as source for the SAP Discovery Center Mission [Develop a Multitenant Extension Application in SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3683/3726/). So we recommend using directly the mission in the SAP Discovery Center.
 
 ## Description
@@ -19,8 +11,8 @@ The application Easy Franchise has been build to help stakeholders to learn how 
 Due to the complexity of this topic, our team has taken some compromise compared to a real application. So, this application doesn't aim to be used for productive usage.
 
 The repository has been structured into 2 different sections:
-* [documentation](documentation/README.md): Here you will find details about the architecture, the components, and a step-by-step guide to set up the application EasyFranchise.
-* [code](code/README.md): Here you will find the code of all the components needed to run the application.
+* [documentation](/documentation/README.md): Here you will find details about the architecture, the components, and a step-by-step guide to set up the application EasyFranchise.
+* [code](/code/easyfranchise/source/README.md): Here you will find the code of all the components needed to run the application.
 
 Find more details in the solution diagram of the EasyFranchise application:
 ![](documentation/images/easyfranchise-diagrams/Slide4.jpeg)
@@ -41,14 +33,14 @@ The tutorial focuses on the following aspects:
 
 ## Requirements
 
-You can find all requirements to execute the tutorial in this [section](documentation/discover/prerequisites/README.md).
+You can find all requirements to execute the tutorial in this [section](/documentation/discover/prerequisites/README.md).
 
 ## Where to Start?
 
-* You want to understand the scenario, the problem statement, or the architecture? Start with the section [discover](documentation/discover/README.md).
-* You would like to explore application components? Start [exploring](documentation/explore/README.md) and get more details.
-* As developer you want to try it out? Start directly with the [preparation steps](documentation/prepare/README.md).
-* Code is your world? You don't want to waste time with reading explanations or architecture details? Here is the [code](code/README.md).
+* You want to understand the scenario, the problem statement, or the architecture? Start with the section [discover](/documentation/discover/README.md).
+* You would like to explore application components? Start [exploring](/documentation/explore/README.md) and get more details.
+* As developer you want to try it out? Start directly with the [preparation steps](/documentation/prepare/README.md).
+* Code is your world? You don't want to waste time with reading explanations or architecture details? Here is the [code](/code/easyfranchise/source/README.md).
 
 ## Known Issues
 
@@ -56,7 +48,7 @@ The tutorial is provided on the "as-is" basis. Currently, there are no known iss
 
 ## How to Obtain Support?
 
-Check if you find an answer in the [troubleshooting](documentation/troubleshooting/README.md) section.
+Check if you find an answer in the [troubleshooting](/documentation/troubleshooting/README.md) section.
 
 Create an issue to get support or to report a bug using [GitHub](https://github.com/SAP-samples/btp-kyma-multitenant-extension/issues/new/choose).
 
@@ -66,7 +58,7 @@ Have you found the enablement material easy to understand? Are you missing somet
 
 ## What's New
 
-Check the details of our last [releases](documentation/discover/whats-new/README.md).
+Check the details of our last [releases](/documentation/discover/whats-new/README.md).
 
 ## License
 

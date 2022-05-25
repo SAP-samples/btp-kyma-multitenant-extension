@@ -1,0 +1,17 @@
+FROM node:14
+
+WORKDIR /app
+
+COPY code/easyfranchise/source/approuter/package.json .
+RUN npm install
+
+COPY code/easyfranchise/source/approuter/approuter-start.js .
+COPY code/easyfranchise/source/approuter/xs-app.json .
+
+EXPOSE 5000
+
+# Belos is using approuter as standalone application
+# CMD ["npm", "start"]
+
+# Below is used to start customized approuter, see approuter-start.js for more details
+CMD ["node", "approuter-start.js"]

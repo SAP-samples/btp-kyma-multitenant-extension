@@ -1,0 +1,12 @@
+FROM node:14
+
+EXPOSE 3002
+
+COPY code/easyfranchise/source/broker/package.json .
+RUN npm install
+
+COPY code/easyfranchise/source/broker/server.js .
+COPY code/easyfranchise/source/broker/createApiRule.js .
+
+CMD ["node", "server.js"]
+

@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: email-service
+  name: email-service
+  namespace: integration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: email-service
+  template:
+    metadata:
+      labels:
+        app: email-service
+    spec:
+      imagePullSecrets:
+        - name: registry-secret # replace with your own registry secret
+      containers:
+      - image: <image-name> # use your own image
+        name: email-service
+        imagePullPolicy: Always
+        env:        
+        - name: SERVICE_LIST
+          valueFrom:
+            configMapKeyRef:
+              key: backend.properties
+              name: backend-configmap        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: email-service
+  namespace: integration
+  labels:
+    run: email-service
+spec:
+  ports:
+  - port: 3002
+    protocol: TCP
+    targetPort: 3002
+  selector:
+    app: email-service
+  type: ClusterIP
+ 

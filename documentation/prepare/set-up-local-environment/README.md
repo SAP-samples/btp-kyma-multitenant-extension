@@ -9,13 +9,14 @@ To execute all the necessary steps of the tutorial, you will need the following 
 * [Docker Hub Account](https://docs.docker.com/get-started/#download-and-install-docker)
 * [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/#kubectl)
 * [Kubernetes OpenID Connect (OIDC) authentication](https://github.com/int128/kubelogin)
+* [jq](https://stedolan.github.io/jq/) 
+* [uuidgen](https://packages.ubuntu.com/bionic/uuid-runtime)
 
 ## Windows User
 
 We recommend using a Linux subsystem for the tutorial as our scripts are only available as bash scripts. Furthermore, most of the examples around Kubernetes, for example, are written for Linux/MacOs environments. See [Install WSL](https://docs.microsoft.com/en-us/windows/wsl/install) in the Microsoft documentation for more details.
 
-We recommend using Ubuntu 21.04, which is available as a community preview, as older versions do not support OpenJDK11 or later. The preview version is available at [Ubuntu on Windows Community](https://www.microsoft.com/store/apps/9P9Q5ZH1HRR0).
-
+We recommend using Ubuntu 22.04, as older versions do not support OpenJDK11 or later.
 If you have chosen to use the Linux, you need to choose the Linux installation option for the following tools.
 
 ## Local Development and Testing
@@ -163,6 +164,21 @@ It will be needed by calling manual or script-based deployment.
    ```
    sudo apt-get install jq
    ```
+
+### uuidgen
+
+1. Check if you have **uuidgen** installed:
+
+   ```
+   uuidgen
+   ```
+
+2. If you need to install it, you can do this with the following command:
+
+   ```
+   sudo apt-get install uuid-runtime
+   ```
+
 
 ## Get the Project Source
 
