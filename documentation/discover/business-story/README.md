@@ -20,7 +20,7 @@ Here is a technical overview of the partner application:
 
 ![](../../images/kyma-diagrams-focus-components/Slide9.jpeg)
 
-# Involved Personas
+# Roles Involved
 
 ### On the Easy Franchise Partner Side
 
@@ -46,4 +46,4 @@ Here is a technical overview of the partner application:
 * Get email notification, when a new business partner is created in the SAP S/4HANA Cloud system
 
 **Mentor**
-* Get email notification, when assigned as mentor to a franchisee
+* Gets an email notification, when assigned as a mentor to a franchisee.

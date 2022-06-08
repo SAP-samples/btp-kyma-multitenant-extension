@@ -6,8 +6,8 @@ To execute all the necessary steps of the tutorial, you will need the following 
 
 * SAP S/4HANA Cloud system or you can use our mock server.
 * Global account in SAP Business Technology Platform (SAP BTP)
-  * Kyma runtime enabled
-  * SAP HANA Cloud service
+  * SAP BTP, Kyma runtime enabled
+  * SAP HANA Cloud
   * Destination service
 
 ## Tools
