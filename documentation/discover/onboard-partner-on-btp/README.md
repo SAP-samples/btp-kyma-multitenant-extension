@@ -1,6 +1,6 @@
 # Onboard to SAP BTP as an SAP Partner
 
-> To view the links, correctly please login to SAP Partner Portal.
+> To see the links, correctly, please log in to SAP Partner Portal.
 * [Explore SAP Business Technology Platform at SAP Partner Portal](https://partneredge.sap.com/en/products/btp/about.html)
 * [SAP Partner License Model](https://partneredge.sap.com/en/partnership/licenses/tdd.html?#section-1-accordion-panel-section-row-item_2-widewidgets-accordionitem)
 * [SAP Partner Price List](https://partneredge.sap.com/en/library/assets/partnership/sales/order_license/pl_pl_part_price_list.html)
