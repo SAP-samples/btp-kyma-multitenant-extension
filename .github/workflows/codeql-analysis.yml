@@ -59,7 +59,7 @@ jobs:
     - if: matrix.language == 'java' 
       name: Build Java Project
       run: |        
-        cd ./code/easyfranchise/source
+        cd ./code/easyfranchise/source/backend
         mvn clean install        
 
     - name: Perform CodeQL Analysis
