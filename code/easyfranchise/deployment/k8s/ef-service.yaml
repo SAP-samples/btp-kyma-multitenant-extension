@@ -23,6 +23,7 @@ spec:
       containers:
       - image: <image-name>
         name: ef-service
+        imagePullPolicy: Always
         resources: {}
         ports:
           - containerPort: 8080

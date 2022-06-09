@@ -17,6 +17,7 @@ spec:
       containers:
       - image: <image-name> # use your own image
         name: approuter
+        imagePullPolicy: Always
         env:
         - name: destinations
           valueFrom: 

@@ -20,6 +20,7 @@ spec:
       containers:
       - image: <image-name> # e.g. cp-enablement.docker.repositories.sap.ondemand.com/com.sap.easyfranchise/s4hanamock:<version>
         name: business-partner-mock
+        imagePullPolicy: Always
         ports:
           - containerPort: 8081
 ---

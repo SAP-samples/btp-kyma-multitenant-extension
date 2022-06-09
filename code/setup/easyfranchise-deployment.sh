@@ -288,30 +288,30 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     fi
     log "Cluster Access successful"
     echo 
-    log "Step 2.2 - Check active subscriptions"
-      # https://saas-manager.cfapps.eu10.hana.ondemand.com/api#/API%20order%20a/getApplicationSubscriptions
-
-    # determine the kyma runtime region, e.g. eu10 or eu20
-    REGION="$(kubectl get ClusterServiceBroker | sed -nr 's/.*service-manager.cfapps.(.*).hana.*/\1/p' | head -n 1)"
-    log "Checking active subscription in cluster \033[1;31m $(kubectl config current-context) \033[0m of region $REGION"
-    CLIENT_ID="$(kubectl -n integration get secrets saas-registry-service-binding --ignore-not-found -o jsonpath='{.data.clientid}' | base64 --decode)"
-    CLIENT_SECRET="$(kubectl -n integration get secrets saas-registry-service-binding --ignore-not-found -o jsonpath='{.data.clientsecret}' | base64 --decode)"
-    URL="$(kubectl -n integration get secrets saas-registry-service-binding --ignore-not-found -o jsonpath='{.data.url}' | base64 --decode)"
-    TOKEN="$(curl -s -L -X POST "$URL/oauth/token" -H 'Content-Type: application/x-www-form-urlencoded' -u "$CLIENT_ID:$CLIENT_SECRET" -d 'grant_type=client_credentials' | jq -r '.access_token')"
+#    log "Step 2.2 - Check active subscriptions"
+    # https://saas-manager.cfapps.eu10.hana.ondemand.com/api#/API%20order%20a/getApplicationSubscriptions
+#
+    #determine the kyma runtime region, e.g. eu10 or eu20
+#    REGION="$(kubectl get ClusterServiceBroker | sed -nr 's/.*service-manager.cfapps.(.*).hana.*/\1/p' | head -n 1)"
+#    log "Checking active subscription in cluster \033[1;31m $(kubectl config current-context) \033[0m of region $REGION"
+#    CLIENT_ID="$(kubectl -n integration get secrets saas-registry-service-binding --ignore-not-found -o jsonpath='{.data.clientid}' | base64 --decode)"
+#    CLIENT_SECRET="$(kubectl -n integration get secrets saas-registry-service-binding --ignore-not-found -o jsonpath='{.data.clientsecret}' | base64 --decode)"
+#    URL="$(kubectl -n integration get secrets saas-registry-service-binding --ignore-not-found -o jsonpath='{.data.url}' | base64 --decode)"
+#    TOKEN="$(curl -s -L -X POST "$URL/oauth/token" -H 'Content-Type: application/x-www-form-urlencoded' -u "$CLIENT_ID:$CLIENT_SECRET" -d 'grant_type=client_credentials' | jq -r '.access_token')"
     # check active subscription
     # echo "active subscription in region $REGION: "
     #curl  -H "Authorization: Bearer $TOKEN"   "https://saas-manager.cfapps.${REGION}.hana.ondemand.com/saas-manager/v1/application/subscriptions"
-    subscription=$(curl -sS -H "Authorization: Bearer $TOKEN"   "https://saas-manager.cfapps.${REGION}.hana.ondemand.com/saas-manager/v1/application/subscriptions")
-    echo "$subscription" | jq '.'
-    LENGTH="$(echo "$subscription" | jq '.subscriptions | length')"    
-    echo ""
-    if [ "$LENGTH" -gt 0 ]; then
-        read -p "There are active subscriptions in your subaccount. Please make sure that you did not change the saas registry or xsuaa service instance described in ef-service.yaml. Continue with deployment? (y/n) " -n 1 -r
-        if [[ $REPLY =~ ^[Nn]$ ]]; then
-          exit 1
-        fi
-    fi
-    echo
+#    subscription=$(curl -sS -H "Authorization: Bearer $TOKEN"   "https://saas-manager.cfapps.${REGION}.hana.ondemand.com/saas-manager/v1/application/subscriptions")
+#    echo "$subscription" | jq '.'
+#    LENGTH="$(echo "$subscription" | jq '.subscriptions | length')"    
+#    echo ""
+#    if [ "$LENGTH" -gt 0 ]; then
+#        read -p "There are active subscriptions in your subaccount. Please make sure that you did not change the saas registry or xsuaa service instance described in ef-service.yaml. Continue with deployment? (y/n) " -n 1 -r
+#        if [[ $REPLY =~ ^[Nn]$ ]]; then
+#          exit 1
+#        fi
+#    fi
+#    echo
     echo
 
     log "================================================================================================="
