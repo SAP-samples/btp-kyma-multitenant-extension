@@ -1,8 +1,5 @@
 # What's New
 
-## 2022-06-06 
-  * Migrated to [SAP Business Technology Platform (SAP BTP) Service Operator for Kubernetes](https://github.com/SAP/sap-btp-service-operator)
-
 ## 2022-05-25
 > Important note: This release brings major changes to the existing mission.
 

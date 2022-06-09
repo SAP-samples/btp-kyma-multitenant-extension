@@ -17,6 +17,7 @@ spec:
       containers:
       - image: <image-name>
         name: ui
+        imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service

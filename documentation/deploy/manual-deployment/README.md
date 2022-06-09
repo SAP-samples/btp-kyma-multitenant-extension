@@ -36,20 +36,6 @@ This section explains how to deploy each component manually to the Kyma cluster.
 
 The Approuter deployment is done through two steps. The first step creates the required instances to XSUAA and the subscription service. The second step builds and deploy the actual Approuter image.
 
-1. Run the script [checkActiveSubscription.sh](../../../code/setup/checkActiveSubscription.sh) in folder `code/setup` to make sure that there is no active subscription:
-
-   ```shell
-   > ./checkActiveSubscription.sh
-   ```
-
-   If there are no subscriptions the response should be like this:
-
-   ```
-   Checking active subscription in cluster  shoot--kyma--c-84e9cbb  of region eu10
-   {"subscriptions":[]}
-   0
-   ```
-
 1. Kubernetes artifacts for XSUAA service, SaaS Registry service, and Destination service are defined in [btp-services.yaml](../../../code/easyfranchise/deployment/k8s/btp-services.yaml). Adapt the following values in the file:
 
    - `<cluster-domain>` the full Kyma cluster domain. You can find the cluster name in the downloaded **kubeconfig** file or in the Kyma dashboard, for example, `c-1ddaa90.kyma.ondemand.com`.
