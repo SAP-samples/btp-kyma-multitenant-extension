@@ -4,7 +4,7 @@
 
 The Approuter is a Node.js [module](https://www.npmjs.com/package/@sap/approuter), which is available in the [npm](https://docs.npmjs.com/about-npm) repository. It represents a single entry point to an application, which might consist of several different apps (microservices). In our use case, it has the responsibility of performing authentication, authorization, and forwarding requests to Java based application **Easy Franchise Service**.
 
-To understand how the Approuter is involved in the authentication flow and witch routs are needed, see section [Understand the Multitenancy Concept - Authentication Flow](../../../documentation/discover/multitenancy/README.md#authentication-flow).
+To understand how the Approuter is involved in the authentication flow and which routes are needed, see section [Understand the Multitenancy Concept - Authentication Flow](../../../documentation/discover/multitenancy/README.md#authentication-flow).
 
 ## Configuring URL Routing
 
