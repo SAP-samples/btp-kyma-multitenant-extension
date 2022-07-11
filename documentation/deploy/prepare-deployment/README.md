@@ -121,7 +121,7 @@ The database secret contains information such as databasename, sqlendpoint, data
        db.password: <password of the admin user>
    ```
 
-   The `db.name` as well as the `db.sqlendpoint` for the secret can be found in the SAP BTP cockpit in the SAP HANA Cloud service overview. For the user credentials `db.admin` and `db.password`, you should use the **EFADMIN** database user.
+   The `db.name` as well as the `db.sqlendpoint` for the secret can be found in the SAP BTP cockpit in the SAP HANA Cloud service overview. For the user credentials `db.admin` and `db.password`, you should use the **DBADMIN** database user.
 
 2. As the secret is only used by the DB service, it needs to be deployed in the integration namespace. The namespace is defined in the secret itself. Use the following command to deploy the secret:
 

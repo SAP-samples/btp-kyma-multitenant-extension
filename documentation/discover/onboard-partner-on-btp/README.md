@@ -27,8 +27,8 @@ The SAP BTP, Kyma environment allows you to build simple functions, develop, and
 * [Developing in the SAP BTP, ABAP environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/31367ef6c3e947059e0d7c1cbfcaae93.html)
 The SAP BTP, ABAP environment is a Platform-as-a-Service that allows you to extend existing ABAP-based applications and develop ABAP cloud applications decoupled from the digital core. Partners can leverage their ABAP know-how in the cloud and reuse existing ABAP assets by writing their source code with ABAP Development Tools for Eclipse.
 
-   To start development in the ABAP environment as a developer, follow these steps:
-   1. Setup Local ABAP Development Tools (ADT).
-   2. Connect to the ABAP system.
-   3. Create software component (optional).
-   4. Develop and deploy application.
+   To start development in the ABAP environment as a developer, follow these steps:  
+   1\. Setup Local ABAP Development Tools (ADT).  
+   2\. Connect to the ABAP system.  
+   3\. Create software component (optional).  
+   4\. Develop and deploy application.  

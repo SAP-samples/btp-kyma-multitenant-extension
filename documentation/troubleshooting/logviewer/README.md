@@ -6,16 +6,16 @@ There are two preconfigured ways to view logs:
 
 ## Pod Logs
 
-1. To view the pod logs open the **Kyma dashboard** (see [this page at the bottom](../../../documentation/prepare/setup-btp-environment/README.md) for help). Then select the namespace that contains the pod you are interested in. Expand the **Workloads** in the left side menu.
-1. Choose a pod and click the three dots on the right-hand side to open a small menu.
-1. Select **Show Logs** to open the log viewer.
+1. To view the pod logs open the **Kyma dashboard** (see [this page at the bottom](../../../documentation/prepare/setup-btp-environment/README.md) for help). Then select the namespace that contains the pod you are interested in.
+1. Expand the **Workloads** in the left side menu, choose **Pods** and select the pod of your interest.
 
    ![](images/podlog1.png)
-   
-1. In the Log Viewer, you can scroll through this pod's logs. Using the clock symbol on the upper right you can select the time frame for the logs between 1 minute and 1 hour. Logs older than 1 hour are not available here.
+1. In the details page of the selected pod, choose **View Logs**.
 
    ![](images/podlog2.png)
+1. In the Log Viewer, you can filter the logs based on a timeframe and add the timestamps directly in the logs by switching the **Show Timestamps** toggle button.
 
+   ![](images/podlog3.png)
 
 ## Grafana Log Viewer
 

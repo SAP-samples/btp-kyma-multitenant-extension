@@ -1,5 +1,11 @@
 # Set Up the Provider Subaccount in SAP BTP
 
+## Using btp-setup-automator
+
+You can use the [btp-setup-automator](https://github.com/SAP-samples/btp-setup-automator) to configure the SAP BTP environment needed for the mission. You can find the instructions how to prepare the account in the [use case for our mission](https://github.com/SAP-samples/btp-setup-automator/blob/main/usecases/released/discoverycenter/3638-kyma-multitenant/README.md).
+
+As an alternative you can also setup the account manually following the steps described below.
+
 ## Create the Provider Subaccount
 
 To host the Easy Franchise application, we will create a provider subaccount.

@@ -62,6 +62,7 @@ spec:
   parameters:
     # the xsappname refers to the one defined in xsuaa service
     xsappname: easyfranchise
+    appName: easyfranchise-<provider-subdomain>
     displayName: Easy Franchise (<provider-subdomain>)
     description: Easy Franchise Basis Mission, a multitenant extension application based on SAP BTP,Kyma runtime
     category: "Demo applications"
@@ -69,6 +70,9 @@ spec:
       # url registered in the kyma-broker which handles SaaS provisioning (subscription/deletion of saas instances)
       onSubscription: https://subscription.<cluster-domain>/callback/v1.0/tenants/{tenantId}
       getDependencies: https://subscription.<cluster-domain>/callback/v1.0/dependencies
+    appPlans:
+      - name: default
+        description: Easy Franchise default plan
 ---
 apiVersion: services.cloud.sap.com/v1
 kind: ServiceBinding

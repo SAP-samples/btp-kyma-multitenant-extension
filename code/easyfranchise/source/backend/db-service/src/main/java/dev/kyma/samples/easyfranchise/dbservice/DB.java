@@ -338,11 +338,10 @@ public class DB {
      */
     public static String offboard(String tenantId) {
         String db_sqlEndpoint = Util.getDBSqlEndpoint();
-        String db_name = Util.getDBName();
         String db_admin = Util.getDBAdmin();
         String db_password = Util.getDBPassword();
-        if (db_sqlEndpoint == null || db_name == null || db_admin == null || db_password == null) {
-            String msg = "DB configuration error: sqlEndpoint " + db_sqlEndpoint + " name " + db_name + " admin user " + db_admin;
+        if (db_sqlEndpoint == null || db_admin == null || db_password == null) {
+            String msg = "DB configuration error: sqlEndpoint " + db_sqlEndpoint + " admin user " + db_admin;
             if (db_password == null) {
                 msg += " password null";
             }

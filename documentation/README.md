@@ -51,6 +51,6 @@
     1. [Run the Business Partner Mock Server](../documentation/appendix/business-partner-mock/README.md)
     1. [Enable the Business Partner OData V2 Rest API](../documentation/appendix/enable-odata-of-s4hana/README.md)
     1. [Connect to SAP S/4HANA On-Premise](appendix/s4hana-on-prem/README.md)
-    1. [BTP Setup Automator](../documentation/appendix/btp-setup-automator/README.md)
+    1. [btp-setup-automator](../documentation/appendix/btp-setup-automator/README.md)
     1. [Deployment via Script](../documentation/appendix/script-deployment/README.md)
     1. [Links](../documentation/appendix/links/README.md)

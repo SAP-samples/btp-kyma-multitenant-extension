@@ -151,7 +151,7 @@ A tenant is added during the subaccount onboarding and deleted during the offboa
 1. DB Service is called from the broker with new tenant id and subdomain as parameters.
 2. Check if tenant/subdomain already exits.
 3. New DB user is created with a `create user` SQL query. For SAP HANA this means that also a new database schema with the same name is created and will be automatically used if this user logs on. The new database schema name is the provided subdomain in upper case letters. We have decided to use the subdomain instead of the tenant id as schema name because such a string (for example, `420f7362-184e-4907-97bf-289c22906084`) is too long as schema name of an SAP HANA database.
-4. A new entry is created in the table `TENANT` of EFADMIN schema with tenant ID, subdomain, and database schema name. This table will be used later on by each request to provide the mapping between tenant ID and schema name.
+4. A new entry is created in the table `TENANT` of DBADMIN schema with tenant ID, subdomain, and database schema name. This table will be used later on by each request to provide the mapping between tenant ID and schema name.
 5. Tables are created in the new database schema. The SQL commands are read from a [script file](../../../code/easyfranchise/source/backend/shared-code/src/main/resources/create.sql).
 6. Default values (for example, logo image) are written to the `Configuration` table in the new schema.
 
@@ -159,7 +159,7 @@ A tenant is added during the subaccount onboarding and deleted during the offboa
 #### Schema Users
 
 We have 2 different kinds of users (and their default schemas) in use:
-* EFADMIN schema, which is a single schema for maintaining info of all the other schemas. Only the table `TENANT` is available in EFADMIN schema. It's needed to store tenant ID, subdomain, and DB SCHEMA name of each tenant.
+* DBADMIN schema, which is a single schema for maintaining info of all the other schemas. Only the table `TENANT` is available in DBADMIN schema. It's needed to store tenant ID, subdomain, and DB SCHEMA name of each tenant.
 * Customer schemas, which are storing the entities specific to each customer.
 
 #### Tenant Aware Operations

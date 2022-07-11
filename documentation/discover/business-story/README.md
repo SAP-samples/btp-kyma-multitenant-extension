@@ -46,4 +46,4 @@ Here is a technical overview of the partner application:
 * Get email notification, when a new business partner is created in the SAP S/4HANA Cloud system
 
 **Mentor**
-* Gets an email notification, when assigned as a mentor to a franchisee.
+* Gets an email notification, when assigned as a mentor to a franchisee
