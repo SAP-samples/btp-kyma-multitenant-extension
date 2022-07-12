@@ -7,7 +7,7 @@ That would mean that the partner would now typically add one or more mentor coor
 
    ![](images/check-role-collections.png)
 
-2. Navigate now to **Users** and click on your user.
+2. Navigate now to **Users** and click on your user. If your user not already exist click on **Create** to create one. 
 
    ![](images/add-role-collection-01.png)
 

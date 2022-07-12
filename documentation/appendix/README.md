@@ -20,6 +20,6 @@ To enable connection to an SAP S/4HANA on-premise system see [Connect to SAP S/4
 
 To deploy the application using a shell script see [Deploy via Script](../../documentation/appendix/script-deployment/README.md) for more details.
 
-## BTP Setup Automator
+## btp-setup-automator
 
-To set up the account and the application using an automated script see [BTP Setup Automator](../../documentation/appendix/btp-setup-automator/README.md) for more details.
+To set up the account and the application using an automated script see [btp-setup-automator](../../documentation/appendix/btp-setup-automator/README.md) for more details.

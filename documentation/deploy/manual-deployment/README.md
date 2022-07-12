@@ -68,7 +68,7 @@ The Approuter deployment is done through two steps. The first step creates the r
 1. After that you can deploy:
 
    ```shell
-   kubectl apply -f ./deplyoment/k8s/approuter.yaml
+   kubectl apply -f ./code/easyfranchise/deployment/k8s/approuter.yaml
    ```
 
 1. Run the following command to verify that the deployment was successful:
@@ -86,14 +86,14 @@ The SaaS Broker handles the on- and offboarding of a new tenant subscription.
 1. Navigate to the root folder of the repository to build and push the Docker image:
 
    ```shell
-   docker build --no-cache=true --rm -t <docker-repository>:broker-0.1  -f ./deplyoment/docker/Dockerfile-broker .
+   docker build --no-cache=true --rm -t <docker-repository>:broker-0.1  -f ./code/easyfranchise/deployment/docker/Dockerfile-broker .
    docker push <docker-repository>:broker-0.1
    ```
 
 1. Before you can deploy the image, you need to replace the `<image-name>` tag in the [broker.yaml](../../../code/easyfranchise/deployment/k8s/broker.yaml) file with `<docker-repository>:broker-0.1`:
 
    ```shell
-   kubectl apply -f .deployment/k8s/broker.yaml
+   kubectl apply -f ./code/easyfranchise/deployment/k8s/broker.yaml
    ```
 
 1. Verify that you can find a new pod with the name **broker-xxxx** in the namespace **integration** of the Kyma cluster to validate the deployment.

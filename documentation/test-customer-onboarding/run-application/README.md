@@ -48,7 +48,7 @@ Lets have a look at the data persisted in **SAP HANA**.
 
    ![](images/open-database-explorer.png)
 
-2. Add your database for the EFADMIN user if not done.
+2. Add your database for the DBADMIN user if not done.
 3. Expand the tables and find the table **TENANT**.
 4. Open the data contend of the TENANT or use an SQL window and run `SELECT * FROM TENANT` to see which rows you have now.
 

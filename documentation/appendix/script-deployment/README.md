@@ -80,6 +80,6 @@ There are certain parameters that you need to provide in the beginning of the sc
 
   ![hana-cloud screenshot](images/hana-cloud.png "hana-cloud")
 
-* DB Admin: Username of the database admin (for example, `EFADMIN` if you followed the mission [Develop a Multitenant Extension Application in SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3683/3726/) or DB Admin if you used the BTP Setup Automator)
+* DB Admin: Username of the database admin (for example, `DBADMIN` if you followed the mission [Develop a Multitenant Extension Application in SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3683/3726/))
 
-* DB Admin Password: Password that belongs to the DB Admin user given in the step before. If you used the BTP Setup Automator, it can be found in the [usecase.json](https://github.com/SAP-samples/btp-setup-automator/blob/main/usecases/released/discoverycenter/3638-kyma-multitenant/usecase.json)
+* DB Admin Password: Password that belongs to the DB Admin user given in the step before. If you used the btp-setup-automator, it can be found in the [usecase.json](https://github.com/SAP-samples/btp-setup-automator/blob/main/usecases/released/discoverycenter/3638-kyma-multitenant/usecase.json)

@@ -25,14 +25,14 @@ To understand the coding, read these exploration sections:
 
 For your local run, you have to configure some properties in a `hiddenconfig.properties` file:
 1. Clone the sources of this GitHub [repository](https://github.com/SAP-samples/btp-kyma-multitenant-extension) or download and extract the ZIP file to your local system.
-2. Copy the file [code/backend/shared-code/src/main/resources/hiddenconfig-template.properties](../../../code/easyfranchise/source/backend/shared-code/src/main/resources/hiddenconfig-template.properties) to `hiddenconfig.properties` in the same folder.
+2. Copy the file [code/easyfranchise/source/backend/shared-code/src/main/resources/hiddenconfig-template.properties](../../../code/easyfranchise/source/backend/shared-code/src/main/resources/hiddenconfig-template.properties) to `hiddenconfig.properties` in the same folder.
 3. Maintain your SAP HANA Cloud JDBC connection properties in the `db.*` section. This should look like this:
 
    ```
    db.name: EasyFranchiseHANADB
    db.sqlendpoint: your_hostname.hanacloud.ondemand.com:443
-   db.admin: EFADMIN
-   db.password: your_efadmin_password
+   db.admin: DBADMIN
+   db.password: your_dbadmin_password
    ```
 
    See [How to find JDBC Connection Properties](../../../documentation/prepare/configure-hana#how-to-find-jdbc-connection-properties) for more details.
@@ -64,7 +64,7 @@ For your local run, you have to configure some properties in a `hiddenconfig.pro
 ### Build
 
 Build the project:
-1. Open a command line window and change to directory to [code/backend](../../../code/easyfranchise/source/backend) containing the main [pom.xml](../../../code/easyfranchise/source/backend/pom.xml). Run the following Maven command:
+1. Open a command line window and change to directory to [code/easyfranchise/source/backend](../../../code/easyfranchise/source/backend) containing the main [pom.xml](../../../code/easyfranchise/source/backend/pom.xml). Run the following Maven command:
 
    ```mvn clean install```
 
@@ -93,24 +93,23 @@ Build the project:
 
 1. Run the following commands to start the services. Start each in a separate command line window and in the correct folder.
 
-   In folder [code/backend/ef-service](../../../code/easyfranchise/source/backend/ef-service):
+   In folder [code/easyfranchise/source/backend/ef-service](../../../code/easyfranchise/source/backend/ef-service):
 
-   ||command (``> cd ef-service``)|
+   ||command|
    |:-----|:----|
    |windows|```java -cp ".\target\*;.\target\dependency\*" -Dlocal_dev=true dev.kyma.samples.easyfranchise.EFServer 8080```|
    |unix   |```java -cp "./target/*:./target/dependency/*" -Dlocal_dev=true dev.kyma.samples.easyfranchise.EFServer 8080```|
 
+   In folder [code/easyfranchise/source/backend/bp-service](../../../code/easyfranchise/source/backend/bp-service):
 
-   In folder [code/backend/bp-service](../../../code/easyfranchise/source/backend/bp-service):
-
-   ||command (``> cd bp-service``)|
+   ||command|
    |:-----|:----|
    |windows|```java -cp ".\target\*;.\target\dependency\*" -Dlocal_dev=true dev.kyma.samples.easyfranchise.ServerApp 8100```|
    |unix   |```java -cp "./target/*:./target/dependency/*" -Dlocal_dev=true dev.kyma.samples.easyfranchise.ServerApp 8100```|
 
-   In folder [code/backend/db-service](../../../code/easyfranchise/source/backend/db-service):
+   In folder [code/easyfranchise/source/backend/db-service](../../../code/easyfranchise/source/backend/db-service):
 
-   ||command (``> cd db-service``)|
+   ||command|
    |:-----|:----|
    | windows | ```java -cp ".\target\*;.\target\dependency\*" -Dlocal_dev=true dev.kyma.samples.easyfranchise.ServerApp 8090```|
    | unix    | ```java -cp "./target/*:./target/dependency/*" -Dlocal_dev=true dev.kyma.samples.easyfranchise.ServerApp 8090```|
@@ -126,7 +125,7 @@ Build the project:
 
 ### Executing the First Admin Rest Call
 
-Database tables in EFADMIN schema are not existing yet.
+Database tables in DBADMIN schema are not existing yet.
 [Hibernate](https://hibernate.org/orm/) creates the tables at runtime when they are needed for the first time.
 To understand how this works, see section [Database Service](../../../documentation/explore/db-service/README.md) for more details.
 
@@ -148,7 +147,7 @@ Windows users have to rely on unix-like shells to execute the curl commands we p
    The first run will take a bit longer than the next one, as database table creation has to be carried out.
 
 2. Let's have a look into table data of our database:
-   - Open the SAP HANA Database Explorer and add your database with user EFADMIN.
+   - Open the SAP HANA Database Explorer and add your database with user DBADMIN.
    - Expand the **Catalog** and select **Tables**.
    - Find the newly created table **TENANT** and open via Context Menu *Open Data*. No records exist yet.
 
@@ -319,7 +318,7 @@ The REST calls of the Easy Franchise service are used from the UI. Let's have a 
 
    ![](images/DatabaseExplorerMentor.png)
 
-   > *You see no Mentor?* Check that you have selected the **MENTOR** table of the correct database user. Neither DBADMIN nor EFADMIN can see the **MENTOR** table content.
+   > *You see no Mentor?* Check that you have selected the **MENTOR** table of the correct database user. The DBADMIN cannot see the **MENTOR** table content.
 
 ### Assign Mentor to a Franchisee
 
