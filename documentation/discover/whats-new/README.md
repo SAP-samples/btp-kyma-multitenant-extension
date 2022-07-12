@@ -1,5 +1,9 @@
 # What's New
 
+## 2022-07-12
+  * Removed creation of dedicated DBUSER for simplification reasions
+  * Changed application registration parameters
+
 ## 2022-05-25
 > Important note: This release brings major changes to the existing mission
 
