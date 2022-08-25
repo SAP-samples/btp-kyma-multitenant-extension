@@ -18,7 +18,7 @@ continue_prompt_bool() {
   fi
 }
 
-parse_yaml {
+function parse_yaml {
    local prefix=$2
    local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
    sed -ne "s|^\($s\):|\1|" \
