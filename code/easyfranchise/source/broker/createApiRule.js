@@ -37,7 +37,7 @@ function createApiRule(svcName, svcPort, host, clusterName) {
         apiVersion: 'gateway.kyma-project.io/v1alpha1',
         kind: 'APIRule',
         metadata: {
-          name: host + '-apirule',
+          name: host,
         },
         spec: {
           gateway: 'kyma-gateway.kyma-system.svc.cluster.local',

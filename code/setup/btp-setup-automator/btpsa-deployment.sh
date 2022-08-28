@@ -18,11 +18,26 @@ continue_prompt_bool() {
   fi
 }
 
+function parse_yaml {
+   local prefix=$2
+   local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
+   sed -ne "s|^\($s\):|\1|" \
+        -e "s|^\($s\)\($w\)$s:$s[\"']\(.*\)[\"']$s\$|\1$fs\2$fs\3|p" \
+        -e "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p"  $1 |
+   awk -F$fs '{
+      indent = length($1)/2;
+      vname[indent] = $2;
+      for (i in vname) {if (i > indent) {delete vname[i]}}
+      if (length($3) > 0) {
+         vn=""; for (i=0; i<indent; i++) {vn=(vn)(vname[i])("_")}
+         printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);
+      }
+   }'
+}
+
 read_automator_config() {  
   result=$(jq '.' /home/user/log/metadata_log.json)
   SUBDOMAIN=$(jq -r '."subdomain"' <<< "${result}")
-  CLUSTER_DOMAIN=$(jq -r '."kymaDashboardUrl"' <<< "${result}")
-  CLUSTER_DOMAIN="${CLUSTER_DOMAIN#*//console.}"
   KUBECONFIG_URL=$(jq -r '."kymaKubeConfigUrl"' <<< "${result}")
   DB_ADMIN="DBADMIN"
   DB_ADMIN_PASSWORD="$( echo "$result" | jq -r '.createdServiceInstances[] | select(.name == "hana-cloud") | .parameters.data.systempassword' 2> /dev/null)"
@@ -32,6 +47,10 @@ read_automator_config() {
   DB_HOST=${DB_HOST/&component*}
   DB_PORT=${DB_DASHBOARD/*port=/}
   DB_SQLENDPOINT="$DB_HOST:$DB_PORT"
+
+  kubectl config view > temp.yaml
+  eval $(parse_yaml temp.yaml "KUBE_")
+  CLUSTER_DOMAIN="${KUBE_clusters__server#*//api.}"
 }
 
 echo "####################################################################################################"
