@@ -374,73 +374,7 @@ The REST calls of the Easy Franchise service are used from the UI. Let's have a 
     ]
    ```
 
-## 2. Run the Email Service Locally
-
-### Prerequisites
-
-- You have Node.js installed as described in the section [Development Setup](../../../documentation/prepare/set-up-local-environment/README.md)
-- You have a gmail account, which can be used to send emails
-
-### Configure Properties
-
-The Email service prepares the notification and sends it to a mail server, which forwards it to the right person. In our case, we use here Gmail but you can use any other mail server. To give access to the mail server, we first need to save the credentials as environment variables.
-
-Add your username/password in the following command ans run it in a terminal:
-
- ```curl --verbose -X PUT "http://localhost:8080/easyfranchise/rest/efservice/v1/config/notificationconfig" -H "Content-Type: application/json" -d '{"email":"gmail account","password":"gmail application password"}'```
-
-   Remember that the original REST call would have to provide the tenantId via header `-H 'x-tenant-id: {tenantId}'`. In the local run, it's taken from the `hiddenconfig.properties` file.
-
-> Note: Due to recent changes in the google security settings you need to use an application password for authentication see [Google Account Security]https://myaccount.google.com/apppasswords).
-
-### Build
-
-1. Open a command line window and navigate to the directory [code/email-service](../../../code/easyfranchise/source/email-service).
-
-2. Build the project:
-
-```shell
-npm install
-```
-
-   Your output should not contain an error and should look like this:
-
-```shell
-npm WARN deprecated har-validator@5.1.5: this library is no longer supported
-npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
-
-added 131 packages, and audited 132 packages in 27s
-
-30 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-```
-
-### Start the Service
-
-To start the service, run the following command in the same folder:
-
-```shell
-npm start
-```
-
-You should receive the following output:
-
-```shell
-> start
-> node server.js
-
-Application listening on port 3002
-```
-
-### Test the Email Service
-
-The Email service should listen to http://localhost:3002. Check out the [API Endpoints](../../../documentation/explore/email-service#list-of-api-endpoints) in the Explore section.
-
-
-## 3. Run User Interface Locally
+## 2. Run User Interface Locally
 
 > Note: To simplify debugging in the browser, we recommend installing the browser extension [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg) for Google Chrome.
 

@@ -53,9 +53,9 @@ To configure the email used to send the notifications, the customer admin has to
 
 ## List of API Endpoints
 
-The path of all APIs begins with `/easyfranchise/rest/emailservice/v1/`. It is then followed by the path listed in the following table for each individual REST call.
+The path of all APIs begins with `/easyfranchise/rest/emailservice/v1/<TENANT-ID>`. It is then followed by the path listed in the following table for each individual REST call.
 
 | Path   | Description  | Curl Example  |
 |:-------|:-------------|:--------------|
-| notifycoordinator     | Send a mail to the subscribed coordinators   | ``curl --verbose -X PUT "http://localhost:3002/easyfranchise/rest/emailservice/v1/notifycoordinator" -H "Content-Type: application/json" -d '{"newFranchiseNames":["new franchisee 1","new franchisee 2"],"newFranchiseCount":2,"coordinators":[{"name":"<coordinator-name>","email":"<coordinator-email>"}]}'``|
-| notifymentor          | Send a mail to the assigned mentor | ``curl --verbose -X PUT "http://localhost:3002/easyfranchise/rest/emailservice/v1/notifymentor" -H "Content-Type: application/json" -d '{"mentorName":"<mentor-name>","email":"<mentor-email>","franchiseName":"<assigned-franchisee>","franchiseEmail":"<franchisee-email>"}'``|
+| notifycoordinator     | Send a mail to the subscribed coordinators   | ``curl --verbose -X PUT "http://localhost:3002/easyfranchise/rest/emailservice/v1/<TENANT-ID>/notifycoordinator" -H "Content-Type: application/json" -d '{"newFranchiseNames":["new franchisee 1","new franchisee 2"],"newFranchiseCount":2,"coordinators":[{"name":"<coordinator-name>","email":"<coordinator-email>"}]}'``|
+| notifymentor          | Send a mail to the assigned mentor | ``curl --verbose -X PUT "http://localhost:3002/easyfranchise/rest/emailservice/v1/<TENANT-ID>/notifymentor" -H "Content-Type: application/json" -d '{"mentorName":"<mentor-name>","email":"<mentor-email>","franchiseName":"<assigned-franchisee>","franchiseEmail":"<franchisee-email>"}'``|
