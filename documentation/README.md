@@ -40,6 +40,7 @@
     1. [Operate your SAP Partner Solution on SAP BTP](../documentation/next-steps/operating/README.md)
     1. [Understand Metering and Billing as an SAP Partner](../documentation/next-steps/metering/README.md)
     1. [Offboard a Customer](../documentation/next-steps/offboarding/README.md)
+    1. [Explore Our Related Missions](../documentation/next-steps/explore-related-missions/README.md)
     1. [Complete the Mission](../documentation/next-steps/complete-mission/README.md)
 7. [Troubleshooting](../documentation/troubleshooting/README.md)
     1. [You Do Not See Any Business Partners (Franchisees)](../documentation/troubleshooting/no-business-partners-visible/README.md)
