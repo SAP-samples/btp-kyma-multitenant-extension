@@ -50,6 +50,10 @@ Here are the steps using kubectl:
    kubectl create namespace integration
    kubectl create namespace backend
    kubectl create namespace frontend
+
+   kubectl label namespace integration istio-injection=enabled --overwrite
+   kubectl label namespace backend istio-injection=enabled --overwrite
+   kubectl label namespace frontend istio-injection=enabled --overwrite
    ```
 
 2.  You should see a message like `namespace/integration created` if the command was successful. In addition, the namespace should also be visible using the Kyma dashboard.
