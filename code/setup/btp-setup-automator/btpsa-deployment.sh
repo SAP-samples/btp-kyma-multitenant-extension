@@ -91,6 +91,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   kubectl create namespace backend || true
   kubectl create namespace mock || true
   kubectl create namespace frontend || true
+
+  kubectl label namespace integration istio-injection=enabled --overwrite || true
+  kubectl label namespace backend istio-injection=enabled --overwrite || true
+  kubectl label namespace mock istio-injection=enabled --overwrite || true
+  kubectl label namespace frontend istio-injection=enabled --overwrite || true
   echo
 
   log "Step 2.2 - DB Secret: "
