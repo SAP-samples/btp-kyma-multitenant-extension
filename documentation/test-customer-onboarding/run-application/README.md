@@ -14,7 +14,7 @@ As mentioned in the previous section, the application URL has been shared with t
 
 3. Configure the general settings of the application and choose **Update settings**.
     * Name of the company: City Scooter
-    * Logo of the company: https://raw.githubusercontent.com/matthieupelatan/easy-franchise-assets/main/images/logo-city-scooter.png
+    * Logo of the company: https://raw.githubusercontent.com/SAP-samples/btp-kyma-multitenant-extension/main/code/easyfranchise/source/ui/src/assets/logo-city-scooter.png
     * Technical email used to send notifications: use a gmail account for sending notifications
     * Password for technical email: Use an application password for your gmail account
 

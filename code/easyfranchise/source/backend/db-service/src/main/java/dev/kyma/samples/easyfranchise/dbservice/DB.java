@@ -294,7 +294,7 @@ public class DB {
             c.setId(1L);
             c.setFranchisor(tenantInfo.subdomain);
             c.setTenantId(tenantId);
-            c.setLogoUrl("https://raw.githubusercontent.com/matthieupelatan/easy-franchise-assets/main/images/logo-placeholder.png");
+            c.setLogoUrl("https://raw.githubusercontent.com/SAP-samples/btp-kyma-multitenant-extension/main/code/easyfranchise/source/ui/src/assets/logo-placeholder.png");
             emTenant.merge(c);
             emTenant.getTransaction().commit();
 
