@@ -19,27 +19,28 @@
 		<div class="reveal">
 			<div class="slides">
 				
-				<section id="home" data-background-image="images/banner-04.jpg" data-background-size="cover">
-					<h1>Develop a Multitenant Extension Application in SAP BTP, Kyma Runtime</h1>
-					<h2>Alexander Rieder, Matthieu Pelatan</h2>
-					<h3>December 2021</h3>
-					<aside class="notes">
-						<ul>
-							<li>Enablement Team of the SAP BTP</li>
-							<li>Slides at the end</li>
-							<li>FAQ at the end</li>
-						</ul>
-					</aside>
-				</section>
-				
 				<section>
-					<h1>Agenda</h1>
-					<p class="fragment fade-up">Introduction</p>
-					<p class="fragment fade-up">Multitenancy concept</p>
-					<p class="fragment fade-up">Demo</p>
-					<p class="fragment fade-up">Mission overview</p>
-					<p class="fragment fade-up">Outlook</p>
-					<p class="fragment fade-up">Q&A</p>
+					<section id="home" data-background-image="images/banner-04.jpg" data-background-size="cover">
+						<h1>Develop a Multitenant Extension Application in SAP BTP, Kyma Runtime</h1>
+						<h2>Alexander Rieder, Matthieu Pelatan</h2>
+						<h3>September 2022</h3>
+						<aside class="notes">
+							<ul>
+								<li>Enablement Team of the SAP BTP</li>
+								<li>Slides at the end</li>
+								<li>FAQ at the end</li>
+							</ul>
+						</aside>
+					</section>
+					
+					<section>
+						<h1>Agenda</h1>
+						<p class="fragment fade-up">Introduction</p>
+						<p class="fragment fade-up">Basis Mission</p>
+						<p class="fragment fade-up">Identity Management Mission</p>
+						<p class="fragment fade-up">Day2 Operations Mission</p>
+						<p class="fragment fade-up">Q&A</p>
+					</section>
 				</section>
 				
 				<section  data-state="make-it-pop">
@@ -53,19 +54,31 @@
 							* Partners
 						</aside>
 					</section>
-					
+
 					<section>
-						<h1 class="sectionTitle">Who is the Mission for?</h1>
-						<p class="longText mb-40">The business scenario of this mission has been created with the <span class="special-02">partner as focus persona</span>. The purpose of this project is to help SAP partners to get a quick start on developing a multitenant application and provide best practices.</p>
-						<p class="longText mb-40">This is of course not exclusively for SAP partner and can be useful for <span class="special-02">every person</span> looking for details on how to build a multitenant application running on Kyma.</p>
-						<p class="longText mb-40">It is suitable for new or experienced developers on SAP Business Technology Platform.</p>
+						<h1 class="sectionTitle">SAP Discovery Center</h1>
+						<img src="images/discovery-center.png" />
+						<p><a class="link" href="https://discovery-center.cloud.sap/protected/index.html" target="_blank">Link to SAP Discovery Center</a></p>
 					</section>
+
+					<section>
+						<h1 class="sectionTitle">Mission details</h1>
+						<p class="fragment fade-up">Step-by-step guide</p>
+						<p class="fragment fade-up">Code in GitHub</p>
+						<p class="fragment fade-up">Mock Server included</p>
+						<p class="fragment fade-up">btp-setup-automator</p>
+						<p class="fragment fade-up">Coaching, troubleshooting & FAQ</p>
+					</section>
+
+					<section>
+						<img src="images/related-missions.png" />
+					</section>					
 
 					<section>
 						<h1 class="sectionTitle">Type of SaaS Solution</h1>
 						<img src="images/extension-type.png" />
 					</section>
-
+					
 					<section>
 						<h1 class="sectionTitle mb-80">Business Story</h1>
 						<img src="images/business-story-single-tenant.drawio.png" />
@@ -93,9 +106,11 @@
 
 				</section>
 				
+
+				<!-- Basis Mission -->
 				<section>
 					<section data-background-image="images/banner-282402.jpg" data-background-size="cover">
-						<h1 class="whiteH1">Multitenancy Concept</h1>
+						<h1 class="whiteH1">Basis Mission</h1>
 					</section>
 
 					<section>
@@ -146,8 +161,16 @@
 							</ol>
 						</div>
 					</section>
+					
+					<section>
+						<h1 class="sectionTitle">Mission Structure</h1>
+						<img src="images/mission-overview.jpg" />
+						<p><a class="link" href="https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3683/3726/" target="_blank">Link to mission</a></p>
+					</section>
+
 				</section>
 
+				<!-- Demo Basis Mission -->
 				<section>
 					<section data-background-image="images/banner-282697.jpg" data-background-size="cover"> 
 						<h1 class="whiteH1">Demo</h1>
@@ -159,46 +182,204 @@
 					</section>
 				</section>
 				
+
+
+				<!-- Identity Management Mission -->
 				<section>
-					<section data-background-image="images/banner-285469.jpg" data-background-size="cover">
-						<h1 class="whiteH1">Mission Overview</h1>
+					<section data-background-image="images/banner-286964.jpg" data-background-size="cover" data-auto-animate>
+						<h2 class="whiteH1">Identity Management Mission</h2>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>Mission Focus</h2>
+						<p style="font-size: 0.6em;"">This mission explains how to enrich a Kyma-based multitenant application<br>with additional identity features.</p>
+						<div class="r-hstack justify-center">
+							<div data-id="box1" style="background: #dedede; width: 160px; height: 60px; margin: 10px; padding: 10px 10px 5px; border-radius: 5px; font-size: 0.5em;">SAP Cloud Identity Services</div>
+							<div data-id="box2" style="background: #dedede; width: 160px; height: 60px; margin: 10px; padding: 10px 10px 5px; border-radius: 5px; font-size: 0.5em;">Principal propagation</div>
+							<div data-id="box3" style="background: #dedede; width: 160px; height: 50px; margin: 10px; padding-top: 25px; border-radius: 5px; font-size: 0.5em;">Custom IdP</div>
+						</div>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>Mission Structure</h2>
+						<div class="r-hstack justify-center">
+							<div data-id="box1" data-auto-animate-delay="0" style="background: #098ed1; width: 30%; height: 100px; margin: 10px; padding-top: 15px; font-size: 0.8em; color: #fff;">SAP Cloud Identity Services</div>
+							<div data-id="box2" data-auto-animate-delay="0.1" style="background: #52b727; width: 30%; height: 100px; margin: 10px; padding-top: 15px; font-size: 0.8em; color: #fff;">Principal propagation</div>
+							<div data-id="box3" data-auto-animate-delay="0.2" style="background: #e2591c; width: 30%; height: 80px; margin: 10px; padding-top: 35px; font-size: 0.8em; color: #fff;">Custom IdP</div>
+						</div>
+						<div class="r-hstack justify-center" style="align-items: start;">
+							<div data-id="box4" data-auto-animate-delay="0" style="width: 30%;  margin: 10px; font-size: 0.4em; text-align: left; line-height: 1.8em;">
+								<ul>
+									<li>Get a Tenant</li>
+									<li>Set Trust between IAS and BTP</li>
+								</ul>
+							</div>
+							<div data-id="box5" data-auto-animate-delay="0.1" style="width: 30%;  margin: 10px; font-size: 0.4em; text-align: left; line-height: 1.8em;">
+								<ul>
+									<li>Set trust between BTP and S/4HANA</li>
+									<li>Configure OAuth Communication</li>
+									<li>Configure S/4HANA</li>
+									<li>Configure SAP BTP</li>
+									<li>Consume the destination</li>
+								</ul>
+							</div>
+							<div data-id="box6" data-auto-animate-delay="0.2" style="width: 30%;  margin: 10px; font-size: 0.4em; text-align: left; line-height: 1.8em;">
+								<ul>
+									<li>Prepare Corporate IdP</li>
+									<li>Set trust between IAS and Azure AD</li>
+									<li>Run the Application</li>
+								</ul>
+							</div>
+						</div>
 					</section>
 
 					<section>
-						<h1 class="sectionTitle">SAP Discovery Center</h1>
-						<img src="images/discovery-center.png" />
-						<p><a class="link" href="https://discovery-center.cloud.sap/protected/index.html" target="_blank">Link to SAP Discovery Center</a></p>
-					</section>
-					
-					<section>
-						<h1 class="sectionTitle">Mission Structure</h1>
-						<img src="images/mission-overview.jpg" />
-						<p><a class="link" href="https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3683/3726/" target="_blank">Link to mission</a></p>
-					</section>
+						<h1 class="sectionTitle">Identity Authentication Service</h1>
+						<img src="images/identity-slide3.jpeg" />
+					</section>	
 
 					<section>
-						<h1 class="sectionTitle">Mission details</h1>
-						<p class="fragment fade-up">Step-by-step guide</p>
-						<p class="fragment fade-up">Mock Server included</p>
-						<p class="fragment fade-up">Support via coaching</p>
-						<p class="fragment fade-up">Troubleshooting & FAQ</p>
-						<p class="fragment fade-up">Feedback survey</p>
-					</section>
+						<h1 class="sectionTitle">Principal Propagation</h1>
+						<img src="images/identity-slide2.jpeg" />
+					</section>	
+
+					<section>
+						<h1 class="sectionTitle">User Federation</h1>
+						<img src="images/identity-slide5.jpeg" />
+					</section>	
 				</section>
 
+				<!-- Demo Identity Management Mission 
 				<section>
-					<section data-background-image="images/banner-276323.jpg" data-background-size="cover">
-						<h1 class="whiteH1">Outlook</h1>
+					<section data-background-image="images/banner-282697.jpg" data-background-size="cover"> 
+						<h1 class="whiteH1">Demo</h1>
 					</section>
 
 					<section>
-						<img src="images/future-activities.png" />
+						<h1 class="sectionTitle">Demo Steps</h1>
+						<img src="images/identity-demo-custom-idp.png" />
+					</section>
+				</section>
+-->
+
+				
+				<!-- Day2 Mission -->
+				<section>
+					<section data-background-image="images/banner-285294.jpg" data-background-size="cover">
+						<h1 class="whiteH1">Day2 Operations Mission</h1>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>Mission Focus</h2>
+						<p style="font-size: 0.6em;"">This mission explains how to extend an existing Kyma based multitenant application<br>by focusing on day 2 operations topics.</p>
+						<div class="r-hstack justify-center">
+							<div data-id="box1" style="background: #dedede; width: 150px; height: 45px; margin: 10px; padding-top: 20px; border-radius: 5px; font-size: 0.5em;">Observability</div>
+							<div data-id="box2" style="background: #dedede; width: 150px; height: 45px; margin: 10px; padding-top: 20px; border-radius: 5px; font-size: 0.5em;">Metering</div>
+							<div data-id="box3" style="background: #dedede; width: 150px; height: 45px; margin: 10px; padding-top: 20px; border-radius: 5px; font-size: 0.5em;">CI/CD</div>
+						</div>
+					</section>
+
+					<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+						<h2>Mission Structure</h2>
+						<div class="r-hstack justify-center">
+							<div data-id="box1" data-auto-animate-delay="0" style="background: #098ed1; width: 30%; height: 80px; margin: 10px; padding-top: 35px; font-size: 0.8em; color: #fff;">Observability</div>
+							<div data-id="box2" data-auto-animate-delay="0.1" style="background: #52b727; width: 30%; height: 80px; margin: 10px; padding-top: 35px; font-size: 0.8em; color: #fff;">Metering</div>
+							<div data-id="box3" data-auto-animate-delay="0.2" style="background: #e2591c; width: 30%; height: 80px; margin: 10px; padding-top: 35px; font-size: 0.8em; color: #fff;">CI/CD</div>
+						</div>
+						<div class="r-hstack justify-center" style="align-items: start;">
+							<div data-id="box4" data-auto-animate-delay="0" style="width: 30%;  margin: 10px; font-size: 0.4em; text-align: left; line-height: 1.8em;">
+								<ul>
+									<li>Logging (Build-in Offering)</li>
+									<li>Logging (Ext. consumption)</li>
+									<li>Monitoring (Build-in Offering)</li>
+									<li>Monitoring (Ext. consumption)</li>
+									<li>Monitoring (Dynatrace)</li>
+								</ul>
+							</div>
+							<div data-id="box5" data-auto-animate-delay="0.1" style="width: 30%;  margin: 10px; font-size: 0.4em; text-align: left; line-height: 1.8em;">
+								<ul>
+									<li>Custom metrics (Active users)</li>
+									<li>App implementation</li>
+									<li>Metering consumption</li>
+									<li>Local and Kyma env.</li>
+								</ul>
+							</div>
+							<div data-id="box6" data-auto-animate-delay="0.2" style="width: 30%;  margin: 10px; font-size: 0.4em; text-align: left; line-height: 1.8em;">
+								<ul>
+									<li>CI/CD Service</li>
+									<li>With K8S YAML</li>
+									<li>With HELM</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Logging</h1>
+						<img src="images/day2-logging.png" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Logging (Ext. Consumption)</h1>
+						<img src="images/day2-logging-ext-consumption.png" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Monitoring (Ext. Consumption)</h1>
+						<img src="images/day2-monitoring-prometheus.png" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Monitoring with Dynatrace</h1>
+						<img src="images/day2-monitoring-dynatrace.png" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Metering</h1>
+						<img src="images/day2-metering.png" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Metering Consumption</h1>
+						<img src="images/day2-metering-consumption.png" />
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">CI/CD</h1>
+						<img src="images/ci-cd.png" />
+					</section>					
+				</section>
+
+				<!-- Demo Day2 Mission -->
+				<section>
+					<section data-background-image="images/banner-282697.jpg" data-background-size="cover"> 
+						<h1 class="whiteH1">Demo</h1>
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Demo Steps</h1>
+						<img src="images/day2-metering-demo.png" />
 					</section>
 				</section>
 
-				<section data-background-image="images/banner-q&a.jpg" data-background-size="cover">
-					<h1 class="whiteH1">Q&A</h1>
+
+				
+
+				<!-- Q&A Section -->
+				<section>
+					<section data-background-image="images/banner-q&a.jpg" data-background-size="cover">
+						<h1 class="whiteH1">Q&A</h1>
+					</section>
+
+					<section>
+						<h1 class="sectionTitle">Feedback Session</h1>
+						<p style="font-size: 14px; color:#f0ab00">Looking for interested customers to reflect on our mission(s)​</p>
+						<img src="images/e2e-feedback-session.png" />
+						<p style="font-size:12px">By interest, please contact: <a class="link" href="mailto:alexander.rieder@sap.com" target="_blank">Alexander Rieder</a> - ​<a class="link" href="mailto:navin.krishnan.manohar@sap.com" target="_blank">Navin Krishnan Manohar</a></p>
+					</section>
+
 				</section>
+				
 				
 				<section>
 					<h1 class="whiteFont">Disclaimer</h1>
