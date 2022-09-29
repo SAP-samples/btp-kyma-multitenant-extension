@@ -1,7 +1,7 @@
 /**
  * SAP Layout + Custom CSS
  */
- .longText{
+ .longText, .smallSize{
 	font-size: 0.6em;
  }
  .mb-40{
@@ -37,7 +37,7 @@
 	background: url(../images/282532-info-icon-small.png) left center no-repeat;
 	background-size: 15px;
 	padding-left: 20px;
-	font-size: 0.3em;
+	font-size: 12px;
 }
 .slides{
 	background-image: url(../images/sap-logo-white-bg.png);
@@ -96,3 +96,10 @@ ol li:before {
 	 margin-top: 0 !important;
 	 margin-bottom: 0 !important;
  }
+.reveal .subtitle{
+	font-size: 16px;
+}
+.specialPosition{
+	top: -200px;
+	margin-left: -50%;
+}
