@@ -2,7 +2,6 @@
 
 Optionally, you may want to run the application locally before you deploy it in the subaccount in the SAP BTP, Kyma environment. Here are the steps needed to have a working app on your local machine:
 * [Start and Test the Database Service, the Easy Franchise Service, and the Business Partner Service](#1-start-and-test-the-microservices-db-service-bp-service-and-ef-service)
-* [Run the Email Service](#2-run-the-email-service-locally)
 * [Run the User Interface Locally](#3-run-user-interface-locally)
 
 
