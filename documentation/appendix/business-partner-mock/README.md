@@ -41,33 +41,7 @@ The mock server simply reads all entities in the [BusinessPartner-sample.json](.
 
 ## Deploy to the Kyma Cluster
 
-For the next steps you need to have your SAP BTP, Kyma environment ready as described in section [prepare](../../../documentation/prepare/setup-btp-environment/README.md). In addition, make sure that you have the Kubeconfig downloaded and made available in your Kubectl as described in section [Get Kubeconfig](../../../documentation/deploy/prepare-deployment/README.md#get-kubeconfig).
-
-1. Create a namespace _mock_:
-
-   ```shell
-   kubectl create ns mock
-   ```
-
-1. Create the Docker registry secret with which Docker image can be pulled by Kubernetes:
-
-   ```shell
-   # replace user credentials and email per your settings
-   kubectl create secret docker-registry <your-docker-secret-name> --docker-server=<your-registry-server> --docker-username=xxx --docker-password=xxx --docker-email="xxxx" -n mock
-   ```
-
-1. Deploy to Kyma cluster:
-
-   ```shell
-   # make sure use the correct .env file for your setup
-   ./build.sh  -e=../.env-dev
-   ```
-
-1. Test service in Kyma cluster locally. Forward the SAP Business Partner Mock Server service in Kyma to local port `8081`, then it can be tested as described above.
-
-   ```shell
-   kubectl -n mock port-forward svc/business-partner-mock 8081:8081
-   ```
+For the next steps you need to have your SAP BTP, Kyma environment ready as described in section [prepare](../../../documentation/prepare/setup-btp-environment/README.md). The deployment of the service itself is part of the deployment script which is described in chapter [Deployment via Script](../script-deployment/README.md). 
 
 1. Create a destination pointing to the mock server in the cluster. In your subscriber subaccount, create a destination for the Business Partner mock server as following:
 

@@ -19,7 +19,7 @@ The SAP BTP, Cloud Foundry environment is an open Platform-as-a-Service targeted
     2. Configure your environment.
     3. Develop and deploy your application.
 
-   Within the Feature Set B, account administrators can use [Cloud Foundry Command Line Interface (cf CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) to set up new Cloud Foundry development projects. The cf CLI is the command line tool for convenient account management, such as managing global accounts, directories, subaccounts, entitlements, environment instances multitenant application subscriptions, and users and their authorizations.
+   Within the Feature Set B, account administrators can use [SAP BTP Command Line Interface (btp CLI)](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/8a8f17f5fd334fb583438edbd831d506.html) to set up new development projects. The btp CLI is the command line tool for convenient account management, such as managing global accounts, directories, subaccounts, entitlements, environment instances multitenant application subscriptions, and users and their authorizations.
 
 * [Development in the SAP BTP, Kyma Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/606ec610ee4746c09d5d2bef5a85a124.html)
 The SAP BTP, Kyma environment allows you to build simple functions, develop, and deploy more complex microservices, or mixtures of those, depending on your use case complexity level. Both functions and microservices can act as standalone applications or extensions for: SAP S/4HANA Cloud, SAP SuccessFactors, SAP Customer Experience systems like SAP Commerce Cloud, SAP Field Service Management, SAP Cloud for Customer.
