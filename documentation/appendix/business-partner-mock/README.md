@@ -41,7 +41,7 @@ The mock server simply reads all entities in the [BusinessPartner-sample.json](.
 
 ## Deploy to the Kyma Cluster
 
-For the next steps you need to have your SAP BTP, Kyma environment ready as described in section [prepare](../../../documentation/prepare/setup-btp-environment/README.md). The deployment of the service itself is part of the deployment script which is described in chapter [Deployment via Script](../script-deployment/README.md). 
+For the next steps you need to have your SAP BTP, Kyma environment ready as described in the section [prepare](../../../documentation/prepare/setup-btp-environment/README.md). The deployment of the service itself is part of the deployment script which is described in chapter [Deployment via Script](../script-deployment/README.md). 
 
 1. Create a destination pointing to the mock server in the cluster. In your subscriber subaccount, create a destination for the Business Partner mock server as following:
 
