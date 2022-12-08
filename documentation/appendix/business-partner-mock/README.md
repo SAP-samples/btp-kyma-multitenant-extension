@@ -22,7 +22,7 @@ The mock server simply reads all entities in the [BusinessPartner-sample.json](.
    node server.js
    ```
 
-1. Once the mock server is up and running on `http://localhost:8081`, try the following get requests:
+1. Once the mock server is up and running on `http://localhost:8081` (`http://127.0.0.1:8081`), try the following get requests:
 
    ``` html
    http://localhost:8081/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$expand=to_BusinessPartnerAddress/to_EmailAddress&$format=json

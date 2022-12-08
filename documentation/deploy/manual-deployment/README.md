@@ -213,7 +213,7 @@ As the Email service is based on Node.js, there is no need to build the service 
 1. You start with building and pushing the Docker image. Navigate to the root folder of the repository and run the following commands:
 
    ```shell
-   docker build --no-cache=true --rm -t <docker-repository>:emailservice-0.1  -f ./deployments/docker/Dockerfile-email-service .
+   docker build --no-cache=true --rm -t <docker-repository>:emailservice-0.1 -f ./code/easyfranchise/deployment/docker/Dockerfile-email-service .
    docker push <docker-repository>:emailservice-0.1
    ```
 
