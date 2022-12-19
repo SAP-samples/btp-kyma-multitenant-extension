@@ -1,7 +1,5 @@
 # Get and Configure the SAP HANA Cloud Database
 
-> Note: If you used the btp-setup-automator to setup your account the database was already created for you and you can skip the steps described below. You can lookup the password used for the instance in the btp-setup-automator [usecase.json](https://github.com/SAP-samples/btp-setup-automator/blob/main/usecases/released/discoverycenter/3638-kyma-multitenant/usecase.json).
-
 ## Create the SAP HANA Cloud Instance
 
 If you would like to use an already existing database, this is also fine and you can skip this step.

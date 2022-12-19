@@ -41,6 +41,7 @@ You can find all requirements to execute the tutorial in this [section](/documen
 * You would like to explore application components? Start [exploring](/documentation/explore/README.md) and get more details.
 * As developer you want to try it out? Start directly with the [preparation steps](/documentation/prepare/README.md).
 * Code is your world? You don't want to waste time with reading explanations or architecture details? Here is the [code](/code/easyfranchise/source/README.md).
+* You have read the documentation and you would like to test the scenario without implementing the whole set-up step-by-step? Then use the [btp-setup-automator](/documentation/appendix/btp-setup-automator/README.md) and get everything working in less than one hour.
 
 ## Known Issues
 
