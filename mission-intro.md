@@ -20,6 +20,14 @@ The tutorial focus on the following aspects:
 * Extension SaaS (extending an SAP LoB solution), not a standalone SaaS
 * Freedom to use non-SAP frameworks and tools without CAP neither SAPUI5 (but indeed SAP Fiori like UI)
 
+## Where to Start?
+
+* You want to understand the scenario, the problem statement, or the architecture? Start with the section [discover](/documentation/discover/README.md).
+* You would like to explore application components? Start [exploring](/documentation/explore/README.md) and get more details.
+* As developer you want to try it out? Start directly with the [preparation steps](/documentation/prepare/README.md).
+* Code is your world? You don't want to waste time with reading explanations or architecture details? Here is the [code](/code/easyfranchise/source/README.md).
+* You have read the documentation and you would like to test the scenario without implementing the whole set-up step-by-step? Then use the [btp-setup-automator](/documentation/appendix/btp-setup-automator/README.md) and get everything working in less than one hour.
+
 ## Known Issues
 
 The tutorial is provided on the "as-is" basis. Currently, there are no known issues for the tutorial project.
