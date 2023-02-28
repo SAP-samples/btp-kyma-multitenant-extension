@@ -22,56 +22,36 @@ Now that we have created the provider subaccount, we will add entitlements.
 1. Choose **Configure Entitlements** and then choose **Add Service Plans**.
 1. Search for **Kyma runtime**.
 1. Select the suggested plan.
-1. Select Entitlement **SAP HANA Cloud** and mark the plan **hana**.
+1. Select Entitlement **SAP HANA Cloud** and mark 2 plans:
+   * **tools (Application)**
+   * **hana-free**
 1. Search for **Authorization and Trust Management Service** and choose the plan **broker**
-1. Choose **Add 3 Service Plans**.
+1. Choose **Add 4 Service Plans**.
 1. Save your changes.
 
    ![](images/Configure-Entitlements.png)
 
 
-## Enable the Cloud Foundry and the Kyma Environments
-
-> Note: The **Cloud Foundry** environment is only needed for the **SAP HANA Cloud Instance** as this is today not possible to have the database directly in the Kyma environment. We will update this section, as soon as possible.
+## Enable the Kyma Environment
 
 1. Navigate back to the **Overview** page of the subaccount.
-2. Choose **Enable Cloud Foundry**.
+2. Choose **Enable Kyma**.
 
    ![](images/Enable-Environments.png)
+3. In the opened dialog accept the pre-defined values and choose **Create**.
+4. Enabling Kyma will take around 30 minutes.
 
-3. In the opened dialogue leave the settings as suggested and press button **Create**.
-
-    ![](images/enableCF.png)
-
-6. Navigate back to the **Overview** page of the subaccount and choose **Enable Kyma**.
-7. In the opened dialog:
-   * Step 1 - **Basic Info**: Use the suggested parameters
-   * Step 2 - **Addional Parameters**: Select a region close to you and choose the smallest machine type. Use the minimal possible value for parameter **Auto Scaler**.
-   * Step 3 - **Review**: Review your settings and choose **Create**.
-8. Enabling Kyma will take around 30 minutes.
-
-## Create a Cloud Foundry Space
-
-We need a space in the Cloud Foundry environment, where we can create the **SAP HANA Cloud Instance**.
-
-1. Navigate to the **Spaces** page.
-2. Choose **Create Space**.
-3. Enter a name, for example, **hana**.
-4. Choose **Create**.
-
-   ![](images/Create-Space.png)
 
 ## Validate Account Setup
 
 Follow the steps to verify that the setup was successful:
 
 1. Choose the **Overview** page of the provider subaccount.
-2. Check that **Cloud Foundry Environment** is enabled and has a space **hana**.
-3. Check that you have a running Kyma environment.
+2. Check that you have a running Kyma environment.
 
    ![](images/success.png)
 
-4. Choose **Link to dashboard** under **Kyma Environment**. The Kyma dashboard should open in a new browser tab.
+3. Choose **Link to dashboard** under **Kyma Environment**. The Kyma dashboard should open in a new browser tab.
 
    ![](images/kymadashboard.png)
 

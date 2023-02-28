@@ -60,7 +60,7 @@ A communication system is a semantic representation of the system, which will co
 
 9. The UI returns back to the previous screen where you wanted to select an inbound user for the **Communication System** edit dialog.
 
-10. In the f**User Name** field of **New Inbound Communication User**, leave the preselected newly created user and **Authentication Method** as **User Name and Password** and choose **OK** to confirm the in-bound user selection.
+10. In the **User Name** field of **New Inbound Communication User**, leave the preselected newly created user and **Authentication Method** as **User Name and Password** and choose **OK** to confirm the in-bound user selection.
 
     ![](./images/createinbounduser2.png)
 
@@ -164,4 +164,3 @@ You can use the **SAP API Business Hub** to gain more information about the Busi
 5. Check for the information that you are searching for. You can also try out according requests.
 
    ![](images/odata-v2-api-overview.png)
-

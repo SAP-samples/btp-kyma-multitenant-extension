@@ -74,11 +74,11 @@ There are certain parameters that you need to provide in the beginning of the sc
 
 * Docker Server: URL of the Docker Server (for example, https://index.docker.io/v1/ for Docker Hub)
 
-* Docker Repository: The name of the docker repository where to store the created images. In case of Docker Hub this is a combination of account and repository name, which look like that: <docker account>/<repository name>
+* Docker Repository: The name of the docker repository where to store the created images. In case of Docker Hub this is a combination of account and repository name, which look like that: ```<docker account>/<repository name>``` e.g. ```user1234/efdeploy```
 
-* SQL Endpoint: SQL endpoint of the database to be used. You can find it in the SAP BTP Cockpit, see the following screenshot.
+* SQL Endpoint: SQL endpoint of the database to be used. Use **Instances and Subscriptions** from the left side navigation, then select the application **SAP HANA Cloud**. Then copy the SQL endpoint like in the following screenshot:
 
-  ![hana-cloud screenshot](images/hana-cloud.png "hana-cloud")
+  ![hana-cloud screenshot](../../prepare/configure-hana/images/getSQLEndpoint.png "hana-cloud")
 
 * DB Admin: Username of the database admin (for example, `DBADMIN` if you followed the mission [Develop a Multitenant Extension Application in SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3683/3726/))
 

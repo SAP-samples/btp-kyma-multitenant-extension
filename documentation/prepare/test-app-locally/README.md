@@ -146,7 +146,9 @@ Windows users have to rely on unix-like shells to execute the curl commands we p
    The first run will take a bit longer than the next one, as database table creation has to be carried out.
 
 2. Let's have a look into table data of our database:
-   - Open the SAP HANA Database Explorer and add your database with user DBADMIN.
+   - In the **Instance** overview select your SAP HANA Database, expand the "..." and select **Open in SAP HANA Database Explorer**. Provide Database user and password.
+
+     ![](images/openSAPHANADBExplorer.png)
    - Expand the **Catalog** and select **Tables**.
    - Find the newly created table **TENANT** and open via Context Menu *Open Data*. No records exist yet.
 
@@ -313,7 +315,11 @@ The REST calls of the Easy Franchise service are used from the UI. Let's have a 
    ]
    ```
 
-3. Open the **Raw Data** tab of the table **MENTOR** of the database user CITY-SCOOTER-LOCAL and find the inserted mentor.
+3. Open the **Raw Data** tab of the table **MENTOR** of the database user CITY-SCOOTER-LOCAL and find the inserted mentor. 
+
+   > **Hint:** You can use the context menu **Add Database with Different User** to access the Database via the **CITY-SCOOTER-LOCAL** database user:
+   >
+   >![](images/AddDatabaseWithDifferentUser.png)
 
    ![](images/DatabaseExplorerMentor.png)
 

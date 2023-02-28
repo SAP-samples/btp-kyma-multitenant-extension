@@ -1,6 +1,6 @@
-# Using btp-setup-automator to Prepeare Environment and Application
+# Using btp-setup-automator to Prepare Environment and Application
 
-In this section, we are explaining to tuse the [btp-setup-automator](https://github.com/SAP-samples/btp-setup-automator) to set up the account and run the application in an automated way.
+In this section, we are explaining to use the [btp-setup-automator](https://github.com/SAP-samples/btp-setup-automator) to set up the account and run the application in an automated way.
 
 ## Prerequisites
 To install the usecase using the btp-setup-automator, you will need Docker. If you haven't it install, you can download it from [Docker Hub](https://hub.docker.com/).
