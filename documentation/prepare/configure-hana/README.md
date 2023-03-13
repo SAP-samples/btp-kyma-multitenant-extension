@@ -32,11 +32,9 @@ If you would like to use an already existing database, this is also fine and you
    * Enter the **Password** for the **DBADMIN** user. Remember this password for future use.
 
    ![](images/createHANA-step3.png)
-10. Choose **Next** until you come to step **(5) SAP HANA Database Advanced**. Select the **Allow All IP addresses** radio button.
+10. Choose **Next** until you come to step **(5) SAP HANA Database Advanced**. Select the **Allow All IP addresses** radio button. This is needed because the Kyma cluster is not yet part of the allowed SAP BTP IP addresses and it allows you to run the Easy Franchise application locally.
 
     ![](images/createHANA-step4.png)
-
-    >**Hint:** Do not use the **Allow all IP addresses** option for production. However, this option is needed to allow local test runs to access the database.
 
 11. Choose **Review and Create** and verify the details of the new instance. Finish the creation.
 
