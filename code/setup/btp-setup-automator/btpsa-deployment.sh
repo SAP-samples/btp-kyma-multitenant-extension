@@ -42,7 +42,7 @@ read_automator_config() {
   DB_ADMIN="DBADMIN"
   DB_ADMIN_PASSWORD="$( echo "$result" | jq -r '.createdServiceInstances[] | select(.name == "hana-cloud") | .parameters.data.systempassword' 2> /dev/null)"
   
-  DB_DASHBOARD="$( echo "$result" | jq -r '.createdServiceInstances[] | select(.name == "hana-cloud") | .statusResponse | ."dashboard url" ' 2> /dev/null)"  
+  DB_DASHBOARD="$( echo "$result" | jq -r '.createdServiceInstances[] | select(.name == "hana-cloud") | .statusResponse | ."dashboard_url" ' 2> /dev/null)"  
   DB_HOST="${DB_DASHBOARD#*?host=}"
   DB_HOST=${DB_HOST/&component*}
   DB_PORT=${DB_DASHBOARD/*port=/}
