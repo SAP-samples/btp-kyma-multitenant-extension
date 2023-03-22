@@ -54,17 +54,17 @@ spec:
   selector:
     app: approuter
 ---
-apiVersion: gateway.kyma-project.io/v1alpha1
+apiVersion: gateway.kyma-project.io/v1beta1
 kind: APIRule
 metadata:
   name: approuter-apirule
   namespace: integration
 spec:
   gateway: kyma-gateway.kyma-system.svc.cluster.local
+  host: <provider-subdomain> # url for provider subaccount, adapt to your own subdomain
   service:
     name: approuter
-    port: 5000
-    host: <provider-subdomain> # url for provider subaccount, adapt to your own subdomain
+    port: 5000    
   rules:
     - path: /.*
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"]
