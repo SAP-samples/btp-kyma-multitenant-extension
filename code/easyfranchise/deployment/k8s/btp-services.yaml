@@ -104,17 +104,17 @@ spec:
   externalName: ef-destination-service-external
   secretName: destination-service-binding   
 ---
-apiVersion: gateway.kyma-project.io/v1alpha1
+apiVersion: gateway.kyma-project.io/v1beta1
 kind: APIRule
 metadata:
   name: subscription-apirule
   namespace: integration
 spec:
   gateway: kyma-gateway.kyma-system.svc.cluster.local
+  host: subscription # adapt to your kyma cluster
   service:
     name: broker
-    port: 3002
-    host: subscription # adapt to your kyma cluster
+    port: 3002    
   rules:
     - path: /.*
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"]
