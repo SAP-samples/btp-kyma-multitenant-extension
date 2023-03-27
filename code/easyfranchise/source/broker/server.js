@@ -2,7 +2,7 @@ const EF_SERVICE_NAME = 'approuter';
 const EF_SERVICE_PORT = 5000;
 const EF_APIRULE_DEFAULT_NAMESPACE = 'integration';
 const KYMA_APIRULE_GROUP = 'gateway.kyma-project.io';
-const KYMA_APIRULE_VERSION = 'v1alpha1';
+const KYMA_APIRULE_VERSION = 'v1beta1';
 const KYMA_APIRULE_PLURAL = 'apirules';
 
 const k8s = require('@kubernetes/client-node');
