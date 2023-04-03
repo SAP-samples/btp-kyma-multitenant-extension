@@ -8,7 +8,7 @@ The mock server simply reads all entities in the [BusinessPartner-sample.json](.
 
 ## Start the Business Partner Mock Server Locally
 
-1. Download the code of this repository [btp-btp-kyma-multitenant-extension](https://github.com/SAP-samples/btp-kyma-multitenant-extension).
+1. Download the code of this repository [btp-kyma-multitenant-extension](https://github.com/SAP-samples/btp-kyma-multitenant-extension).
 1. Open a command shell and change the directory to [code/easyfranchise/source/business-partner-mock-server/](../../../code/easyfranchise/source/business-partner-mock-server/).
 1. Install the required package in the folder **code/easyfranchise/source/business-partner-mock-server/**:
 
