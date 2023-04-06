@@ -31,6 +31,6 @@ Once the customer subaccount is created, the partner needs to establish the conn
 
    ![](images/create-destination-02.png)
 
-4. Choose **Check Connection** and verify that the connection has been established. Then close the pop-up window. Please note if you used the mock server in your destination the check will fail. Reason for that is that the mock server is only reachable from within the Kyma Cluster, so it will work for the appliaction despite the check fails.
+4. Choose **Check Connection** and verify that the connection has been established. Then close the pop-up window. Please note if you used the mock server in your destination the check will fail. Reason for that is that the mock server is only reachable from within the Kyma Cluster, so it will work for the application despite the check fails.
 
    ![](images/create-destination-03.png)
