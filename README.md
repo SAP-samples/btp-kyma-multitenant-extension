@@ -43,6 +43,16 @@ You can find all requirements to execute the tutorial in this [section](/documen
 * Code is your world? You don't want to waste time with reading explanations or architecture details? Here is the [code](/code/easyfranchise/source/README.md).
 * You have read the documentation and you would like to test the scenario without implementing the whole set-up step-by-step? Then use the [btp-setup-automator](/documentation/appendix/btp-setup-automator/README.md) and get everything working in less than one hour.
 
+## What Next? 
+
+Related missions are enriching this mission with identity features and day 2 operations:
+* [Enrich a Kyma based multitenant application with new identity features](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/4000/4207/)  
+This mission explains how to enrich a Kyma-based multitenant application with additional identity features by focusing on identity topics like identity management via SAP Cloud Identity Services, custom identity provider and principal propagation. This mission is based on the Easy Franchise application too.
+* [Extend a Kyma based multitenant application with day 2 operations](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3999/4206/)  
+This mission explains how to extend a Kyma based multitenant application with day2 operations topics like metering, observability and CI/CD. This mission is based on the Easy Franchise application too.
+
+
+
 ## Known Issues
 
 The tutorial is provided on the "as-is" basis. Currently, there are no known issues for the tutorial project.
