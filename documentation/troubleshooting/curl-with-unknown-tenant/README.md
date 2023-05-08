@@ -4,8 +4,7 @@ Symptom:
 * You are executing a curl command where a tenant is required but not existing. As a consequence, you get an error: ```unknown tenant: 123456789-local-tenant-id```.
 
 **If you are in a local test mode**
-1. Check your configuration ```hiddenconfig.properties``` files as described here: [Configure Properties](../../../documentation/prepare/test-app-locally/README.md#configure-properties). 
-2. Check the ```devmode.tenantid``` which is used for local testing. 
+1. Check your configuration ```hiddenconfig.properties``` file as described here: [Configure Properties](../../../documentation/prepare/test-app-locally/README.md#configure-properties). Check the, which value you have configured for the property  ```devmode.tenantid``` which is used for local testing. 
 3. Check which tenants already exist:
 
    ```
