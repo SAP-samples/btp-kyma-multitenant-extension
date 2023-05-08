@@ -61,6 +61,12 @@ Have you found the enablement material easy to understand? Are you missing somet
 
 Check the details of our last [releases](/documentation/discover/whats-new/README.md).
 
+## Related Missions
+
+* [Enrich a Kyma based multitenant application with new identity features](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/4000/4207/)  
+This mission explains how to enrich a Kyma-based multitenant application with additional identity features by focusing on identity topics like identity management via SAP Cloud Identity Services, custom identity provider and principal propagation. This mission is based on the Easy Franchise application too.
+* [Extend a Kyma based multitenant application with day 2 operations](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3999/4206/)  This mission explains how to extend a Kyma based multitenant application with day2 operations topics like metering, observability and CI/CD. This mission is based on the Easy Franchise application too.
+
 ## License
 
 Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.

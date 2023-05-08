@@ -6,7 +6,7 @@ If you went through the mission without doing the setup but you would like to te
 * [Enrich a Kyma based multitenant application with new identity features](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/4000/4207/)  
 This mission explains how to enrich a Kyma-based multitenant application with additional identity features by focusing on identity topics like identity management via SAP Cloud Identity Services, custom identity provider and principal propagation. This mission is based on the Easy Franchise application too.
 
-* [Extend a Kyma based multitenant application with day 2 operations](https://discovery-center.cloud.sap/missiondetail/url-to-be-updated)  
+* [Extend a Kyma based multitenant application with day 2 operations](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3999/4206/)  
 This mission explains how to extend a Kyma based multitenant application with day2 operations topics like metering, observability and CI/CD. This mission is based on the Easy Franchise application too.
 
 * [Getting Started with the SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3252/3281/)  
