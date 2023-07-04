@@ -10,7 +10,7 @@ To execute all the necessary steps of the tutorial, you will need the following 
 * [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/#kubectl)
 * [Kubernetes OpenID Connect (OIDC) authentication](https://github.com/int128/kubelogin)
 * [jq](https://stedolan.github.io/jq/) 
-* [uuidgen](https://packages.ubuntu.com/bionic/uuid-runtime)
+* [uuidgen](https://launchpad.net/ubuntu/bionic/+package/uuid-runtime)
 
 ## Windows User
 
