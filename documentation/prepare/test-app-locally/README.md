@@ -381,7 +381,7 @@ The REST calls of the Easy Franchise service are used from the UI. Let's have a 
 
 ## 2. Run User Interface Locally
 
-> Note: To simplify debugging in the browser, we recommend installing the browser extension [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg) for Google Chrome.
+> Note: To simplify debugging in the browser, we recommend installing the browser extension called **Vue.js devtools** for Google Chrome.
 
 1. Go back to your IDE and open the **ui** folder of the application.
 2. Navigate to the **src** folder and open the file **main.js**.
