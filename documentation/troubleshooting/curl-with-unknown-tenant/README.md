@@ -11,7 +11,7 @@ Symptom:
    curl --verbose -X GET http://localhost:8090/easyfranchise/rest/dbadminservice/v1/config/tenants
    ```
    If the expected tenant doesn't exist, onboard the tenant as described in the chapter [Onboard the First Tenant](../../../documentation/prepare/test-app-locally/README.md#onboard-the-first-tenant). The tenant you have configured in your ```hiddenconfig.propertie``` via the property ```devmode.tenantid``` have to match to the onboard process.
-3. If all of this doesn't help redo all steps of [Test the Easy Franchise Application Locally](../../../documentation/prepare/test-app-locally/README.md).
+3. If all of this doesn't help redo, all steps of [Test the Easy Franchise Application Locally](../../../documentation/prepare/test-app-locally/README.md).
 
 **If you aren't in a local test mode**
 1. Check the steps of the chapter [Subscribe to the Easy Franchise Application](../../../documentation/test-customer-onboarding/subscribe-easyfranchise-app/README.md).
