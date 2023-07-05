@@ -17,9 +17,14 @@ app.get('/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner', function (r
     });
  })
   
-var server = app.listen(8081, 'localhost', function () {
-   var host = server.address().address
+var server = app.listen(8081, '127.0.0.1', function () {
+   var host = server.address().address;
+   if (host === '::') {
+        host = 'localhost';
+    }
+   console.log("Host: " + host);
    var port = server.address().port
+   console.log("Port: " + port);
 
    console.log("Business Partner Mock listening at http://%s:%s", host, port)
 })
