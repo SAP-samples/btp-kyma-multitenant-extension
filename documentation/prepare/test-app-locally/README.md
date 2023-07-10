@@ -285,6 +285,7 @@ Most of the properties of a franchisee are read from the SAP S/4HANA Cloud syste
        }, ..
     ]
     ```
+
 ###  Create a Mentor
 
 The REST calls of the Easy Franchise service are used from the UI. Let's have a look at how to create a mentor via REST call.
