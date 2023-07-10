@@ -58,7 +58,7 @@ Lets have a look at the data persisted in **SAP HANA**.
 
 5. In the records search for the one with the fitting subdomain. Remember the **SCHEMA** and **PASSWORD** value.
 6. Open the context menu of your database and **Create a new Database with a different User**. Provide the remembered **SCHEMA** value as Database user. Use the password of the **TENANT** record.
-7. Find the table **Mentor** just added database. Open the data view and find the mentors you have added via the application.
+7. Find the **Mentor** table in the just added database. Open the data view and find the mentors you have added via the application.
 
    ![](images/mentor-table.png)
 
