@@ -10,5 +10,5 @@ Solutions developed by SAP partners need to be commercialized using one of the e
 All solutions are made available through our digital marketplace in SAP App Center, which is the partner's key point of access to 440,000 global customers. Backed by the credibility of SAP, SAP partners can expose their solutions to senior leaders with buying power from across all lines of business – representing leading businesses, from over 25 industries, that are looking to optimize their investment in SAP solutions.
 
 * <a href="https://help.sap.com/viewer/7db4dc653edc4597825628ba6d20a2c2/Cloud/en-US/ec3d6ea3062641c39da9ca288d7a22f3.html" target="_blank">Commercial Offering for Industry Cloud Solutions</a>
-* <a href="https://www.sap.com/dmc/exp/2020-05-22-sap-partner-solution-progression/index.html" target="_blank">Partner Solution Progression</a>
+* <a href="https://www.sap.com/documents/2020/01/0e31d745-807d-0010-87a3-c30de2ffd8ff.html" target="_blank">Partner Solution Progression</a>
 * <a href="https://store.sap.com/dcp/en/partner-with-us/documentation/go-to-market-guide" target="_blank">Go-to-Market Guide</a>
