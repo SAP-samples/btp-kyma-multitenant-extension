@@ -46,32 +46,32 @@ The Approuter deployment is done through two steps. The first step creates the r
 
      ![](images/subdomain.png)
 
-1. You can proceed with the deployment to the Kyma cluster. Navigate to root folder of the repository:
+2. You can proceed with the deployment to the Kyma cluster. Navigate to root folder of the repository:
 
    ```shell
    kubectl apply -f ./code/easyfranchise/deployment/k8s/btp-services.yaml
    ```
 
-1. Continue with the deployment of the Approuter itself. You need to build the Docker image and push it to the repository. If you are using dockerhub the `<docker-repository>` is a combination of your account name and the repository which looks like this: <docker account>/<repo name>
+3. Continue with the deployment of the Approuter itself. You need to build the Docker image and push it to the repository. If you are using dockerhub the `<docker-repository>` is a combination of your account name and the repository which looks like this: <docker account>/<repo name>
 
    ```shell
    docker build --no-cache=true --rm -t <docker-repository>:approuter-0.1  -f ./code/easyfranchise/deployment/docker/Dockerfile-approuter .
    docker push <docker-repository>:approuter-0.1
    ```
 
-1. Before you can deploy the Approuter to the cluster, you need to adapt the [approuter.yaml](../../../code/easyfranchise/deployment/k8s/approuter.yaml) and replace the following placeholders:
+4. Before you can deploy the Approuter to the cluster, you need to adapt the [approuter.yaml](../../../code/easyfranchise/deployment/k8s/approuter.yaml) and replace the following placeholders:
 
    - `<image-name>` the image name you just created
    - `<cluster-domain>` same as above
    - `<provider-subdomain>` same as above
 
-1. After that you can deploy:
+5. After that you can deploy:
 
    ```shell
    kubectl apply -f ./code/easyfranchise/deployment/k8s/approuter.yaml
    ```
 
-1. Run the following command to verify that the deployment was successful:
+6. Run the following command to verify that the deployment was successful:
 
    ```
    kubectl get pods -n integration
