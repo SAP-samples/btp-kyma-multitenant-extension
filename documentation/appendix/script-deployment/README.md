@@ -11,7 +11,7 @@ We recommend using a Linux subsystem for the tutorial as our scripts are only av
 * [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/#kubectl)
 * [Kubernetes OpenID Connect (OIDC) authentication](https://github.com/int128/kubelogin)
 * [jq](https://stedolan.github.io/jq/)
-* [uuidgen](https://packages.ubuntu.com/bionic/uuid-runtime)
+* [uuidgen](https://launchpad.net/ubuntu/bionic/+package/uuid-runtime)
 
 > If you run through the manual deployment before, revert the changes you have done in the `.yaml` files. The build scripts will modify them according to your input.
 
