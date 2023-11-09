@@ -5,14 +5,14 @@
 To host the Easy Franchise application, we will create a provider subaccount.
 
 1. Open the SAP BTP cockpit and create a new subaccount from the **Account Explorer**.
-![](images/Create-Subaccount-1.png)
+![](images/2023-Create-Subaccount-1.png)
 
 2. In the dialog that opens, specify the following details:
    * **Display Name**: **Easy Franchise**
    * **Subdomain**: Use the predefined entry to avoid name clashes (it will show up after you choose a region)
    * **Region**: Choose a region close to you (Note: If you go for the Free-Tier-Model stick to AWS regions)
 
-   ![](images/Create-Subaccount-2.png)
+   ![](images/2023-Create-Subaccount-2.png)
 
 ## Configure Entitlements
 
