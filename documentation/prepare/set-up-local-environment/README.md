@@ -167,7 +167,7 @@ It will be needed by calling manual or script-based deployment.
 
 ### uuidgen
 
-1. Check if you have **uuidgen** installed:
+1. Check if you have **uuidgen** installed (already installed by default on Mac):
 
    ```
    uuidgen
