@@ -18,7 +18,7 @@ To host the Easy Franchise application, we will create a provider subaccount.
 
 Now that we have created the provider subaccount, we will add entitlements.
 
-1. Navigate to the **Entitlements** page.
+1. Open the subaccount and navigate to the **Entitlements** page.
 1. Choose **Configure Entitlements** and then choose **Add Service Plans**.
 1. Search for **Kyma runtime**.
 1. Select the suggested plan.
@@ -26,10 +26,9 @@ Now that we have created the provider subaccount, we will add entitlements.
    * **tools (Application)**
    * **hana-free**
 1. Search for **Authorization and Trust Management Service** and choose the plan **broker**
-1. Choose **Add 4 Service Plans**.
 1. Save your changes.
 
-   ![](images/Configure-Entitlements.png)
+   ![](images/2023-Configure-Entitlements.png)
 
 
 ## Enable the Kyma Environment
@@ -37,7 +36,7 @@ Now that we have created the provider subaccount, we will add entitlements.
 1. Navigate back to the **Overview** page of the subaccount.
 2. Choose **Enable Kyma**.
 
-   ![](images/Enable-Environments.png)
+   ![](images/2023-Enable-Environments.png)
 3. In the opened dialog accept the pre-defined values and choose **Create**.
 4. Enabling Kyma will take around 30 minutes.
 
@@ -47,12 +46,12 @@ Now that we have created the provider subaccount, we will add entitlements.
 Follow the steps to verify that the setup was successful:
 
 1. Choose the **Overview** page of the provider subaccount.
-2. Check that you have a running Kyma environment.
+2. Check that you have a running Kyma environment and choose **Link to dashboard** under **Kyma Environment**. 
 
-   ![](images/success.png)
+   ![](images/2023-success.png)
 
-3. Choose **Link to dashboard** under **Kyma Environment**. The Kyma dashboard should open in a new browser tab.
+3. The Kyma dashboard should open in a new browser tab.
 
-   ![](images/kymadashboard.png)
+   ![](images/2023-kymadashboard.png)
 
    Per default, the user that has enabled the Kyma Environment is granted with the cluster admin role. In order to give access to further users have a look at the [Kyma Help Documentation](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/148ae38b7d6f4e61bbb696bbfb3996b2.html?locale=en-US). You need to follow the steps described under Kyma 2.x.
