@@ -143,7 +143,7 @@ Server: Docker Engine - Community
 
 ### Docker Hub Account
 
-To be able to deploy the application, you will first need a place to store your images. If you don't have an image reposiotry already available in your company, you can create a [Docker Hub Account](https://docs.docker.com/get-started/#download-and-install-docker) to store the images.
+To be able to deploy the application, you will first need a place to store your images. If you don't have an image repository already available in your company, you can create a [Docker Hub Account](https://docs.docker.com/get-started/#download-and-install-docker) to store the images.
 
 
 ### jq
