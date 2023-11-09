@@ -63,7 +63,7 @@ For your local run, you have to configure some properties in a `hiddenconfig.pro
 ### Build
 
 Build the project:
-1. Open a command line window and change to directory to [code/easyfranchise/source/backend](../../../code/easyfranchise/source/backend) containing the main [pom.xml](../../../code/easyfranchise/source/backend/pom.xml). Run the following Maven command:
+1. Open a command line window and change to directory to [code/easyfranchise/source/backend](../../../code/easyfranchise/source/backend) containing the main [pom.xml](../../../code/easyfranchise/source/backend/pom.xml). Be sure to update the JDK version in the pom.xml (lign 23) if you are not using JDK15. Then run the following Maven command:
 
    ```mvn clean install```
 
@@ -141,7 +141,7 @@ Windows users have to rely on unix-like shells to execute the curl commands we p
 
    * return status: `200 OK`
    * content: ``[]``
-   * ![](images/getTenants01.png)
+   * ![](images/2023-getTenants01.png)
 
    The first run will take a bit longer than the next one, as database table creation has to be carried out.
 
