@@ -7,10 +7,10 @@ If you would like to use an already existing database, this is also fine and you
 1. Open your **Easy Franchise** subaccount 
 2. Expand the **Services** and open **Services Marketplace** and select and open **SAP HANA Cloud**.
    
-   ![](images/openServicesMarketplace.png)
+   ![](images/2023-openServicesMarketplace.png)
 3. In the **Application Plans** section you should find a plan **tools**. Expand the 3 dots on the right side of the plan info line and select **Create**. In the following dialog accept the pre-selected service and plan and choose **Create**.
    
-   ![](images/createHanaToolsSubsciption.png)
+   ![](images/2023-createHanaToolsSubsciption.png)
 4. Don't open the **Subscription** as you first have to assign the role collection **SAP HANA Cloud Administrator**  to gain full access. Expand **Security** and open  **Users** and select yourself. Open the **Assign Role Collection** dialog on the right side by expanding the 3 dots. 
 
    ![](images/assignRoleCollection.png)
