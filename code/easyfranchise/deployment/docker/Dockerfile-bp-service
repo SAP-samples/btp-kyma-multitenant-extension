@@ -12,7 +12,7 @@ COPY code/easyfranchise/source/backend/db-service/src /opt/app/db-service/src
 RUN mvn clean install -DskipTests=true
 
 # At this point, BUILDER stage should have your .jar or whatever in some path
-FROM sapmachine:16 as production-stage
+FROM sapmachine:latest as production-stage
 LABEL maintainer="alexander.rieder@sap.com"
 WORKDIR /opt/app
 COPY --from=BUILDER /opt/app/bp-service/target/bp-service.jar /opt/app/bp-service.jar

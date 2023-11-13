@@ -40,13 +40,17 @@ The Approuter deployment is done through two steps. The first step creates the r
 
    - `<cluster-domain>` the full Kyma cluster domain. You can find the cluster name in the downloaded **kubeconfig** file or in the Kyma dashboard, for example, `c-1ddaa90.kyma.ondemand.com`.
 
-     ![](images/kymaConsole.png)
+     ![](images/2023-kymaConsole.png)
 
    - `<provider-subdomain>` must be replaced with the subdomain of the sub account where the application should be deployed to. This can be found in the SAP BTP cockpit.
 
-     ![](images/subdomain.png)
+     ![](images/2023-subdomain.png)
 
-2. You can proceed with the deployment to the Kyma cluster. Navigate to root folder of the repository:
+2. If you are using recently provisioned Kyma runtime, you need to enable the BTP operator module in Kyma under the **kyma-system** namespace. Follow the steps described in the [official documentation(https://help.sap.com/docs/btp/sap-business-technology-platform/enable-and-disable-kyma-module#loio1b548e9ad4744b978b8b595288b0cb5c)]. At the end, you should see the module **btp-operator** configured.
+
+   ![](images/2023-btp-operator.png)
+
+3. You can proceed with the deployment to the Kyma cluster. Navigate to root folder of the repository:
 
    ```shell
    kubectl apply -f ./code/easyfranchise/deployment/k8s/btp-services.yaml
