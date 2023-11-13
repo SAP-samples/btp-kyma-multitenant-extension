@@ -18,7 +18,7 @@ spec:
       imagePullSecrets:
         - name: registry-secret # replace with your own registry secret      
       containers:
-      - image: <image-name> # e.g. cp-enablement.docker.repositories.sap.ondemand.com/com.sap.easyfranchise/s4hanamock:<version>
+      - image: <image-name> # use your own image
         name: business-partner-mock
         imagePullPolicy: Always
         ports:

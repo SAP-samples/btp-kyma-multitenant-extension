@@ -18,7 +18,7 @@ spec:
       imagePullSecrets:
         - name: registry-secret # replace with your own registry secret
       containers:
-      - image: <image-name> #cp-enablement.docker.repositories.sap.ondemand.com/easyfranchise/broker # use your own image
+      - image: <image-name> # use your own image
         name: broker
         imagePullPolicy: Always
         env:
