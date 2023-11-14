@@ -5,20 +5,20 @@ That would mean that the partner would now typically add one or more mentor coor
 
 1. First verify that the role collections have been installed correctly during the subscription process. Go to **Role Collections** under **Security** in the left sidebar and search for the Easy Franchise role collections.
 
-   ![](images/check-role-collections.png)
+   ![](images/2023-check-role-collections.png)
 
 2. Navigate now to **Users** and click on your user. If your user not already exist click on **Create** to create one. 
 
-   ![](images/add-role-collection-01.png)
+   ![](images/2023-add-role-collection-01.png)
 
 3. Click on the 3 dots icon and select **Assign Role Collection**.
 
-   ![](images/add-role-collection-02.png)
+   ![](images/2023-add-role-collection-02.png)
 
-4. Search for **Easy Franchise**, then select **Easy Franchise Backend Role (`<subdomain>`) Collection** and choose **Assign Role Collection**.
+4. Search for **Easy Franchise**, then select **Easy Franchise Backend Role (`<subdomain>`)** collection and choose **Assign Role Collection**.
 
-   ![](images/add-role-collection-03.png)
+   ![](images/2023-add-role-collection-03.png)
 
-5. The application is now configured and ready to be used by the customer. As partner you can share the link of the application with the end-user (in our case you ;)). You can find the URL of the app by choosing **Instances and Subscriptions** under **Services**. The link is under the link **Easy Franchise (`<subdomain>`)**.
+5. The application is now configured and ready to be used by the customer. As partner you can share the link of the application with the end-user. You can find the URL of the app by choosing **Instances and Subscriptions** under **Services**. The link is under the link **Easy Franchise (`<subdomain>`)**.
 
-   ![](images/start-application.png)
+   ![](images/2023-start-application.png)
