@@ -11,7 +11,7 @@ COPY code/easyfranchise/source/backend/ef-service/src /opt/app/ef-service/src
 COPY code/easyfranchise/source/backend/db-service/src /opt/app/db-service/src
 RUN mvn clean install -DskipTests=true
 
-FROM --platform=linux/amd64 sapmachine:16 as production-stage
+FROM --platform=linux/amd64 sapmachine:latest as production-stage
 LABEL maintainer="alexander.rieder@sap.com"
 WORKDIR /opt/app
 COPY --from=BUILDER /opt/app/db-service/target/db-service.jar /opt/app/db-service.jar
