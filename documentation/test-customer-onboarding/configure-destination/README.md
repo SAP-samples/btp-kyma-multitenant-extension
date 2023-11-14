@@ -4,11 +4,11 @@ Once the customer subaccount is created, the partner needs to establish the conn
 
 1. Verify first that you are in the correct customer subaccount (here *City Scooter*) and choose **Connectivity** on the left sidebar.
 
-   ![](images/go-to-connectivity.png)
+   ![](images/2023-go-to-connectivity.png)
 
-2. Choose **Destinations** under Connectivity and create a new destination by choosing **New Destination**.
+2. Choose **Destinations** under Connectivity and create a new destination by choosing **Create Destination**.
 
-   ![](images/create-destination-01.png)
+   ![](images/2023-create-destination-01.png)
 
 3. Enter the following details to configure the destination pointing to the SAP S/4HANA system and then choose **Save**. Those details need of course to be adapted based on your system.
 
@@ -21,7 +21,7 @@ Once the customer subaccount is created, the partner needs to establish the conn
     * Authentication: BasicAuthentication
     * User and Password: Communication Arrangement User
 
-   If you are using the Business Partner Mock Server, the settings are slightly different:
+   If you are using the [Business Partner Mock Server](../../appendix/business-partner-mock/README.md), the settings are slightly different:
     * Name: EasyFranchise-S4HANA (here it's important to keep this name)
     * Type: HTTP
     * Description: Destination to Business Partner Mock Server
@@ -29,7 +29,7 @@ Once the customer subaccount is created, the partner needs to establish the conn
     * Proxy Type: Internet
     * Authentication: NoAuthentication
 
-   ![](images/create-destination-02.png)
+   ![](images/2023-create-destination-02.png)
 
 4. Choose **Check Connection** and verify that the connection has been established. Then close the pop-up window. Please note if you used the mock server in your destination the check will fail. Reason for that is that the mock server is only reachable from within the Kyma Cluster, so it will work for the application despite the check fails.
 
