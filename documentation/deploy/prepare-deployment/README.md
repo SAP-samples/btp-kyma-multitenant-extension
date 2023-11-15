@@ -33,12 +33,14 @@ Easy Franchise app consists of the following artifacts:
 - Broker
 - Email Service
 - UI
+- Optional: Business Partner Mock Server
 
-In total you have three namespaces to separate the artifacts:
+In total you have three (or 4) namespaces to separate the artifacts:
 
 - **integration** contains all micro-services that have dependencies to other SAP BTP services, for example, ef-approuter, ef-broker, db-service, and bp-service.
 - **backend** contains only the Easy Franchise service, which acts as central entry point for all other backend services.
-- **frontend** it contains the UI components.
+- **frontend** contains the UI components.
+- **mock** contains the Business Partner Mock Server if you decide to use it instead of an SAP S/4HANA system.
 
 Either you can create the namespaces using kubectl or using the Kyma dashboard.
 
@@ -55,6 +57,11 @@ Here are the steps using kubectl:
    kubectl label namespace backend istio-injection=enabled --overwrite
    kubectl label namespace frontend istio-injection=enabled --overwrite
    ```
+   Optional if you want to use the Business Partner Mock
+      ```shell
+      kubectl create namespace mock
+      kubectl label namespace mock istio-injection=enabled --overwrite
+      ```
 
 2.  You should see a message like `namespace/integration created` if the command was successful. In addition, the namespace should also be visible using the Kyma dashboard.
 
@@ -64,7 +71,7 @@ Here are the steps using the Kyma Dashboard:
 
    ![](images/2023-createNamespace.png)
 
-2. Create all 3 namespaces: **integration**, **backend**, **frontend**.
+2. Create all 3 namespaces: **integration**, **backend**, **frontend** and optionally **mock**.
 
 # Determine Placeholder Values
 
