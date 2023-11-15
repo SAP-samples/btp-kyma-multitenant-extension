@@ -256,3 +256,22 @@ Before deploying the UI, you need to check the global variable **backendApi**, w
    ```bash
    kubectl apply -f ./code/easyfranchise/deployment/k8s/ui.yaml
    ```
+
+## [OPTIONAL] Deploy the Business Partner Mock
+
+If the SAP S/4HANA Cloud system is not available, you can also deploy our Business Partner mock server.
+
+1. Navigate to the root folder of the repository to build and push the Docker image:
+
+   ```shell
+   docker build --no-cache=true --rm -t <docker-repository>:mock-0.1  -f ./code/easyfranchise/deployment/docker/Dockerfile-business-partner-mock .
+   docker push <docker-repository>:mock-0.1
+   ```
+
+1. Before you can deploy the image, you need to replace the `<image-name>` tag in the [business-partner-mock.yaml](../../../code/easyfranchise/deployment/k8s/business-partner-mock.yaml) file with `<docker-repository>:mock-0.1`:
+
+   ```shell
+   kubectl apply -f ./code/easyfranchise/deployment/k8s/business-partner-mock.yaml
+   ```
+
+1. Verify that you can find a new pod with the name **business-partner-mock-xxxx** in the namespace **mock** of the Kyma cluster to validate the deployment.
