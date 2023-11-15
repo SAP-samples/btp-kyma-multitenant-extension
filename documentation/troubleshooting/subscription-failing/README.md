@@ -17,5 +17,5 @@ Check if you allowed the access from all IP addresses:
    ![](images/2023-ManageConfiguration.png)
 5. Check in the upcoming dialog for the **Connections** properties and check if **Allow all IP addresses** is selected. If not Edit the configuration of your database instance.
 
-   ![](images/allow-all-ip.png)
+   ![](images/2023-allow-all-ip.png)
 6. Try to subscribe again.
