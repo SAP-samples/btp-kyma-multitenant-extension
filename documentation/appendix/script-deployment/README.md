@@ -56,15 +56,15 @@ There are certain parameters that you need to provide in the beginning of the sc
 
 * Subdomain: The subdomain of the subaccount, where your application should be deployed, for example, `easyfranchise`.
 
-  ![subdomain screenshot](images/subdomain.png "subdomain")
+  ![subdomain screenshot](images/2023-subdomain.png "subdomain")
 
 * Cluster Domain: The full Kyma cluster domain that you can find in the downloaded **kubeconfig** file or in the Kyma dashboard, for example, `c-1ddaa90.kyma.ondemand.com`.
 
-  ![](images/kymaConsole.png)
+  ![](images/2023-kymaConsole.png)
 
 * Kubeconfig Url: Open SAP BTP Cockpit and navigate to the overview page of the subaccount where Kyma is enabled. There you will find the URL to download the `kubeconfig` file.
 
-   ![](images/kyma-dashboard.png)
+   ![](images/2023-kyma-dashboard.png)
 
 * Docker E-Mail: E-Mail address associated with the docker repository
 
@@ -76,9 +76,9 @@ There are certain parameters that you need to provide in the beginning of the sc
 
 * Docker Repository: The name of the docker repository where to store the created images. In case of Docker Hub this is a combination of account and repository name, which look like that: ```<docker account>/<repository name>``` e.g. ```user1234/efdeploy```
 
-* SQL Endpoint: SQL endpoint of the database to be used. Use **Instances and Subscriptions** from the left side navigation, then select the application **SAP HANA Cloud**. Then copy the SQL endpoint like in the following screenshot:
+* SQL Endpoint: SQL endpoint of the database to be used. Use **Instances and Subscriptions** from the left side navigation, then select the application **SAP HANA Cloud**. The **SAP HANA Cloud Central** will open. Then copy the SQL endpoint like in the following screenshot:
 
-  ![hana-cloud screenshot](../../prepare/configure-hana/images/getSQLEndpoint.png "hana-cloud")
+  ![](images/2023-hana-cloud.png)
 
 * DB Admin: Username of the database admin (for example, `DBADMIN` if you followed the mission [Develop a Multitenant Extension Application in SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3683/3726/))
 

@@ -40,13 +40,17 @@ The Approuter deployment is done through two steps. The first step creates the r
 
    - `<cluster-domain>` the full Kyma cluster domain. You can find the cluster name in the downloaded **kubeconfig** file or in the Kyma dashboard, for example, `c-1ddaa90.kyma.ondemand.com`.
 
-     ![](images/kymaConsole.png)
+     ![](images/2023-kymaConsole.png)
 
    - `<provider-subdomain>` must be replaced with the subdomain of the sub account where the application should be deployed to. This can be found in the SAP BTP cockpit.
 
-     ![](images/subdomain.png)
+     ![](images/2023-subdomain.png)
 
-2. You can proceed with the deployment to the Kyma cluster. Navigate to root folder of the repository:
+2. If you are using recently provisioned Kyma runtime, you need to enable the BTP operator module in Kyma under the **kyma-system** namespace. Follow the steps described in the [official documentation(https://help.sap.com/docs/btp/sap-business-technology-platform/enable-and-disable-kyma-module#loio1b548e9ad4744b978b8b595288b0cb5c)]. At the end, you should see the module **btp-operator** configured.
+
+   ![](images/2023-btp-operator.png)
+
+3. You can proceed with the deployment to the Kyma cluster. Navigate to root folder of the repository:
 
    ```shell
    kubectl apply -f ./code/easyfranchise/deployment/k8s/btp-services.yaml
@@ -213,11 +217,11 @@ As the Email service is based on Node.js, there is no need to build the service 
 1. You start with building and pushing the Docker image. Navigate to the root folder of the repository and run the following commands:
 
    ```shell
-   docker build --no-cache=true --rm -t <docker-repository>:emailservice-0.1 -f ./code/easyfranchise/deployment/docker/Dockerfile-email-service .
-   docker push <docker-repository>:emailservice-0.1
+   docker build --no-cache=true --rm -t <docker-repository>:email-service-0.1 -f ./code/easyfranchise/deployment/docker/Dockerfile-email-service .
+   docker push <docker-repository>:email-service-0.1
    ```
 
-1. Before you can deploy the image, you need to replace the <image-name> tag in the [email-service.yaml](../../../code/easyfranchise/deployment/k8s/email-service.yaml) file with `<docker-repository>:emailservice-0.1`.
+1. Before you can deploy the image, you need to replace the <image-name> tag in the [email-service.yaml](../../../code/easyfranchise/deployment/k8s/email-service.yaml) file with `<docker-repository>:email-service-0.1`.
 
 1. Deploy the service:
 
@@ -252,3 +256,22 @@ Before deploying the UI, you need to check the global variable **backendApi**, w
    ```bash
    kubectl apply -f ./code/easyfranchise/deployment/k8s/ui.yaml
    ```
+
+## [OPTIONAL] Deploy the Business Partner Mock
+
+If the SAP S/4HANA Cloud system is not available, you can also deploy our Business Partner mock server.
+
+1. Navigate to the root folder of the repository to build and push the Docker image:
+
+   ```shell
+   docker build --no-cache=true --rm -t <docker-repository>:mock-0.1  -f ./code/easyfranchise/deployment/docker/Dockerfile-business-partner-mock .
+   docker push <docker-repository>:mock-0.1
+   ```
+
+1. Before you can deploy the image, you need to replace the `<image-name>` tag in the [business-partner-mock.yaml](../../../code/easyfranchise/deployment/k8s/business-partner-mock.yaml) file with `<docker-repository>:mock-0.1`:
+
+   ```shell
+   kubectl apply -f ./code/easyfranchise/deployment/k8s/business-partner-mock.yaml
+   ```
+
+1. Verify that you can find a new pod with the name **business-partner-mock-xxxx** in the namespace **mock** of the Kyma cluster to validate the deployment.

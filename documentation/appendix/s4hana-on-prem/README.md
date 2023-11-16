@@ -25,18 +25,26 @@ See section [Configure SAP BTP Connectivity in the Kyma Environment](https://hel
 
 Configuration steps:
 
-1. Add entitlement for plan **connectivity_proxy** in **Entitlements** section of your EasyFranchise subaccount. (In the screenshot it is grayed out because the entitlement was already set before.)
+1. Go to your global account and add entitlement for plan **connectivity_proxy** in **Entitlements** section of your EasyFranchise subaccount.
 
-   ![Add Plan](./images/proxy01.png)
+   ![Add Plan](./images/2023-proxy01.png)
 
-1. In the Kyma dashboard, select the **integration** namespace and go to **Service Management - Catalog**. You will find the Connectivity Service. Choose it and add an instance. Using default (generated) names will do.
+1. Select **Connectivity Service** and select the plan **connectivity_proxy**. Then add the entitlement.
+   ![Add Plan](./images/2023-proxy01b.png)
+
+1. In the Kyma dashboard under **Service Management**, click **Create Service Instance** and provide the following details:
+   * Name - a unique name for your service instance.The name must not contain more than 253 characters. It must consist of lowercase alphanumeric characters. It can also contain - (single or consecutive, like in a--a).
+   * Offering Name - set it to connectivity.
+   * Plan Name - set it to connectivity_proxy.
 
    ![Service](./images/proxy02.png)
 
-2. Switch to the **Instances** section and select your newly created service instance. Add a service binding by choosing **Add ServiceBinding +**. Again, using default names is ok. Now, bind the application **bp-service** by using the button **Create Service Binding Usage +**. You now should have a bound service instance similar to this one:
+2. Go to the tab **Service Bindings** and **click Create Service Binding** and provide the following details:
+   * Name - a unique name for your service binding.
+   * Service Instance Name - the name of the service instance created previously.
 
-   ![Instance](./images/proxy03.png)
 
+   ![Instance](./images/2023-proxy03.png)
 ## Use Connectivity-Proxy in bp-service
 
 Changing Easy Franchise setup from SAP S/4HANA Cloud to on-premise after the previous configuration steps requires only small changes. The same destination name was reused. You may want to compare with [Destination Configuration](../../test-customer-onboarding/configure-destination/README.md).

@@ -6,7 +6,7 @@ The **kubectl** command line tool lets you control your clusters. You will use i
 
 1. Open the SAP BTP Cockpit and navigate to the overview page of the subaccount where Kyma is enabled. There you will find the url to download the kubeconfig file. 
 
-   ![](images/kyma-dashboard.png)
+   ![](images/2023-kyma-dashboard.png)
 
 2. See section [Organizing Cluster Access Using kubeconfig Files](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/) in the Kubernetes documentation for more details about the kubeconfig file.
 
@@ -33,12 +33,14 @@ Easy Franchise app consists of the following artifacts:
 - Broker
 - Email Service
 - UI
+- Optional: Business Partner Mock Server
 
-In total you have three namespaces to separate the artifacts:
+In total you have three (or 4) namespaces to separate the artifacts:
 
 - **integration** contains all micro-services that have dependencies to other SAP BTP services, for example, ef-approuter, ef-broker, db-service, and bp-service.
 - **backend** contains only the Easy Franchise service, which acts as central entry point for all other backend services.
-- **frontend** it contains the UI components.
+- **frontend** contains the UI components.
+- **mock** contains the Business Partner Mock Server if you decide to use it instead of an SAP S/4HANA system.
 
 Either you can create the namespaces using kubectl or using the Kyma dashboard.
 
@@ -55,6 +57,11 @@ Here are the steps using kubectl:
    kubectl label namespace backend istio-injection=enabled --overwrite
    kubectl label namespace frontend istio-injection=enabled --overwrite
    ```
+   Optional if you want to use the Business Partner Mock
+      ```shell
+      kubectl create namespace mock
+      kubectl label namespace mock istio-injection=enabled --overwrite
+      ```
 
 2.  You should see a message like `namespace/integration created` if the command was successful. In addition, the namespace should also be visible using the Kyma dashboard.
 
@@ -62,9 +69,9 @@ Here are the steps using the Kyma Dashboard:
 
 1. Open the Kyma Dashboard and choose **Add new namespace**. Provide the namespace name and choose **Create**.
 
-   ![](images/createNamespace.png)
+   ![](images/2023-createNamespace.png)
 
-2. Create all 3 namespaces: **integration**, **backend**, **frontend**.
+2. Create all 3 namespaces: **integration**, **backend**, **frontend** and optionally **mock**.
 
 # Determine Placeholder Values
 
@@ -73,11 +80,11 @@ For manual deployment you need to provide multiple parameters.
 - *Docker Repository*: a Docker registry to store images, for example https://hub.docker.com/.
 - *Subdomain*: the subdomain of the subaccount, where your application is deployed, for example, easyfranchise.
 
-  ![subdomain screenshot](images/subdomain.png "subdomain")
+  ![subdomain screenshot](images/2023-subdomain.png "subdomain")
 
 - *Cluster Domain*: the full Kyma cluster domain. You can find the cluster name in the downloaded **kubeconfig** file or in the Kyma dashboard, for example, `c-1ddaa90.kyma.ondemand.com`.
 
-  ![](images/kymaConsole.png)
+  ![](images/2023-kymaConsole.png)
 
 - *image-name*: The following code snippet shows the example of a Kubernetes deployment file containing the place-holder "image-name". You will find a suggestion for the image name in the respective deployment step.
 
@@ -119,7 +126,6 @@ The database secret contains information such as databasename, sqlendpoint, data
    type: Opaque
    stringData:
      db.properties: |
-       db.name: <SAP HANA DB Name>
        db.sqlendpoint: <SAP HANA DB Host>
        db.admin: <Admin user>
        db.password: <password of the admin user>
@@ -156,9 +162,9 @@ Here are the steps in case you are using **Docker hub**:
 
    As you can only create *one* private repository in a free Docker hub account, we have made sure in our instructions, that Docker images stored on Docker hub will have different tag names so that they can be stored under one repository.
 
-   When we speak about repository name, we mean the combination of account and repo name that is usual with docker hub: `<docker account>/<repo name>`. An example would be `easyfranchise/kyma-multitentant`.
+   When we speak about repository name, we mean the combination of account and repo name that is usual with docker hub: `<docker account>/<repo name>`. An example would be `easyfranchise/kyma-multitenant`.
 
-   Addressing an image will include the tag name:`<docker account>/<repo name>:<tag name>`. An example would be `easyfranchise/kyma-multitentant:bp-service-0.1`.
+   Addressing an image will include the tag name:`<docker account>/<repo name>:<tag name>`. An example would be `easyfranchise/kyma-multitenant:bp-service-0.1`.
 
 2. Log in to Docker using this command:
 

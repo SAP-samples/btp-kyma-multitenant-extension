@@ -1,5 +1,5 @@
 # build stage
-FROM node:14-alpine as build-stage
+FROM --platform=linux/amd64 node:14-alpine as build-stage
 WORKDIR /app
 COPY code/easyfranchise/source/ui/package*.json ./
 RUN npm install
@@ -7,7 +7,7 @@ COPY code/easyfranchise/source/ui/. .
 RUN npm run build
 
 # production stage
-FROM nginx:stable-alpine as production-stage
+FROM --platform=linux/amd64 nginx:stable-alpine as production-stage
 COPY --from=build-stage /app/resources /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

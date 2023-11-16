@@ -21,7 +21,7 @@ spec:
       imagePullSecrets:
         - name: registry-secret
       containers:
-      - image: <image-name>
+      - image: <image-name> # use your own image
         name: bp-service
         imagePullPolicy: Always
         resources: {}

@@ -1,4 +1,4 @@
-FROM maven:3-openjdk-17-slim as BUILDER
+FROM --platform=linux/amd64 maven:3-openjdk-17-slim as BUILDER
 WORKDIR /opt/app
 COPY code/easyfranchise/source/backend/bp-service/pom.xml bp-service/pom.xml
 COPY code/easyfranchise/source/backend/db-service/pom.xml db-service/pom.xml
@@ -11,7 +11,7 @@ COPY code/easyfranchise/source/backend/ef-service/src /opt/app/ef-service/src
 COPY code/easyfranchise/source/backend/db-service/src /opt/app/db-service/src
 RUN mvn clean install -DskipTests=true
 
-FROM sapmachine:16 as production-stage
+FROM --platform=linux/amd64 sapmachine:latest as production-stage
 LABEL maintainer="alexander.rieder@sap.com"
 WORKDIR /opt/app
 COPY --from=BUILDER /opt/app/ef-service/target/ef-service.jar /opt/app/ef-service.jar

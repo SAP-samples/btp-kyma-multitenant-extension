@@ -41,15 +41,9 @@ The mock server simply reads all entities in the [BusinessPartner-sample.json](.
 
 ## Deploy to the Kyma Cluster
 
-For the next steps you need to have your SAP BTP, Kyma environment ready as described in the section [prepare](../../../documentation/prepare/setup-btp-environment/README.md). The deployment of the service itself is part of the deployment script which is described in chapter [Deployment via Script](../script-deployment/README.md). 
+For the next steps you need to have your SAP BTP, Kyma environment ready as described in the section [prepare](../../../documentation/prepare/setup-btp-environment/README.md). 
 
-1. Create a destination pointing to the mock server in the cluster. In your subscriber subaccount, create a destination for the Business Partner mock server as following:
-
-   ![Destination](images/BPMock-Destination.png)
-
-   The properties of the destination are shown in the following screenshot. Note that the Business Partner mock server does not require user and password. For compatibility purpose, you can use any text for username and password.
-
-   ![Destination Properties](images/BPMock-Destination_Properties.png)
+The deployment of the service can be done manually as described in the section [Deploy the Artifacts Manually](../../deploy/manual-deployment/README.md) or via the deployment script which is described in chapter [Deployment via Script](../script-deployment/README.md). 
 
 ## Using Multiple Instances
 
