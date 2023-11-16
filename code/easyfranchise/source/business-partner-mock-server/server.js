@@ -17,7 +17,7 @@ app.get('/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner', function (r
     });
  })
   
-var server = app.listen(8081, '127.0.0.1', function () {
+var server = app.listen(8081, '0.0.0.0', function () {
    var host = server.address().address;
    if (host === '::') {
         host = 'localhost';
