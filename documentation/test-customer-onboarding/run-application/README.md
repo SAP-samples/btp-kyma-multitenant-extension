@@ -6,7 +6,7 @@ As mentioned in the previous section, the application URL has been shared with t
 1. Copy the URL sent by the partner and start the application in a browser.
     > Note: You can find your app URL by choosing **Instances and Subscriptions** under **Services**.
 
-   ![](images/start-application.png)
+   ![](images/2023-start-application.png)
 
 2. By running the application the first time, you will be prompted to go to the **Admin Corner** and do the initial configuration. Choose **Go to admin corner**.
 
