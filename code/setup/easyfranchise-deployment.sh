@@ -319,7 +319,19 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     log "================================================================================================="
     echo ""
 
-    log "Step 3.1 - Create Namepaces"
+    log "Step 3.1 - Enable BTP Operator"
+    if [ "$DRY_RUN" = false ]; then
+      curl -Lo kyma.tar.gz "https://github.com/kyma-project/cli/releases/download/$(curl -s https://api.github.com/repos/kyma-project/cli/releases/latest | grep tag_name | cut -d '"' -f 4)/kyma_Linux_x86_64.tar.gz" \
+      && mkdir kyma-release && tar -C kyma-release -zxvf kyma.tar.gz && chmod +x kyma-release/kyma && sudo mv kyma-release/kyma /usr/local/bin \
+      && rm -rf kyma-release kyma.tar.gz
+
+      kyma alpha enable module btp-operator  --channel regular --kyma-name default --wait
+    else 
+      log "Skipped for Dry Run"
+    fi
+
+    echo
+    log "Step 3.2 - Create Namepaces"
     if [ "$DRY_RUN" = false ]; then
       kubectl create namespace integration || true
       kubectl create namespace backend || true
@@ -335,7 +347,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     fi
 
     echo
-    log "Step 3.2 - Create Secrets, Configmap and depended Services"
+    log "Step 3.3 - Create Secrets, Configmap and depended Services"
     echo
     log "DB Secret: "
     if [ "$DRY_RUN" = true ]; then
