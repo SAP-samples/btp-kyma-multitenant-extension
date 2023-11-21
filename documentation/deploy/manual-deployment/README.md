@@ -46,7 +46,7 @@ The Approuter deployment is done through two steps. The first step creates the r
 
      ![](images/2023-subdomain.png)
 
-2. If you are using recently provisioned Kyma runtime, you need to enable the BTP operator module in Kyma under the **kyma-system** namespace. Follow the steps described in the [official documentation(https://help.sap.com/docs/btp/sap-business-technology-platform/enable-and-disable-kyma-module#loio1b548e9ad4744b978b8b595288b0cb5c)]. At the end, you should see the module **btp-operator** configured.
+2. If you are using recently provisioned Kyma runtime, you need to enable the BTP operator module in Kyma under the **kyma-system** namespace. Follow the steps described in the [official documentation](https://help.sap.com/docs/btp/sap-business-technology-platform/enable-and-disable-kyma-module#loio1b548e9ad4744b978b8b595288b0cb5c). At the end, you should see the module **btp-operator** configured.
 
    ![](images/2023-btp-operator.png)
 
