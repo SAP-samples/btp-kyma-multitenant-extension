@@ -320,14 +320,57 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo ""
 
     log "Step 3.1 - Enable BTP Operator"
-    if [ "$DRY_RUN" = false ]; then
-      curl -Lo kyma.tar.gz "https://github.com/kyma-project/cli/releases/download/$(curl -s https://api.github.com/repos/kyma-project/cli/releases/latest | grep tag_name | cut -d '"' -f 4)/kyma_Linux_x86_64.tar.gz" \
-      && mkdir kyma-release && tar -C kyma-release -zxvf kyma.tar.gz && chmod +x kyma-release/kyma && sudo mv kyma-release/kyma /usr/local/bin \
-      && rm -rf kyma-release kyma.tar.gz
+    # Download and Install Kyma CLI
+    curl -Lo kyma.tar.gz "https://github.com/kyma-project/cli/releases/download/$(curl -s https://api.github.com/repos/kyma-project/cli/releases/latest | grep tag_name | cut -d '"' -f 4)/kyma_Linux_x86_64.tar.gz" \
+    && mkdir kyma-release && tar -C kyma-release -zxvf kyma.tar.gz && chmod +x kyma-release/kyma && sudo mv kyma-release/kyma /usr/local/bin \
+    && rm -rf kyma-release kyma.tar.gz
 
-      kyma alpha enable module btp-operator  --channel regular --kyma-name default --wait
-    else 
-      log "Skipped for Dry Run"
+    # Wait for Kyma CLI to be ready
+    KYMA_CLI_READY=0
+    MAX_RETRIES=5
+    RETRY_INTERVAL=5
+
+    for ((i=1; i<=MAX_RETRIES; i++)); do
+        if kyma version; then
+            KYMA_CLI_READY=1
+            break
+        else
+            echo "Waiting for Kyma CLI to be ready... retry $i/$MAX_RETRIES"
+            sleep $RETRY_INTERVAL
+        fi
+    done
+
+    if [ $KYMA_CLI_READY -eq 0 ]; then
+        echo "Kyma CLI is not ready. Exiting..."
+        exit 1
+    else
+        echo "Kyma CLI is ready."
+    fi
+
+    # Enable BTP Operator
+    kyma alpha enable module btp-operator  --channel regular --kyma-name default --wait
+
+
+    # Wait for BTP Operator to be ready
+    BTP_OPERATOR_READY=0
+    MAX_RETRIES=30
+    RETRY_INTERVAL=10
+
+    for ((i=1; i<=MAX_RETRIES; i++)); do
+        if kubectl get pods -n kyma-system | grep -q 'btp-operator.*Running'; then
+            BTP_OPERATOR_READY=1
+            break
+        else
+            echo "Waiting for BTP Operator to be ready... retry $i/$MAX_RETRIES"
+            sleep $RETRY_INTERVAL
+        fi
+    done
+
+    if [ $BTP_OPERATOR_READY -eq 0 ]; then
+        echo "BTP Operator is not ready. Exiting..."
+        exit 1
+    else
+        echo "BTP Operator is ready."
     fi
 
     echo
