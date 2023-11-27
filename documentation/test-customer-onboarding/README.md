@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-You have gone through all the steps described in section Deploy](../../documentation/deploy/README.md).
+You have gone through all the steps described in section [Deploy](../../documentation/deploy/README.md).
 
 ## Overview
 

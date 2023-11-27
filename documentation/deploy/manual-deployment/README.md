@@ -56,7 +56,7 @@ The Approuter deployment is done through two steps. The first step creates the r
    kubectl apply -f ./code/easyfranchise/deployment/k8s/btp-services.yaml
    ```
 
-3. Continue with the deployment of the Approuter itself. You need to build the Docker image and push it to the repository. If you are using dockerhub the `<docker-repository>` is a combination of your account name and the repository which looks like this: <docker account>/<repo name>
+3. Continue with the deployment of the Approuter itself. You need to build the Docker image and push it to the repository. If you are using dockerhub the `<docker-repository>` is a combination of your account name and the repository which looks like this: `docker_account/repo_name`.
 
    ```shell
    docker build --no-cache=true --rm -t <docker-repository>:approuter-0.1  -f ./code/easyfranchise/deployment/docker/Dockerfile-approuter .
