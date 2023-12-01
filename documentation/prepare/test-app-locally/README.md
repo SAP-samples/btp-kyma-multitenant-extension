@@ -63,7 +63,7 @@ For your local run, you have to configure some properties in a `hiddenconfig.pro
 ### Build
 
 Build the project:
-1. Open a command line window and change to directory to [code/easyfranchise/source/backend](../../../code/easyfranchise/source/backend) containing the main [pom.xml](../../../code/easyfranchise/source/backend/pom.xml). Be sure to update the JDK version in the pom.xml (lign 23) if you are not using JDK15. Then run the following Maven command:
+1. Open a command line window and change to directory to [code/easyfranchise/source/backend](../../../code/easyfranchise/source/backend) containing the main [pom.xml](../../../code/easyfranchise/source/backend/pom.xml). Be sure to update the JDK version in the pom.xml (lign 23) if you are not using JDK17. Then run the following Maven command:
 
    ```mvn clean install```
 
@@ -141,14 +141,13 @@ Windows users have to rely on unix-like shells to execute the curl commands we p
 
    * return status: `200 OK`
    * content: ``[]``
-   * ![](images/2023-getTenants01.png)
 
    The first run will take a bit longer than the next one, as database table creation has to be carried out.
 
 2. Let's have a look into table data of our database:
    - In the **Instance** overview select your SAP HANA Database, expand the "..." and select **Open in SAP HANA Database Explorer**. Provide Database user and password.
 
-     ![](images/openSAPHANADBExplorer.png)
+     ![](images/2023-getTenants01.png)
    - Expand the **Catalog** and select **Tables**.
    - Find the newly created table **TENANT** and open via Context Menu *Open Data*. No records exist yet.
 

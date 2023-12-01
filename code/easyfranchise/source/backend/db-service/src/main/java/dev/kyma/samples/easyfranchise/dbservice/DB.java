@@ -244,7 +244,7 @@ public class DB {
             
             // create user and schema
             emAdmin.getTransaction().begin();     
-            Query q = emAdmin.createNativeQuery("CREATE USER " + schema + " PASSWORD " + tenant.getPassword() + " NO FORCE_FIRST_PASSWORD_CHANGE;");
+            Query q = emAdmin.createNativeQuery("CREATE USER " + schema + " PASSWORD \"" + tenant.getPassword() + "\" NO FORCE_FIRST_PASSWORD_CHANGE;");
             q.executeUpdate();
             q = emAdmin.createNativeQuery("ALTER USER " + schema + " DISABLE PASSWORD LIFETIME;");
             q.executeUpdate();
