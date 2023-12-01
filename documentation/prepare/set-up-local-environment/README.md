@@ -2,7 +2,7 @@
 
 To execute all the necessary steps of the tutorial, you will need the following software available on your machine:
 
-* Java: JDK16 or later. We recommend [OpenJDK](https://openjdk.java.net/install/).
+* Java: JDK17 or later. We recommend [OpenJDK](https://openjdk.java.net/install/).
 * [Maven](https://maven.apache.org/install.html)
 * [Node.js](https://nodejs.org/en/download/)
 * [Docker](https://hub.docker.com/)
@@ -23,7 +23,7 @@ If you have chosen to use the Linux, you need to choose the Linux installation o
 
 ### Java - Java Development Kit
 
-You can choose any JDK provider that you prefer. We recommend using [OpenJDK](https://openjdk.java.net/install/). Make sure that you have at least JDK16 installed.
+You can choose any JDK provider that you prefer. We recommend using [OpenJDK](https://openjdk.java.net/install/). Make sure that you have at least JDK17 installed.
 
 To verify your installation, type the following in a shell:
 
@@ -72,7 +72,7 @@ node -v
 The output should look like this:
 
 ```shell
-v12.21.0
+v21.1.0
 ```
 
 ## Deployment to Kyma
