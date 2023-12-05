@@ -17,11 +17,12 @@ We recommend using a Linux subsystem for the tutorial as our scripts are only av
 
 ## Deployment Script
 
-Execute build script from within the [setup folder](../../../code/setup):
+Execute build script from within the [setup folder](../../../code/setup). 
 
 ```shell
 ./easyfranchise-deployment.sh
 ```
+> Note: Make sure that the file is executable. If this is not the case, you can do it for example with ```chmod 777 easyfranchise-deployment.sh``` on Unic OS and then execute the script.
 
 Execute build script in dry-run mode:
 
