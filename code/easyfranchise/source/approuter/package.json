@@ -7,9 +7,9 @@
     "start": "node approuter-start.js"
   },
   "dependencies": {
-    "@sap/approuter": "14.3.4",
+    "@sap/approuter": "14.4.2",
     "@sap/xsenv": "^4.0.0",
-    "@sap/xssec": "^3.4.0",
+    "@sap/xssec": "^3.6.0",
     "jwt-decode": "^4.0.0"
   },
   "devDependencies": {},
