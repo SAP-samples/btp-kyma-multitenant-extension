@@ -17,9 +17,9 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Log in to the Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
@@ -30,11 +30,11 @@ jobs:
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-business-partner-mock  
       - name: Build Docker image
-        uses: docker/build-push-action@v5.1.0
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./code/easyfranchise/deployment/docker/Dockerfile-business-partner-mock
