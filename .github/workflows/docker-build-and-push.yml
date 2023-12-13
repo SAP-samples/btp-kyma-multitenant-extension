@@ -34,7 +34,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-business-partner-mock  
       - name: Build Docker image
-        uses: docker/build-push-action@v2.10.0
+        uses: docker/build-push-action@v5.1.0
         with:
           context: .
           file: ./code/easyfranchise/deployment/docker/Dockerfile-business-partner-mock
