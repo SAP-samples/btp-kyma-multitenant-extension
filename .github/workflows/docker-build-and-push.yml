@@ -51,24 +51,25 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Log in to the Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Get commit id
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"      
+        run: echo "name=sha_short::$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-broker
       - name: Build Docker image
-        uses: docker/build-push-action@v2.10.0
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./code/easyfranchise/deployment/docker/Dockerfile-broker
@@ -85,24 +86,24 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Log in to the Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Get commit id
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"      
+        run: echo "name=sha_short::$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-approuter
       - name: Build Docker image
-        uses: docker/build-push-action@v2.10.0
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./code/easyfranchise/deployment/docker/Dockerfile-approuter
@@ -119,24 +120,24 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Log in to the Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Get commit id
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"      
+        run: echo "name=sha_short::$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT   
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-bp-service
       - name: Build Docker image
-        uses: docker/build-push-action@v2.10.0
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./code/easyfranchise/deployment/docker/Dockerfile-bp-service
@@ -153,24 +154,24 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Log in to the Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Get commit id
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"      
+        run: echo "name=sha_short::$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT     
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-db-service
       - name: Build Docker image
-        uses: docker/build-push-action@v2.10.0
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./code/easyfranchise/deployment/docker/Dockerfile-db-service
@@ -187,24 +188,24 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Log in to the Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Get commit id
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"      
+        run: echo "name=sha_short::$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT     
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-ef-service
       - name: Build Docker image
-        uses: docker/build-push-action@v2.10.0
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./code/easyfranchise/deployment/docker/Dockerfile-ef-service
@@ -221,24 +222,24 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Log in to the Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Get commit id
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"      
+        run: echo "name=sha_short::$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT    
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-email-service
       - name: Build Docker image
-        uses: docker/build-push-action@v2.10.0
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./code/easyfranchise/deployment/docker/Dockerfile-email-service
@@ -255,24 +256,24 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Log in to the Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Get commit id
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"      
+        run: echo "name=sha_short::$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT    
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-ui
       - name: Build Docker image
-        uses: docker/build-push-action@v2.10.0
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./code/easyfranchise/deployment/docker/Dockerfile-ui
