@@ -1,8 +1,11 @@
+# DEPRECATED
+
+> [!CAUTION]  
+> As of July 2024 the tutorial is discontinued. The content provided is not going to be maintained anymore. 
+
 # Easy Franchise: Develop a Multitenant Extension Application in SAP BTP, Kyma Runtime
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-kyma-multitenant-extension)](https://api.reuse.software/info/github.com/SAP-samples/btp-kyma-multitenant-extension)
-
-> Note: The content of this GitHub repository has been created as source for the SAP Discovery Center Mission [Develop a Multitenant Extension Application in SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/missiondetail/3683/3726/). So we recommend using directly the mission in the SAP Discovery Center.
 
 ## Description
 

@@ -1,3 +1,8 @@
+# DEPRECATED
+
+> [!CAUTION]  
+> As of July 2024 the tutorial is discontinued. The content provided is not going to be maintained anymore. 
+
 # Welcome to the Mission
 
 In this mission, you will learn how to develop a multitenant application running on the Kyma environment of the SAP Business Technology Platform (SAP BTP).
