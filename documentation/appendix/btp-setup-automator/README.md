@@ -2,6 +2,7 @@
 
 In this section, we are explaining to use the [btp-setup-automator](https://github.com/SAP-samples/btp-setup-automator) to set up the account and run the application in an automated way.
 
+>**Warning:** In the chapter [Instructions for running SAP Discovery Center Mission in btp-setup-automator](https://github.com/SAP-samples/btp-setup-automator/blob/main/usecases/released/discoverycenter/3638-kyma-multitenant/README.md#instructions) of the [btp-setup-automator](https://github.com/SAP-samples/btp-setup-automator), there is a small error in step 1 when navigating to the parameter file. The correct path is ```cd usecases/released/discoverycenter/3638-kyma-multitenant```
 ## Prerequisites
 To install the usecase using the btp-setup-automator, you will need Docker. If you haven't it install, you can download it from [Docker Hub](https://hub.docker.com/).
 
